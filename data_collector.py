@@ -43,13 +43,14 @@ SERIES = {
 def init_db(conn: sqlite3.Connection) -> None:
     conn.executescript("""
         CREATE TABLE IF NOT EXISTS events (
-            id           TEXT PRIMARY KEY,
-            title        TEXT,
-            series_id    INTEGER,
-            sport        TEXT,
-            start_date   TEXT,
-            end_date     TEXT,
-            collected_at TEXT
+            id              TEXT PRIMARY KEY,
+            title           TEXT,
+            series_id       INTEGER,
+            sport           TEXT,
+            start_date      TEXT,
+            end_date        TEXT,
+            collected_at    TEXT,
+            game_start_time TEXT
         );
 
         CREATE TABLE IF NOT EXISTS markets (
@@ -74,6 +75,10 @@ def init_db(conn: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_mkt_event  ON markets(event_id);
         CREATE INDEX IF NOT EXISTS idx_evt_series ON events(series_id);
     """)
+    # migration: add game_start_time if it doesn't exist yet
+    cols = [r[1] for r in conn.execute("PRAGMA table_info(events)").fetchall()]
+    if "game_start_time" not in cols:
+        conn.execute("ALTER TABLE events ADD COLUMN game_start_time TEXT")
     conn.commit()
 
 
@@ -226,13 +231,14 @@ def collect_sport(conn: sqlite3.Connection, sport: str, series_id: int) -> None:
             skipped += 1
             continue
 
-        title      = event.get("title", "")
-        start_date = event.get("startDate", "")
-        end_date   = event.get("endDate", "")
+        title           = event.get("title", "")
+        start_date      = event.get("startDate", "")
+        end_date        = event.get("endDate", "")
+        game_start_time = event.get("startTime", "")
 
         cur.execute(
-            "INSERT OR IGNORE INTO events VALUES (?,?,?,?,?,?,?)",
-            (event_id, title, series_id, sport, start_date, end_date, now),
+            "INSERT OR IGNORE INTO events VALUES (?,?,?,?,?,?,?,?)",
+            (event_id, title, series_id, sport, start_date, end_date, now, game_start_time),
         )
 
         for mkt in event.get("markets", []):
@@ -315,6 +321,43 @@ def backfill_missing(conn: sqlite3.Connection, sport: str | None = None) -> None
         logging.info(f"  backfill {done:,}/{total:,} — batch {total_pts:,} pts")
 
 
+# ── backfill game_start_time for existing events ──────────────────────────────
+
+def backfill_game_start_time(conn: sqlite3.Connection) -> None:
+    """
+    Re-fetch event metadata from Gamma API to populate game_start_time
+    for events that were collected before this field was added.
+    Event metadata (unlike price history) is not retention-limited.
+    """
+    rows = conn.execute(
+        "SELECT id FROM events WHERE game_start_time IS NULL OR game_start_time = ''"
+    ).fetchall()
+    total = len(rows)
+    logging.info(f"Backfilling game_start_time for {total:,} events …")
+
+    updated = 0
+    cur = conn.cursor()
+    for i, (event_id,) in enumerate(rows):
+        try:
+            data = _get(f"{GAMMA_API}/events/{event_id}", {})
+            gst  = data.get("startTime", "") if isinstance(data, dict) else ""
+            cur.execute(
+                "UPDATE events SET game_start_time = ? WHERE id = ?",
+                (gst, event_id),
+            )
+            if gst:
+                updated += 1
+        except Exception as exc:
+            logging.warning(f"  event {event_id}: {exc}")
+        if (i + 1) % 500 == 0:
+            conn.commit()
+            logging.info(f"  {i+1:,}/{total:,} — {updated:,} filled so far")
+        time.sleep(0.05)  # gentle rate limit
+
+    conn.commit()
+    logging.info(f"game_start_time backfill done — {updated:,}/{total:,} filled")
+
+
 # ── entry point ───────────────────────────────────────────────────────────────
 
 def main(backfill: bool = False, sport: str | None = None) -> None:
@@ -337,9 +380,17 @@ def main(backfill: bool = False, sport: str | None = None) -> None:
 
 if __name__ == "__main__":
     import sys
-    # Usage: python3 data_collector.py [backfill [sport]]
+    # Usage:
+    #   python3 data_collector.py                      — normal collection
+    #   python3 data_collector.py backfill [SPORT]     — backfill price history
+    #   python3 data_collector.py backfill_gst         — backfill game_start_time
     if len(sys.argv) > 1 and sys.argv[1] == "backfill":
         sport_arg = sys.argv[2].upper() if len(sys.argv) > 2 else None
         main(backfill=True, sport=sport_arg)
+    elif len(sys.argv) > 1 and sys.argv[1] == "backfill_gst":
+        conn = sqlite3.connect(DB_PATH)
+        init_db(conn)
+        backfill_game_start_time(conn)
+        conn.close()
     else:
         main()

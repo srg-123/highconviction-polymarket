@@ -123,6 +123,7 @@ def backtest(
     unit_size:   float           = Query(default=50.0, gt=0),
     unit_pct:    float           = Query(default=0.05, gt=0, le=1.0),
     limit_orders: bool           = Query(default=False),
+    trade_window: str            = Query(default="all"),
     # strategy-specific knobs (forwarded as params)
     threshold:   Optional[float] = Query(default=None),
     side:        Optional[str]   = Query(default=None),
@@ -161,6 +162,7 @@ def backtest(
             unit_size=unit_size,
             unit_pct=unit_pct,
             limit_orders=limit_orders,
+            trade_window=trade_window,
         )
     except ValueError as exc:
         raise HTTPException(400, str(exc))

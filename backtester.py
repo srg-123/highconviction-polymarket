@@ -40,28 +40,21 @@ def _get_markets(conn: sqlite3.Connection, sport: Optional[str],
     if date_to:
         date_filter += f" AND e.start_date < '{date_to}'"
 
+    select = """SELECT m.id, m.question, m.resolved_outcome, m.volume,
+                       e.sport, e.title, e.game_start_time
+               FROM markets m
+               JOIN events e ON m.event_id = e.id
+               WHERE m.resolved_outcome IS NOT NULL"""
     if sport and sport.upper() != "ALL":
         sid = SPORT_SERIES.get(sport.upper())
         if not sid:
             return []
         rows = conn.execute(
-            """SELECT m.id, m.question, m.resolved_outcome, m.volume,
-                      e.sport, e.title
-               FROM markets m
-               JOIN events e ON m.event_id = e.id
-               WHERE e.series_id = ? AND m.resolved_outcome IS NOT NULL"""
-            + _MATCH_WINNER_FILTER + date_filter,
+            select + " AND e.series_id = ?" + _MATCH_WINNER_FILTER + date_filter,
             (sid,),
         ).fetchall()
     else:
-        rows = conn.execute(
-            """SELECT m.id, m.question, m.resolved_outcome, m.volume,
-                      e.sport, e.title
-               FROM markets m
-               JOIN events e ON m.event_id = e.id
-               WHERE m.resolved_outcome IS NOT NULL"""
-            + _MATCH_WINNER_FILTER + date_filter
-        ).fetchall()
+        rows = conn.execute(select + _MATCH_WINNER_FILTER + date_filter).fetchall()
     return rows
 
 
@@ -188,7 +181,10 @@ def run_backtest(
     limit_orders: bool = False,
     date_from: Optional[str] = None,
     date_to: Optional[str] = None,
+    trade_window: str = "all",
 ) -> dict:
+    # trade_window: "all" | "prematch" | "inmatch"
+    # prematch = only enter before game_start_time; inmatch = only enter after
     """
     Walk price histories, apply strategy, return aggregated metrics + sample bets.
 
@@ -251,17 +247,37 @@ def run_backtest(
         cal_rows = calibration_only(sport)
         cal_dict = {r["bucket"]: r for r in cal_rows}
 
-    for market_id, question, resolved_outcome, volume, mkt_sport, event_title in markets:
+    for market_id, question, resolved_outcome, volume, mkt_sport, event_title, game_start_time in markets:
         history = _get_price_history(conn, market_id)
         n = len(history)
         if n < 5:
             continue
+
+        # Resolve game_start_time to a unix timestamp for boundary checks
+        gst_ts: Optional[int] = None
+        if game_start_time:
+            import calendar, email.utils
+            try:
+                from datetime import datetime, timezone
+                gst_ts = int(datetime.fromisoformat(
+                    game_start_time.replace("Z", "+00:00")
+                ).timestamp())
+            except Exception:
+                gst_ts = None
 
         cutoff = max(2, int(n * entry_pct))
 
         for i in range(2, cutoff):
             snapshot = history[i]
             past     = history[:i]
+
+            # Enforce pre/in-match window using game_start_time
+            if gst_ts is not None and trade_window != "all":
+                ts = snapshot["timestamp"]
+                if trade_window == "prematch" and ts >= gst_ts:
+                    break   # past match start — no more pre-match signals possible
+                if trade_window == "inmatch" and ts < gst_ts:
+                    continue  # before match start — skip
 
             if strategy_name == "calibration_bucket":
                 signal = strategy_fn(snapshot, past, calibration=cal_dict, **params)
