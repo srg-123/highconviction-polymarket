@@ -1,0 +1,12 @@
+backtest.db
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+logs/
+api.log
+collector.log
+*.log
+.DS_Store

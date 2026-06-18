@@ -1,0 +1,501 @@
+event,start_date,question,resolved_outcome,volume_usd,price_points,min_price,max_price,avg_price
+Parma: Laslo Djere vs Ryan Seggerman,2026-06-17T08:12:10.079656Z,Parma: Laslo Djere vs Ryan Seggerman,1,498232.21212200075,11,0.44,0.9995,0.7422
+Parma: Laslo Djere vs Ryan Seggerman,2026-06-17T08:12:10.079656Z,Parma: Completed Match: Laslo Djere vs Ryan Seggerman,1,0.0,5,0.5,0.9995,0.5999
+Poznan: Gonzalo Bueno vs Frederico Ferreira Silva,2026-06-17T04:44:03.556851Z,Poznan: Completed Match: Gonzalo Bueno vs Frederico Ferreira Silva,1,0.0,12,0.5,0.9995,0.5416
+Poznan: Gonzalo Bueno vs Frederico Ferreira Silva,2026-06-17T04:44:03.556851Z,Poznan: Gonzalo Bueno vs Frederico Ferreira Silva,1,17347.624106000003,11,0.56,0.9995,0.619
+Dublin: Clement Tabur vs Stefanos Sakellaridis,2026-06-17T04:36:09.972599Z,Dublin: Completed Match: Clement Tabur vs Stefanos Sakellaridis,1,199.9974,11,0.495,0.9995,0.545
+Dublin: Clement Tabur vs Stefanos Sakellaridis,2026-06-17T04:36:09.972599Z,Dublin: Clement Tabur vs Stefanos Sakellaridis,0,88201.004853,12,0.0005,0.66,0.4488
+Parma: Sebastian Ofner vs Enrico Dalla Valle,2026-06-17T04:18:04.663788Z,Parma: Completed Match: Sebastian Ofner vs Enrico Dalla Valle,1,0.0,11,0.5,0.9955,0.545
+Parma: Sebastian Ofner vs Enrico Dalla Valle,2026-06-17T04:18:04.663788Z,Parma: Sebastian Ofner vs Enrico Dalla Valle,1,27381.193976999995,12,0.675,0.9995,0.735
+Poznan: Norbert Gombos vs Dalibor Svrcina,2026-06-17T04:04:07.502573Z,Poznan: Norbert Gombos vs Dalibor Svrcina,0,17806.09611000001,12,0.0005,0.24,0.1767
+Poznan: Norbert Gombos vs Dalibor Svrcina,2026-06-17T04:04:07.502573Z,Poznan: Completed Match: Norbert Gombos vs Dalibor Svrcina,1,0.0,11,0.5,0.9995,0.5454
+Royan: Leo Raquillet vs Pavel Kotov,2026-06-17T03:45:54.620845Z,Royan: Completed Match: Leo Raquillet vs Pavel Kotov,0,0.0,13,0.5,0.5,0.5
+Royan: Leo Raquillet vs Pavel Kotov,2026-06-17T03:45:54.620845Z,Royan: Leo Raquillet vs Pavel Kotov,1,56581.56643300003,12,0.15,0.925,0.2188
+Parma: Jacopo Vasami vs Buvaysar Gadamauri,2026-06-17T03:16:08.850502Z,Parma: Jacopo Vasami vs Buvaysar Gadamauri,0,59809.46197500001,12,0.0005,0.595,0.4955
+Parma: Jacopo Vasami vs Buvaysar Gadamauri,2026-06-17T03:16:08.850502Z,Parma: Completed Match: Jacopo Vasami vs Buvaysar Gadamauri,1,0.0,13,0.495,0.9995,0.538
+Royan: Gilles Arnaud Bailly vs Cosme de Ravel,2026-06-17T03:03:58.808572Z,Royan: Gilles Arnaud Bailly vs Cosme de Ravel,0,27844.06574600001,12,0.0005,0.885,0.6521
+Royan: Gilles Arnaud Bailly vs Cosme de Ravel,2026-06-17T03:03:58.808572Z,Royan: Completed Match: Gilles Arnaud Bailly vs Cosme de Ravel,1,50.0,11,0.495,0.9955,0.5446
+HSBC Championships: Alex de Minaur vs Denis Shapovalov,2026-06-17T03:02:14.485793Z,HSBC Championships: Alex de Minaur vs Denis Shapovalov,1,81617.04285200006,11,0.41,0.89,0.75
+HSBC Championships: Alex de Minaur vs Denis Shapovalov,2026-06-17T03:02:14.485793Z,HSBC Championships: Completed Match: Alex de Minaur vs Denis Shapovalov,1,0.0,11,0.5,0.5,0.5
+Poznan: Martin Krumich vs Joao Lucas Da Silva,2026-06-17T02:52:08.509201Z,Poznan: Martin Krumich vs Joao Lucas Da Silva,0,25174.61346500001,12,0.0005,0.455,0.3984
+Poznan: Martin Krumich vs Joao Lucas Da Silva,2026-06-17T02:52:08.509201Z,Poznan: Completed Match: Martin Krumich vs Joao Lucas Da Silva,1,200.0,12,0.5,0.9955,0.5413
+Halle Open: Ben Shelton vs Lorenzo Sonego,2026-06-16T16:23:47.842274Z,Halle Open: Ben Shelton vs Lorenzo Sonego,1,196021.93061799984,22,0.735,0.9995,0.7823
+Halle Open: Ben Shelton vs Lorenzo Sonego,2026-06-16T16:23:47.842274Z,Halle Open: Completed Match: Ben Shelton vs Lorenzo Sonego,1,400.0,22,0.495,0.9995,0.5225
+Royan: Max Alcala Gurri vs Ryo Tabata,2026-06-16T16:19:26.933297Z,Royan: Max Alcala Gurri vs Ryo Tabata,1,16174.949772999998,18,0.435,0.985,0.8625
+Royan: Max Alcala Gurri vs Ryo Tabata,2026-06-16T16:19:26.933297Z,Royan: Completed Match: Max Alcala Gurri vs Ryo Tabata,1,0.0,18,0.5,0.5,0.5
+Parma: Roberto Carballes Baena vs Stefano Travaglia,2026-06-16T16:19:26.933266Z,Parma: Completed Match: Roberto Carballes Baena vs Stefano Travaglia,1,0.0,19,0.5,0.5,0.5
+Parma: Roberto Carballes Baena vs Stefano Travaglia,2026-06-16T16:19:26.933266Z,Parma: Roberto Carballes Baena vs Stefano Travaglia,1,121751.40588199996,19,0.53,0.95,0.6137
+Halle Open: Frances Tiafoe vs Sho Shimabukuro,2026-06-16T16:17:35.339764Z,Halle Open: Frances Tiafoe vs Sho Shimabukuro,1,215805.928218,21,0.685,0.865,0.7033
+Halle Open: Frances Tiafoe vs Sho Shimabukuro,2026-06-16T16:17:35.339764Z,Halle Open: Completed Match: Frances Tiafoe vs Sho Shimabukuro,1,200.0,21,0.495,0.5,0.4998
+Parma: Marco Cecchinato vs Federico Bondioli,2026-06-16T16:17:35.339711Z,Parma: Completed Match: Marco Cecchinato vs Federico Bondioli,1,0.0,21,0.465,0.9995,0.5224
+Parma: Marco Cecchinato vs Federico Bondioli,2026-06-16T16:17:35.339711Z,Parma: Marco Cecchinato vs Federico Bondioli,1,14528.427201000008,21,0.58,0.9995,0.6528
+Dublin: Grigor Dimitrov vs Conor Gannon,2026-06-16T16:15:29.332564Z,Dublin: Completed Match: Grigor Dimitrov vs Conor Gannon,1,0.0,22,0.5,0.9995,0.5227
+Dublin: Grigor Dimitrov vs Conor Gannon,2026-06-16T16:15:29.332564Z,Dublin: Grigor Dimitrov vs Conor Gannon,1,72819.11968199995,22,0.475,0.9995,0.8336
+Parma: Chun-Hsin Tseng vs Oriol Roca Batalla,2026-06-16T16:15:29.332537Z,Parma: Chun-Hsin Tseng vs Oriol Roca Batalla,1,81745.70851900002,19,0.48,0.9995,0.575
+Parma: Chun-Hsin Tseng vs Oriol Roca Batalla,2026-06-16T16:15:29.332537Z,Parma: Completed Match: Chun-Hsin Tseng vs Oriol Roca Batalla,1,50.0,19,0.5,0.9995,0.5263
+Poznan: Facundo Acosta vs Hynek Barton,2026-06-16T16:15:29.287222Z,Poznan: Completed Match: Facundo Acosta vs Hynek Barton,1,0.0,21,0.5,0.9995,0.5238
+Poznan: Facundo Acosta vs Hynek Barton,2026-06-16T16:15:29.287222Z,Poznan: Facundo Acosta vs Hynek Barton,1,13191.706286999995,21,0.59,0.9995,0.6576
+HSBC Championships: Brandon Nakashima vs Ignacio Buse,2026-06-16T16:13:30.701443Z,HSBC Championships: Brandon Nakashima vs Ignacio Buse,1,322727.6251160003,20,0.675,0.9995,0.746
+HSBC Championships: Brandon Nakashima vs Ignacio Buse,2026-06-16T16:13:30.701443Z,HSBC Championships: Completed Match: Brandon Nakashima vs Ignacio Buse,1,0.0,20,0.5,0.995,0.5247
+Royan: Daniel Jade vs Raphael Perot,2026-06-16T16:13:30.701388Z,Royan: Daniel Jade vs Raphael Perot,0,14917.614398000003,18,0.039,0.53,0.4802
+Royan: Daniel Jade vs Raphael Perot,2026-06-16T16:13:30.701388Z,Royan: Completed Match: Daniel Jade vs Raphael Perot,1,0.0,18,0.5,0.505,0.5003
+Poznan: Maks Kasnikowski vs Jan Choinski,2026-06-16T16:09:02.468971Z,Poznan: Maks Kasnikowski vs Jan Choinski,0,53522.88385499997,21,0.0005,0.525,0.4103
+Poznan: Maks Kasnikowski vs Jan Choinski,2026-06-16T16:09:02.468971Z,Poznan: Completed Match: Maks Kasnikowski vs Jan Choinski,1,0.0,21,0.5,0.9995,0.5238
+Poznan: Genaro Alberto Olivieri vs Michele Ribecai,2026-06-16T16:07:08.011825Z,Poznan: Completed Match: Genaro Alberto Olivieri vs Michele Ribecai,1,0.0,20,0.5,0.5,0.5
+Poznan: Genaro Alberto Olivieri vs Michele Ribecai,2026-06-16T16:07:08.011825Z,Poznan: Genaro Alberto Olivieri vs Michele Ribecai,0,48706.946039,20,0.175,0.495,0.456
+HSBC Championships: Adrian Mannarino vs Arthur Fery,2026-06-16T16:07:08.01181Z,HSBC Championships: Adrian Mannarino vs Arthur Fery,0,699946.6699330003,24,0.0005,0.565,0.5036
+HSBC Championships: Adrian Mannarino vs Arthur Fery,2026-06-16T16:07:08.01181Z,HSBC Championships: Completed Match: Adrian Mannarino vs Arthur Fery,1,0.0,24,0.5,0.9995,0.5208
+Royan: Emilien Demanet vs Carlos Sanchez Jover,2026-06-16T16:07:08.011796Z,Royan: Emilien Demanet vs Carlos Sanchez Jover,0,106103.87328299994,22,0.0005,0.765,0.4016
+Royan: Emilien Demanet vs Carlos Sanchez Jover,2026-06-16T16:07:08.011796Z,Royan: Completed Match: Emilien Demanet vs Carlos Sanchez Jover,1,0.0,22,0.5,0.9995,0.5227
+Poznan: Petr Brunclik vs Florian Broska,2026-06-16T16:07:07.989475Z,Poznan: Completed Match: Petr Brunclik vs Florian Broska,0,0.0,18,0.5,0.5,0.5
+Poznan: Petr Brunclik vs Florian Broska,2026-06-16T16:07:07.989475Z,Poznan: Petr Brunclik vs Florian Broska,0,79122.08681,18,0.35,0.715,0.6603
+Nottingham 2: Jaime Faria vs Zhizhen Zhang,2026-06-15T22:28:53.774412Z,Nottingham 2: Completed Match: Jaime Faria vs Zhizhen Zhang,1,0.0,20,0.495,0.9995,0.5247
+Nottingham 2: Jaime Faria vs Zhizhen Zhang,2026-06-15T22:28:53.774412Z,Nottingham 2: Jaime Faria vs Zhizhen Zhang,0,34148.61176699998,20,0.0005,0.495,0.4278
+Asuncion 2: Samuel Heredia vs Luciano Emanuel Ambrogi,2026-06-15T22:28:53.603402Z,Asuncion 2: Completed Match: Samuel Heredia vs Luciano Emanuel Ambrogi,1,0.0,25,0.5,0.5,0.5
+Asuncion 2: Samuel Heredia vs Luciano Emanuel Ambrogi,2026-06-15T22:28:53.603402Z,Asuncion 2: Samuel Heredia vs Luciano Emanuel Ambrogi,0,175866.7206720002,25,0.17,0.59,0.3258
+Nottingham 2: Christopher O'Connell vs Jay Clarke,2026-06-15T22:28:53.586432Z,Nottingham 2: Completed Match: Christopher O'Connell vs Jay Clarke,1,28.0,40,0.5,0.995,0.5247
+Nottingham 2: Christopher O'Connell vs Jay Clarke,2026-06-15T22:28:53.586432Z,Nottingham 2: Christopher O'Connell vs Jay Clarke,1,143782.51227699997,40,0.39,0.9995,0.625
+Royan: Franco Ribero vs Pavel Kotov,2026-06-15T22:28:24.495072Z,Royan: Completed Match: Franco Ribero vs Pavel Kotov,1,0.0,20,0.495,0.9995,0.5247
+Royan: Franco Ribero vs Pavel Kotov,2026-06-15T22:28:24.495072Z,Royan: Franco Ribero vs Pavel Kotov,0,39731.98193899999,20,0.0005,0.56,0.1743
+Asuncion 2: Ignacio Parisca vs Santiago Rodriguez Taverna,2026-06-15T22:17:15.774018Z,Asuncion 2: Ignacio Parisca vs Santiago Rodriguez Taverna,0,21552.78850700001,22,0.0115,0.645,0.4587
+Asuncion 2: Ignacio Parisca vs Santiago Rodriguez Taverna,2026-06-15T22:17:15.774018Z,Asuncion 2: Completed Match: Ignacio Parisca vs Santiago Rodriguez Taverna,1,0.0,22,0.5,0.5,0.5
+Asuncion 2: Joaquin Aguilar vs Gustavo Almeida,2026-06-15T22:17:07.486933Z,Asuncion 2: Joaquin Aguilar vs Gustavo Almeida,1,98126.96557099989,28,0.25,0.9995,0.4734
+Asuncion 2: Joaquin Aguilar vs Gustavo Almeida,2026-06-15T22:17:07.486933Z,Asuncion 2: Completed Match: Joaquin Aguilar vs Gustavo Almeida,1,200.0,28,0.495,0.9995,0.5175
+Asuncion 2: Ignacio Monzon vs Juan Manuel La Serna,2026-06-15T22:17:06.609361Z,Asuncion 2: Ignacio Monzon vs Juan Manuel La Serna,0,17700.156612,21,0.0005,0.615,0.3307
+Asuncion 2: Ignacio Monzon vs Juan Manuel La Serna,2026-06-15T22:17:06.609361Z,Asuncion 2: Completed Match: Ignacio Monzon vs Juan Manuel La Serna,1,0.0,21,0.5,0.9995,0.5238
+Poznan: Norbert Gombos vs Olle Wallin,2026-06-15T22:17:05.841821Z,Poznan: Norbert Gombos vs Olle Wallin,1,15837.122487000002,18,0.61,0.765,0.6558
+Poznan: Norbert Gombos vs Olle Wallin,2026-06-15T22:17:05.841821Z,Poznan: Completed Match: Norbert Gombos vs Olle Wallin,1,0.0,18,0.495,0.5,0.4997
+Poznan: Mathys Erhard vs Frederico Ferreira Silva,2026-06-15T22:16:34.504979Z,Poznan: Completed Match: Mathys Erhard vs Frederico Ferreira Silva,1,0.0,19,0.495,0.5,0.4997
+Poznan: Mathys Erhard vs Frederico Ferreira Silva,2026-06-15T22:16:34.504979Z,Poznan: Mathys Erhard vs Frederico Ferreira Silva,0,20037.960850000018,19,0.0215,0.5,0.4482
+Nottingham 2: Roman Safiullin vs August Holmgren,2026-06-15T16:35:40.128442Z,Nottingham 2: Roman Safiullin vs August Holmgren,1,15159.582694,26,0.65,0.9995,0.6794
+Nottingham 2: Roman Safiullin vs August Holmgren,2026-06-15T16:35:40.128442Z,Nottingham 2: Completed Match: Roman Safiullin vs August Holmgren,1,0.0,26,0.5,0.9995,0.5192
+Dublin: Jerome Kym vs Thanasi Kokkinakis,2026-06-15T16:35:24.42794Z,Dublin: Completed Match: Jerome Kym vs Thanasi Kokkinakis,1,0.0,25,0.5,0.505,0.5002
+Dublin: Jerome Kym vs Thanasi Kokkinakis,2026-06-15T16:35:24.42794Z,Dublin: Jerome Kym vs Thanasi Kokkinakis,1,78763.27210799993,25,0.085,0.705,0.2988
+Dublin: Titouan Droguet vs Charles Broom,2026-06-15T16:35:24.346029Z,Dublin: Titouan Droguet vs Charles Broom,1,80509.39088800002,27,0.525,0.975,0.5722
+Dublin: Titouan Droguet vs Charles Broom,2026-06-15T16:35:24.346029Z,Dublin: Completed Match: Titouan Droguet vs Charles Broom,1,0.0,27,0.5,0.5,0.5
+Nottingham 2: Remy Bertola vs Yibing Wu,2026-06-15T16:35:23.845774Z,Nottingham 2: Remy Bertola vs Yibing Wu,1,68110.01270999997,26,0.235,0.9995,0.289
+Nottingham 2: Remy Bertola vs Yibing Wu,2026-06-15T16:35:23.845774Z,Nottingham 2: Completed Match: Remy Bertola vs Yibing Wu,1,0.0,26,0.5,0.9995,0.5192
+Parma: Enrico Dalla Valle vs Alexander Weis,2026-06-15T16:22:41.78279Z,Parma: Completed Match: Enrico Dalla Valle vs Alexander Weis,1,200.0,26,0.495,0.9995,0.519
+Parma: Enrico Dalla Valle vs Alexander Weis,2026-06-15T16:22:41.78279Z,Parma: Enrico Dalla Valle vs Alexander Weis,1,10909.341466000003,26,0.665,0.9995,0.7508
+HSBC Championships: Botic van de Zandschulp vs Harry Wendelken,2026-06-14T22:21:25.626991Z,HSBC Championships: Completed Match: Botic van de Zandschulp vs Harry Wendelken,1,0.0,15,0.495,0.5,0.4997
+HSBC Championships: Botic van de Zandschulp vs Harry Wendelken,2026-06-14T22:21:25.626991Z,HSBC Championships: Botic van de Zandschulp vs Harry Wendelken,1,274215.5724920002,15,0.645,0.925,0.688
+Halle Open: Nikoloz Basilashvili vs Daniel Altmaier,2026-06-14T22:21:24.888094Z,Halle Open: Completed Match: Nikoloz Basilashvili vs Daniel Altmaier,1,0.0,15,0.5,0.9995,0.5333
+Halle Open: Nikoloz Basilashvili vs Daniel Altmaier,2026-06-14T22:21:24.888094Z,Halle Open: Nikoloz Basilashvili vs Daniel Altmaier,0,129855.71029600006,15,0.0005,0.605,0.519
+Halle Open: Terence Atmane vs Martin Landaluce,2026-06-14T22:21:24.531319Z,Halle Open: Terence Atmane vs Martin Landaluce,1,547978.250468,16,0.325,0.995,0.3875
+Halle Open: Terence Atmane vs Martin Landaluce,2026-06-14T22:21:24.531319Z,Halle Open: Completed Match: Terence Atmane vs Martin Landaluce,1,5.0,16,0.5,0.995,0.5316
+Nottingham 2: Luca Nardi vs Remy Bertola,2026-06-14T22:21:18.247831Z,Nottingham 2: Completed Match: Luca Nardi vs Remy Bertola,1,0.0,15,0.5,0.9995,0.5333
+Nottingham 2: Luca Nardi vs Remy Bertola,2026-06-14T22:21:18.247831Z,Nottingham 2: Luca Nardi vs Remy Bertola,0,144828.05241899978,15,0.0005,0.865,0.5904
+Asuncion 2: Juan Estevez vs Samuel Linde,2026-06-14T22:21:15.205504Z,Asuncion 2: Completed Match: Juan Estevez vs Samuel Linde,1,0.0,23,0.495,0.5,0.4998
+Asuncion 2: Juan Estevez vs Samuel Linde,2026-06-14T22:21:15.205504Z,Asuncion 2: Juan Estevez vs Samuel Linde,1,25241.05788800001,23,0.375,0.984,0.6667
+HSBC Championships: Tommy Paul vs Zachary Svajda,2026-06-14T22:21:04.660021Z,HSBC Championships: Tommy Paul vs Zachary Svajda,1,406797.6207520004,17,0.695,0.9995,0.7297
+HSBC Championships: Tommy Paul vs Zachary Svajda,2026-06-14T22:21:04.660021Z,HSBC Championships: Completed Match: Tommy Paul vs Zachary Svajda,1,5.0,17,0.5,0.995,0.5291
+Nottingham 2: Alastair Gray vs Tristan Schoolkate,2026-06-14T22:21:03.16282Z,Nottingham 2: Completed Match: Alastair Gray vs Tristan Schoolkate,0,64.0,14,0.5,0.5,0.5
+Nottingham 2: Anton Matusevich vs Arthur Gea,2026-06-14T22:20:49.461618Z,Nottingham 2: Completed Match: Anton Matusevich vs Arthur Gea,1,0.0,20,0.495,0.995,0.5245
+Nottingham 2: Anton Matusevich vs Arthur Gea,2026-06-14T22:20:49.461618Z,Nottingham 2: Anton Matusevich vs Arthur Gea,0,26058.67257400002,20,0.0005,0.64,0.421
+Nottingham 2: Darwin Blanch vs Zhizhen Zhang,2026-06-14T22:20:49.187605Z,Nottingham 2: Darwin Blanch vs Zhizhen Zhang,0,93964.56081699996,17,0.0005,0.51,0.4003
+Nottingham 2: Darwin Blanch vs Zhizhen Zhang,2026-06-14T22:20:49.187605Z,Nottingham 2: Completed Match: Darwin Blanch vs Zhizhen Zhang,1,55.0,17,0.5,0.9995,0.5294
+HSBC Championships: Rinky Hijikata vs Alejandro Tabilo,2026-06-14T22:20:47.793272Z,HSBC Championships: Rinky Hijikata vs Alejandro Tabilo,1,109847.95413199987,43,0.47,0.961,0.4925
+HSBC Championships: Rinky Hijikata vs Alejandro Tabilo,2026-06-14T22:20:47.793272Z,HSBC Championships: Completed Match: Rinky Hijikata vs Alejandro Tabilo,1,0.0,43,0.495,0.505,0.5
+Nottingham 2: Tristan Boyer vs Jay Clarke,2026-06-14T22:20:46.072387Z,Nottingham 2: Tristan Boyer vs Jay Clarke,0,23395.341056999998,18,0.0005,0.56,0.452
+Nottingham 2: Tristan Boyer vs Jay Clarke,2026-06-14T22:20:46.072387Z,Nottingham 2: Completed Match: Tristan Boyer vs Jay Clarke,1,0.0,18,0.5,0.995,0.5275
+Asuncion 2: Carlos Maria Zarate vs Juan Sebastian Gomez,2026-06-14T04:27:17.848027Z,Asuncion 2: Carlos Maria Zarate vs Juan Sebastian Gomez,0,176959.19652900015,43,0.435,0.795,0.5483
+Asuncion 2: Carlos Maria Zarate vs Juan Sebastian Gomez,2026-06-14T04:27:17.848027Z,Asuncion 2: Completed Match: Carlos Maria Zarate vs Juan Sebastian Gomez,1,0.0,43,0.5,0.5,0.5
+Asuncion 2: Gonzalo Villanueva vs Juan Bautista Torres,2026-06-14T04:27:17.552554Z,Asuncion 2: Gonzalo Villanueva vs Juan Bautista Torres,1,253804.46442799998,68,0.175,0.81,0.4737
+Asuncion 2: Gonzalo Villanueva vs Juan Bautista Torres,2026-06-14T04:27:17.552554Z,Asuncion 2: Completed Match: Gonzalo Villanueva vs Juan Bautista Torres,1,0.0,68,0.495,0.505,0.5
+Asuncion 2: Santiago De La Fuente vs Paulo Dos Santos,2026-06-14T04:27:11.526129Z,Asuncion 2: Santiago De La Fuente vs Paulo Dos Santos,1,66197.71652699995,63,0.345,0.9995,0.5093
+Asuncion 2: Santiago De La Fuente vs Paulo Dos Santos,2026-06-14T04:27:11.526129Z,Asuncion 2: Completed Match: Santiago De La Fuente vs Paulo Dos Santos,1,349.998,63,0.495,0.9955,0.5078
+Asuncion 2: Hernando Escurra vs Hernan Casanova,2026-06-14T04:27:06.754318Z,Asuncion 2: Completed Match: Hernando Escurra vs Hernan Casanova,1,300.0,67,0.5,0.9995,0.5075
+Asuncion 2: Hernando Escurra vs Hernan Casanova,2026-06-14T04:27:06.754318Z,Asuncion 2: Hernando Escurra vs Hernan Casanova,0,32353.245958000007,67,0.0005,0.595,0.4033
+Asuncion 2: Juan Estevez vs Ryan Dickerson,2026-06-14T04:27:06.712448Z,Asuncion 2: Completed Match: Juan Estevez vs Ryan Dickerson,0,0.0,3,0.5,0.5,0.5
+Asuncion 2: Lorenzo Joaquin Rodriguez vs Eduardo Ribeiro,2026-06-14T04:27:06.65609Z,Asuncion 2: Lorenzo Joaquin Rodriguez vs Eduardo Ribeiro,0,21296.335595,43,0.105,0.65,0.4947
+Asuncion 2: Lorenzo Joaquin Rodriguez vs Eduardo Ribeiro,2026-06-14T04:27:06.65609Z,Asuncion 2: Completed Match: Lorenzo Joaquin Rodriguez vs Eduardo Ribeiro,1,715.772208,43,0.48,0.545,0.5103
+Asuncion 2: Nicolas Kicker vs Federico Coria,2026-06-14T04:27:06.580559Z,Asuncion 2: Nicolas Kicker vs Federico Coria,1,111444.42969500004,65,0.345,0.9995,0.5535
+Asuncion 2: Nicolas Kicker vs Federico Coria,2026-06-14T04:27:06.580559Z,Asuncion 2: Completed Match: Nicolas Kicker vs Federico Coria,1,0.0,65,0.5,0.9995,0.5077
+Asuncion 2: Johan Alexander Rodriguez vs Matias Soto,2026-06-14T04:27:06.539794Z,Asuncion 2: Johan Alexander Rodriguez vs Matias Soto,0,160601.21790199995,64,0.155,0.71,0.5132
+Asuncion 2: Johan Alexander Rodriguez vs Matias Soto,2026-06-14T04:27:06.539794Z,Asuncion 2: Completed Match: Johan Alexander Rodriguez vs Matias Soto,1,0.0,64,0.465,0.535,0.4995
+Asuncion 2: Bruno Fernandez vs Nick Hardt,2026-06-14T04:27:06.479904Z,Asuncion 2: Completed Match: Bruno Fernandez vs Nick Hardt,1,32.9087,42,0.495,0.995,0.5211
+Asuncion 2: Bruno Fernandez vs Nick Hardt,2026-06-14T04:27:06.479904Z,Asuncion 2: Bruno Fernandez vs Nick Hardt,0,280051.7260180001,42,0.005,0.555,0.416
+Asuncion 2: Thiago Seyboth Wild vs Alex Santino Nunez,2026-06-14T04:27:06.437438Z,Asuncion 2: Thiago Seyboth Wild vs Alex Santino Nunez,1,7488.163383,62,0.485,0.9995,0.6544
+Asuncion 2: Thiago Seyboth Wild vs Alex Santino Nunez,2026-06-14T04:27:06.437438Z,Asuncion 2: Completed Match: Thiago Seyboth Wild vs Alex Santino Nunez,1,0.0,62,0.495,0.9995,0.508
+Asuncion 2: Guido Justo vs Alex Hernandez,2026-06-14T04:27:06.287379Z,Asuncion 2: Completed Match: Guido Justo vs Alex Hernandez,1,64.0,63,0.5,0.9995,0.5238
+Asuncion 2: Guido Justo vs Alex Hernandez,2026-06-14T04:27:06.287379Z,Asuncion 2: Guido Justo vs Alex Hernandez,1,6025.847970999999,63,0.5,0.9995,0.6113
+Dublin: Alexis Galarneau vs Francesco Maestrelli,2026-06-13T22:31:47.934733Z,Dublin: Alexis Galarneau vs Francesco Maestrelli,1,47783.83729499996,44,0.335,0.9995,0.5769
+Dublin: Alexis Galarneau vs Francesco Maestrelli,2026-06-13T22:31:47.934733Z,Dublin: Completed Match: Alexis Galarneau vs Francesco Maestrelli,1,0.0,44,0.49,0.9995,0.5111
+Dublin: Gauthier Onclin vs Kyrian Jacquet,2026-06-13T22:31:47.855965Z,Dublin: Gauthier Onclin vs Kyrian Jacquet,0,69310.50289999995,41,0.275,0.575,0.4771
+Dublin: Gauthier Onclin vs Kyrian Jacquet,2026-06-13T22:31:47.855965Z,Dublin: Completed Match: Gauthier Onclin vs Kyrian Jacquet,1,0.0,41,0.495,0.5,0.4999
+Dublin: Juan Pablo Ficovich vs Nicolas Mejia,2026-06-13T22:31:47.81481Z,Dublin: Juan Pablo Ficovich vs Nicolas Mejia,0,67499.21731399998,43,0.0005,0.58,0.4886
+Dublin: Juan Pablo Ficovich vs Nicolas Mejia,2026-06-13T22:31:47.81481Z,Dublin: Completed Match: Juan Pablo Ficovich vs Nicolas Mejia,1,0.0,43,0.5,0.995,0.5116
+Dublin: Clement Chidekh vs Colton Smith,2026-06-13T22:31:47.775634Z,Dublin: Clement Chidekh vs Colton Smith,0,39139.04148799999,43,0.0005,0.67,0.4561
+Dublin: Clement Chidekh vs Colton Smith,2026-06-13T22:31:47.775634Z,Dublin: Completed Match: Clement Chidekh vs Colton Smith,1,0.0,43,0.495,0.9995,0.5115
+Dublin: Ivan Ivanov vs Stefanos Sakellaridis,2026-06-13T22:31:47.741095Z,Dublin: Completed Match: Ivan Ivanov vs Stefanos Sakellaridis,1,200.0,68,0.495,0.9995,0.5073
+Dublin: Ivan Ivanov vs Stefanos Sakellaridis,2026-06-13T22:31:47.741095Z,Dublin: Ivan Ivanov vs Stefanos Sakellaridis,0,32528.988289999994,68,0.0005,0.505,0.3858
+Parma: Nikolas Sanchez Izquierdo vs Luca Van Assche,2026-06-13T22:31:47.719495Z,Parma: Completed Match: Nikolas Sanchez Izquierdo vs Luca Van Assche,1,0.0,44,0.5,0.995,0.5114
+Parma: Nikolas Sanchez Izquierdo vs Luca Van Assche,2026-06-13T22:31:47.719495Z,Parma: Nikolas Sanchez Izquierdo vs Luca Van Assche,0,32119.842285000013,44,0.005,0.685,0.4739
+Parma: Buvaysar Gadamauri vs Damir Dzumhur,2026-06-13T22:31:47.529625Z,Parma: Buvaysar Gadamauri vs Damir Dzumhur,1,127995.82331500009,47,0.33,0.9995,0.4997
+Parma: Buvaysar Gadamauri vs Damir Dzumhur,2026-06-13T22:31:47.529625Z,Parma: Completed Match: Buvaysar Gadamauri vs Damir Dzumhur,1,0.0,47,0.5,0.9995,0.5107
+Parma: Ilia Simakin vs Jacopo Vasami,2026-06-13T22:31:47.472987Z,Parma: Ilia Simakin vs Jacopo Vasami,0,124324.32933599988,70,0.0005,0.595,0.2993
+Parma: Ilia Simakin vs Jacopo Vasami,2026-06-13T22:31:47.472987Z,Parma: Completed Match: Ilia Simakin vs Jacopo Vasami,1,200.0,70,0.5,0.995,0.5071
+Parma: Franco Agamenone vs Stefano Napolitano,2026-06-13T22:31:47.433938Z,Parma: Franco Agamenone vs Stefano Napolitano,0,123351.93664599983,45,0.005,0.515,0.4803
+Parma: Franco Agamenone vs Stefano Napolitano,2026-06-13T22:31:47.433938Z,Parma: Completed Match: Franco Agamenone vs Stefano Napolitano,1,0.0,45,0.495,0.995,0.5109
+Royan: Carlos Sanchez Jover vs Alejandro Moro Canas,2026-06-13T22:31:47.264694Z,Royan: Completed Match: Carlos Sanchez Jover vs Alejandro Moro Canas,1,0.0,45,0.5,0.9995,0.5112
+Royan: Carlos Sanchez Jover vs Alejandro Moro Canas,2026-06-13T22:31:47.264694Z,Royan: Carlos Sanchez Jover vs Alejandro Moro Canas,1,72649.44485599996,45,0.015,0.9995,0.421
+Royan: Leo Raquillet vs Manoj Dhamne Manas,2026-06-13T22:31:47.223224Z,Royan: Completed Match: Leo Raquillet vs Manoj Dhamne Manas,1,299.99490000000003,69,0.46,0.9995,0.503
+Royan: Leo Raquillet vs Manoj Dhamne Manas,2026-06-13T22:31:47.223224Z,Royan: Leo Raquillet vs Manoj Dhamne Manas,1,57992.13559700002,69,0.195,0.9995,0.37
+Royan: Pierre Delage vs Svyatoslav Gulin,2026-06-13T22:31:47.124383Z,Royan: Completed Match: Pierre Delage vs Svyatoslav Gulin,1,0.0,44,0.495,0.995,0.5111
+Royan: Pierre Delage vs Svyatoslav Gulin,2026-06-13T22:31:47.124383Z,Royan: Pierre Delage vs Svyatoslav Gulin,0,32043.74233100001,44,0.005,0.5,0.33
+Royan: Kilian Feldbausch vs Laurent Lokoli,2026-06-13T22:31:47.083116Z,Royan: Completed Match: Kilian Feldbausch vs Laurent Lokoli,1,0.0,42,0.5,0.995,0.5118
+Royan: Kilian Feldbausch vs Laurent Lokoli,2026-06-13T22:31:47.083116Z,Royan: Kilian Feldbausch vs Laurent Lokoli,1,22416.50711400001,42,0.5,0.9995,0.6656
+Royan: Lucio Ratti vs Calvin Hemery,2026-06-13T22:31:46.982304Z,Royan: Completed Match: Lucio Ratti vs Calvin Hemery,0,0.0,46,0.0005,0.5,0.489
+Royan: Lucio Ratti vs Calvin Hemery,2026-06-13T22:31:46.982304Z,Royan: Lucio Ratti vs Calvin Hemery,1,30838.27144700005,46,0.195,0.9995,0.4346
+Royan: Eliakim Coulibaly vs Felix Balshaw,2026-06-13T22:31:46.953733Z,Royan: Eliakim Coulibaly vs Felix Balshaw,0,45201.74855399996,69,0.17,0.625,0.3212
+Royan: Eliakim Coulibaly vs Felix Balshaw,2026-06-13T22:31:46.953733Z,Royan: Completed Match: Eliakim Coulibaly vs Felix Balshaw,1,0.0,69,0.5,0.505,0.5001
+Royan: Ognjen Milic vs Thomas Faurel,2026-06-13T22:31:46.871784Z,Royan: Completed Match: Ognjen Milic vs Thomas Faurel,1,32.9087,43,0.49,0.55,0.5084
+Royan: Ognjen Milic vs Thomas Faurel,2026-06-13T22:31:46.871784Z,Royan: Ognjen Milic vs Thomas Faurel,0,39652.724937,43,0.055,0.62,0.4074
+Poznan: Gustavo Heide vs Daniel Michalski,2026-06-13T22:31:46.727616Z,Poznan: Gustavo Heide vs Daniel Michalski,1,12535.074718999998,68,0.395,0.9995,0.6629
+Poznan: Gustavo Heide vs Daniel Michalski,2026-06-13T22:31:46.727616Z,Poznan: Completed Match: Gustavo Heide vs Daniel Michalski,1,0.0,68,0.495,0.9995,0.5073
+Poznan: Duje Ajdukovic vs Dalibor Svrcina,2026-06-13T22:31:46.703002Z,Poznan: Duje Ajdukovic vs Dalibor Svrcina,0,38552.07200899999,41,0.0005,0.5,0.2873
+Poznan: Duje Ajdukovic vs Dalibor Svrcina,2026-06-13T22:31:46.703002Z,Poznan: Completed Match: Duje Ajdukovic vs Dalibor Svrcina,1,66.9703,41,0.48,0.995,0.5183
+Poznan: Gonzalo Bueno vs Tomasz Berkieta,2026-06-13T22:31:46.661763Z,Poznan: Completed Match: Gonzalo Bueno vs Tomasz Berkieta,1,0.0,70,0.495,0.9995,0.5071
+Poznan: Gonzalo Bueno vs Tomasz Berkieta,2026-06-13T22:31:46.661763Z,Poznan: Gonzalo Bueno vs Tomasz Berkieta,1,33343.49930600003,70,0.395,0.9995,0.7109
+Poznan: Petr Brunclik vs Sumit Nagal,2026-06-13T22:31:46.587562Z,Poznan: Petr Brunclik vs Sumit Nagal,1,26862.90885399999,44,0.46,0.9995,0.5604
+Poznan: Petr Brunclik vs Sumit Nagal,2026-06-13T22:31:46.587562Z,Poznan: Completed Match: Petr Brunclik vs Sumit Nagal,0,0.0,43,0.0005,0.505,0.4885
+Poznan: Facundo Acosta vs Franco Roncadelli,2026-06-13T22:31:46.409697Z,Poznan: Completed Match: Facundo Acosta vs Franco Roncadelli,1,0.0,41,0.5,0.9995,0.5123
+Poznan: Facundo Acosta vs Franco Roncadelli,2026-06-13T22:31:46.409697Z,Poznan: Facundo Acosta vs Franco Roncadelli,1,18062.718065999998,41,0.5,0.9995,0.7022
+Ilkley: Jacob Fearnley vs Yunchaokete Bu,2026-06-13T22:31:45.742451Z,Ilkley: Jacob Fearnley vs Yunchaokete Bu,0,50717.054186999965,17,0.3,0.505,0.4418
+Ilkley: Jacob Fearnley vs Yunchaokete Bu,2026-06-13T22:31:45.742451Z,Ilkley: Completed Match: Jacob Fearnley vs Yunchaokete Bu,1,0.0,17,0.5,0.5,0.5
+Cattolica: Jesper de Jong vs Roberto Carballes Baena,2026-06-13T22:31:45.455416Z,Cattolica: Jesper de Jong vs Roberto Carballes Baena,1,100557.49803400002,18,0.485,0.785,0.6308
+Cattolica: Jesper de Jong vs Roberto Carballes Baena,2026-06-13T22:31:45.455416Z,Cattolica: Completed Match: Jesper de Jong vs Roberto Carballes Baena,1,0.0,18,0.5,0.5,0.5
+Lyon: Felix Balshaw vs David Jorda Sanchis,2026-06-13T22:31:45.339388Z,Lyon: Completed Match: Felix Balshaw vs David Jorda Sanchis,1,0.0,17,0.5,0.5,0.5
+Lyon: Felix Balshaw vs David Jorda Sanchis,2026-06-13T22:31:45.339388Z,Lyon: Felix Balshaw vs David Jorda Sanchis,0,38996.39336100002,17,0.055,0.625,0.5594
+Libema Open: Kamil Majchrzak vs Alex de Minaur,2026-06-13T22:31:45.245549Z,Libema Open: Completed Match: Kamil Majchrzak vs Alex de Minaur,1,0.0,17,0.5,0.5,0.5
+Libema Open: Kamil Majchrzak vs Alex de Minaur,2026-06-13T22:31:45.245549Z,Libema Open: Kamil Majchrzak vs Alex de Minaur,1,757580.6049420004,17,0.215,0.705,0.2809
+"HSBC Championships, Qualification: Rinky Hijikata vs Marcos Giron",2026-06-13T22:31:45.223482Z,"HSBC Championships, Qualification: Completed Match: Rinky Hijikata vs Marcos Giron",1,0.0,17,0.5,0.5,0.5
+"HSBC Championships, Qualification: Rinky Hijikata vs Marcos Giron",2026-06-13T22:31:45.223482Z,"HSBC Championships, Qualification: Rinky Hijikata vs Marcos Giron",1,132708.6676619998,17,0.38,0.905,0.4856
+Stuttgart Open: Ben Shelton vs Taylor Fritz,2026-06-13T22:31:45.073359Z,Stuttgart Open: Completed Match: Ben Shelton vs Taylor Fritz,1,0.0,16,0.5,0.995,0.5309
+Stuttgart Open: Ben Shelton vs Taylor Fritz,2026-06-13T22:31:45.073359Z,Stuttgart Open: Ben Shelton vs Taylor Fritz,1,863003.7524609987,16,0.445,0.995,0.5103
+"HSBC Championships, Qualification: Aleksandar Kovacevic vs Giovanni Mpetshi Perricard",2026-06-13T22:31:45.040237Z,"HSBC Championships, Qualification: Completed Match: Aleksandar Kovacevic vs Giovanni Mpetshi Perricard",1,0.0,16,0.5,0.5,0.5
+"HSBC Championships, Qualification: Aleksandar Kovacevic vs Giovanni Mpetshi Perricard",2026-06-13T22:31:45.040237Z,"HSBC Championships, Qualification: Aleksandar Kovacevic vs Giovanni Mpetshi Perricard",0,32314.681845000043,16,0.025,0.39,0.3516
+Poznan: Alexander Shevchenko vs Genaro Alberto Olivieri,2026-06-13T22:31:44.241229Z,Poznan: Completed Match: Alexander Shevchenko vs Genaro Alberto Olivieri,0,64.1,19,0.0005,0.5,0.4477
+Tucuman: Luciano Emanuel Ambrogi vs Johan Alexander Rodriguez,2026-06-13T22:29:43.418072Z,Tucuman: Luciano Emanuel Ambrogi vs Johan Alexander Rodriguez,1,59927.862286,20,0.51,0.81,0.5643
+Tucuman: Luciano Emanuel Ambrogi vs Johan Alexander Rodriguez,2026-06-13T22:29:43.418072Z,Tucuman: Completed Match: Luciano Emanuel Ambrogi vs Johan Alexander Rodriguez,1,0.0,20,0.5,0.5,0.5
+Parma: Sebastian Ofner vs Raul Brancaccio,2026-06-13T22:29:42.914588Z,Parma: Sebastian Ofner vs Raul Brancaccio,1,26781.496201999995,41,0.385,0.745,0.636
+Parma: Sebastian Ofner vs Raul Brancaccio,2026-06-13T22:29:42.914588Z,Parma: Completed Match: Sebastian Ofner vs Raul Brancaccio,1,0.0,41,0.5,0.515,0.5005
+HSBC Championships: Alexander Blockx vs Francisco Cerundolo,2026-06-13T16:33:15.130123Z,HSBC Championships: Completed Match: Alexander Blockx vs Francisco Cerundolo,0,64.1,15,0.0055,0.145,0.1086
+"Halle Open, Qualification: Mattia Bellucci vs Alex Bolt",2026-06-13T16:33:14.992621Z,"Halle Open, Qualification: Mattia Bellucci vs Alex Bolt",1,357958.5815699998,24,0.365,0.9995,0.6416
+"Halle Open, Qualification: Mattia Bellucci vs Alex Bolt",2026-06-13T16:33:14.992621Z,"Halle Open, Qualification: Completed Match: Mattia Bellucci vs Alex Bolt",1,0.0,24,0.5,0.9995,0.5214
+Bratislava: Alexander Shevchenko vs Taro Daniel,2026-06-13T16:33:14.003008Z,Bratislava: Completed Match: Alexander Shevchenko vs Taro Daniel,1,0.0,20,0.495,0.5,0.4995
+Bratislava: Alexander Shevchenko vs Taro Daniel,2026-06-13T16:33:14.003008Z,Bratislava: Alexander Shevchenko vs Taro Daniel,0,282163.08548799984,20,0.375,0.615,0.5693
+HSBC Championships: Arthur Rinderknech vs Hamad Medjedovic,2026-06-13T16:32:56.453763Z,HSBC Championships: Completed Match: Arthur Rinderknech vs Hamad Medjedovic,1,0.0,73,0.5,0.505,0.5001
+HSBC Championships: Arthur Rinderknech vs Hamad Medjedovic,2026-06-13T16:32:56.453763Z,HSBC Championships: Arthur Rinderknech vs Hamad Medjedovic,0,320297.432172,73,0.405,0.56,0.5234
+"Halle Open, Qualification: Martin Landaluce vs Tom Gentzsch",2026-06-13T16:32:55.974964Z,"Halle Open, Qualification: Completed Match: Martin Landaluce vs Tom Gentzsch",1,0.0,23,0.5,0.9995,0.5222
+"Halle Open, Qualification: Martin Landaluce vs Tom Gentzsch",2026-06-13T16:32:55.974964Z,"Halle Open, Qualification: Martin Landaluce vs Tom Gentzsch",1,95410.03576200009,23,0.5,0.9995,0.763
+Halle Open: Tomas Etcheverry vs Daniil Medvedev,2026-06-13T16:32:54.59433Z,Halle Open: Tomas Etcheverry vs Daniil Medvedev,0,149241.69124899997,73,0.035,0.285,0.2239
+Halle Open: Tomas Etcheverry vs Daniil Medvedev,2026-06-13T16:32:54.59433Z,Halle Open: Completed Match: Tomas Etcheverry vs Daniil Medvedev,1,200.0,73,0.495,0.5,0.4999
+Halle Open: Flavio Cobolli vs Frances Tiafoe,2026-06-13T16:32:52.225612Z,Halle Open: Flavio Cobolli vs Frances Tiafoe,0,550968.1843290015,49,0.0005,0.505,0.4351
+Halle Open: Flavio Cobolli vs Frances Tiafoe,2026-06-13T16:32:52.225612Z,Halle Open: Completed Match: Flavio Cobolli vs Frances Tiafoe,1,46.380869999999994,49,0.49,0.996,0.5239
+HSBC Championships: Ignacio Buse vs Rafael Jodar,2026-06-13T16:32:11.959989Z,HSBC Championships: Completed Match: Ignacio Buse vs Rafael Jodar,0,175.0,47,0.0045,0.505,0.4896
+Halle Open: Max Schoenhaus vs Learner Tien,2026-06-13T16:32:11.147056Z,Halle Open: Max Schoenhaus vs Learner Tien,0,149087.66365000003,43,0.0005,0.205,0.1722
+Halle Open: Max Schoenhaus vs Learner Tien,2026-06-13T16:32:11.147056Z,Halle Open: Completed Match: Max Schoenhaus vs Learner Tien,1,0.0,43,0.5,0.9995,0.5116
+Halle Open: Nuno Borges vs Felix Auger-Aliassime,2026-06-13T16:32:10.997595Z,Halle Open: Nuno Borges vs Felix Auger-Aliassime,0,520205.2973860003,47,0.0005,0.385,0.2909
+Halle Open: Nuno Borges vs Felix Auger-Aliassime,2026-06-13T16:32:10.997595Z,Halle Open: Completed Match: Nuno Borges vs Felix Auger-Aliassime,1,0.0,47,0.5,0.9995,0.5107
+HSBC Championships: Tommy Paul vs Jaume Munar,2026-06-13T16:19:24.337475Z,HSBC Championships: Completed Match: Tommy Paul vs Jaume Munar,0,5796.506221000002,15,0.0045,0.145,0.0579
+"Halle Open, Qualification: Lorenzo Sonego vs Nikoloz Basilashvili",2026-06-13T16:19:22.025152Z,"Halle Open, Qualification: Completed Match: Lorenzo Sonego vs Nikoloz Basilashvili",1,0.0,20,0.5,0.505,0.5003
+"Halle Open, Qualification: Lorenzo Sonego vs Nikoloz Basilashvili",2026-06-13T16:19:22.025152Z,"Halle Open, Qualification: Lorenzo Sonego vs Nikoloz Basilashvili",0,153780.24630699994,20,0.015,0.66,0.5702
+Halle Open: Zizou Bergs vs Taylor Fritz,2026-06-13T16:19:20.682729Z,Halle Open: Zizou Bergs vs Taylor Fritz,0,463391.20206400077,92,0.0005,0.31,0.2539
+Halle Open: Zizou Bergs vs Taylor Fritz,2026-06-13T16:19:20.682729Z,Halle Open: Completed Match: Zizou Bergs vs Taylor Fritz,1,214.0,92,0.495,0.9945,0.5052
+"HSBC Championships, Qualification: Zachary Svajda vs Martin Damm",2026-06-13T16:19:20.088492Z,"HSBC Championships, Qualification: Zachary Svajda vs Martin Damm",0,92077.54946599987,20,0.325,0.565,0.5203
+"HSBC Championships, Qualification: Zachary Svajda vs Martin Damm",2026-06-13T16:19:20.088492Z,"HSBC Championships, Qualification: Completed Match: Zachary Svajda vs Martin Damm",1,0.0,20,0.5,0.5,0.5
+HSBC Championships: Cameron Norrie vs Alejandro Davidovich Fokina,2026-06-13T16:19:19.498841Z,HSBC Championships: Completed Match: Cameron Norrie vs Alejandro Davidovich Fokina,1,0.0,75,0.48,0.9995,0.5047
+HSBC Championships: Cameron Norrie vs Alejandro Davidovich Fokina,2026-06-13T16:19:19.498841Z,HSBC Championships: Cameron Norrie vs Alejandro Davidovich Fokina,0,606096.4759429997,75,0.0005,0.525,0.4589
+HSBC Championships: Kamil Majchrzak vs Jiri Lehecka,2026-06-13T16:19:19.458057Z,HSBC Championships: Kamil Majchrzak vs Jiri Lehecka,0,388609.70618600026,75,0.205,0.405,0.3572
+HSBC Championships: Kamil Majchrzak vs Jiri Lehecka,2026-06-13T16:19:19.458057Z,HSBC Championships: Completed Match: Kamil Majchrzak vs Jiri Lehecka,1,0.0,75,0.5,0.505,0.5001
+"Halle Open, Qualification: Raphael Collignon vs Roberto Bautista Agut",2026-06-13T16:19:17.427924Z,"Halle Open, Qualification: Raphael Collignon vs Roberto Bautista Agut",1,97873.30783199995,20,0.5,0.88,0.6445
+"Halle Open, Qualification: Raphael Collignon vs Roberto Bautista Agut",2026-06-13T16:19:17.427924Z,"Halle Open, Qualification: Completed Match: Raphael Collignon vs Roberto Bautista Agut",1,0.0,20,0.5,0.505,0.5015
+HSBC Championships: Jack Pinnington Jones vs Denis Shapovalov,2026-06-13T16:19:11.755508Z,HSBC Championships: Completed Match: Jack Pinnington Jones vs Denis Shapovalov,1,0.0,50,0.5,0.9995,0.5101
+HSBC Championships: Jack Pinnington Jones vs Denis Shapovalov,2026-06-13T16:19:11.755508Z,HSBC Championships: Jack Pinnington Jones vs Denis Shapovalov,0,560671.3965459998,50,0.0005,0.65,0.3895
+"HSBC Championships, Qualification: Aleksandar Vukic vs Harry Wendelken",2026-06-13T16:19:11.662288Z,"HSBC Championships, Qualification: Aleksandar Vukic vs Harry Wendelken",0,64754.943685000006,21,0.0005,0.63,0.55
+"HSBC Championships, Qualification: Aleksandar Vukic vs Harry Wendelken",2026-06-13T16:19:11.662288Z,"HSBC Championships, Qualification: Completed Match: Aleksandar Vukic vs Harry Wendelken",1,0.0,21,0.5,0.9995,0.5238
+Ilkley: Jacob Fearnley vs Filippo Romano,2026-06-13T16:05:00Z,Ilkley: Jacob Fearnley vs Filippo Romano,1,76469.17700999997,3,0.64,0.9995,0.8315
+Ilkley: Jacob Fearnley vs Filippo Romano,2026-06-13T16:05:00Z,Ilkley: Completed Match: Jacob Fearnley vs Filippo Romano,1,0.0,3,0.5,0.9995,0.6665
+Nottingham 2: Jaime Faria vs Moez Echargui,2026-06-13T10:21:41.37566Z,Nottingham 2: Completed Match: Jaime Faria vs Moez Echargui,1,0.0,55,0.5,0.9995,0.5113
+Nottingham 2: Jaime Faria vs Moez Echargui,2026-06-13T10:21:41.37566Z,Nottingham 2: Jaime Faria vs Moez Echargui,1,11925.620699,55,0.5,0.9995,0.8029
+Nottingham 2: Oliver Tarvet vs Roman Safiullin,2026-06-13T10:21:41.346663Z,Nottingham 2: Completed Match: Oliver Tarvet vs Roman Safiullin,1,5.0,50,0.5,0.505,0.5001
+Nottingham 2: Oliver Tarvet vs Roman Safiullin,2026-06-13T10:21:41.346663Z,Nottingham 2: Oliver Tarvet vs Roman Safiullin,0,113343.973113,50,0.115,0.545,0.4356
+"HSBC Championships, Qualification: Dino Prizmic vs Rinky Hijikata",2026-06-13T10:21:40.790668Z,"HSBC Championships, Qualification: Dino Prizmic vs Rinky Hijikata",0,390700.01135300053,7,0.44,0.875,0.575
+"HSBC Championships, Qualification: Dino Prizmic vs Rinky Hijikata",2026-06-13T10:21:40.790668Z,"HSBC Championships, Qualification: Completed Match: Dino Prizmic vs Rinky Hijikata",1,0.0,7,0.5,0.5,0.5
+"Halle Open, Qualification: Martin Landaluce vs Marc-Andrea Huesler",2026-06-13T10:21:40.724173Z,"Halle Open, Qualification: Completed Match: Martin Landaluce vs Marc-Andrea Huesler",1,0.0,5,0.5,0.5,0.5
+"Halle Open, Qualification: Martin Landaluce vs Marc-Andrea Huesler",2026-06-13T10:21:40.724173Z,"Halle Open, Qualification: Martin Landaluce vs Marc-Andrea Huesler",1,220530.86975700007,5,0.585,0.705,0.656
+"Halle Open, Qualification: Mattia Bellucci vs Mikhail Kukushkin",2026-06-13T10:21:40.702365Z,"Halle Open, Qualification: Completed Match: Mattia Bellucci vs Mikhail Kukushkin",1,0.0,5,0.5,0.5,0.5
+"Halle Open, Qualification: Mattia Bellucci vs Mikhail Kukushkin",2026-06-13T10:21:40.702365Z,"Halle Open, Qualification: Mattia Bellucci vs Mikhail Kukushkin",1,25855.201232,5,0.755,0.975,0.825
+"Halle Open, Qualification: Tiago Pereira vs Tom Gentzsch",2026-06-13T10:21:40.543489Z,"Halle Open, Qualification: Completed Match: Tiago Pereira vs Tom Gentzsch",1,0.0,4,0.5,0.9995,0.6249
+"Halle Open, Qualification: Tiago Pereira vs Tom Gentzsch",2026-06-13T10:21:40.543489Z,"Halle Open, Qualification: Tiago Pereira vs Tom Gentzsch",0,52111.878607,4,0.0005,0.265,0.1451
+"HSBC Championships, Qualification: Zachary Svajda vs Liam Broady",2026-06-13T10:21:40.52084Z,"HSBC Championships, Qualification: Completed Match: Zachary Svajda vs Liam Broady",1,0.0,3,0.5,0.9995,0.6665
+"HSBC Championships, Qualification: Zachary Svajda vs Liam Broady",2026-06-13T10:21:40.52084Z,"HSBC Championships, Qualification: Zachary Svajda vs Liam Broady",1,19184.631184000013,3,0.71,0.9995,0.8248
+"Halle Open, Qualification: Jamie Mackenzie vs Alex Bolt",2026-06-13T10:21:40.501823Z,"Halle Open, Qualification: Jamie Mackenzie vs Alex Bolt",0,71960.17257400003,3,0.0005,0.315,0.1718
+"Halle Open, Qualification: Jamie Mackenzie vs Alex Bolt",2026-06-13T10:21:40.501823Z,"Halle Open, Qualification: Completed Match: Jamie Mackenzie vs Alex Bolt",1,0.0,3,0.5,0.9995,0.6665
+"HSBC Championships, Qualification: Johannus Monday vs Giovanni Mpetshi Perricard",2026-06-13T10:21:40.478309Z,"HSBC Championships, Qualification: Johannus Monday vs Giovanni Mpetshi Perricard",0,142009.82556399997,6,0.01,0.35,0.2325
+"HSBC Championships, Qualification: Johannus Monday vs Giovanni Mpetshi Perricard",2026-06-13T10:21:40.478309Z,"HSBC Championships, Qualification: Completed Match: Johannus Monday vs Giovanni Mpetshi Perricard",1,0.0,6,0.5,0.5,0.5
+"HSBC Championships, Qualification: Daniel Evans vs Marcos Giron",2026-06-13T10:21:40.438078Z,"HSBC Championships, Qualification: Daniel Evans vs Marcos Giron",0,143230.352296,8,0.0005,0.435,0.2432
+"HSBC Championships, Qualification: Daniel Evans vs Marcos Giron",2026-06-13T10:21:40.438078Z,"HSBC Championships, Qualification: Completed Match: Daniel Evans vs Marcos Giron",1,0.0,8,0.5,0.9995,0.5624
+Nottingham 2: Yunchaokete Bu vs Otto Virtanen,2026-06-13T10:21:28.66051Z,Nottingham 2: Completed Match: Yunchaokete Bu vs Otto Virtanen,0,55.0,61,0.1,0.5,0.4916
+Nottingham 2: Henrique Rocha vs Christopher O'Connell,2026-06-13T10:21:28.605135Z,Nottingham 2: Henrique Rocha vs Christopher O'Connell,0,76172.39116799996,55,0.0005,0.525,0.47
+Nottingham 2: Henrique Rocha vs Christopher O'Connell,2026-06-13T10:21:28.605135Z,Nottingham 2: Completed Match: Henrique Rocha vs Christopher O'Connell,1,0.0,55,0.5,0.9995,0.5092
+"HSBC Championships, Qualification: James Duckworth vs Aleksandar Vukic",2026-06-13T10:21:28.58711Z,"HSBC Championships, Qualification: Completed Match: James Duckworth vs Aleksandar Vukic",1,0.0,4,0.5,0.5,0.5
+"HSBC Championships, Qualification: James Duckworth vs Aleksandar Vukic",2026-06-13T10:21:28.58711Z,"HSBC Championships, Qualification: James Duckworth vs Aleksandar Vukic",0,19925.763583,4,0.005,0.665,0.495
+"HSBC Championships, Qualification: Aleksandar Kovacevic vs Michael Mmoh",2026-06-13T10:21:28.386004Z,"HSBC Championships, Qualification: Completed Match: Aleksandar Kovacevic vs Michael Mmoh",1,0.0,5,0.5,0.9995,0.5999
+"HSBC Championships, Qualification: Aleksandar Kovacevic vs Michael Mmoh",2026-06-13T10:21:28.386004Z,"HSBC Championships, Qualification: Aleksandar Kovacevic vs Michael Mmoh",1,52470.97413500002,5,0.515,0.9995,0.7319
+"HSBC Championships, Qualification: Harry Wendelken vs Adam Walton",2026-06-13T10:21:24.675231Z,"HSBC Championships, Qualification: Harry Wendelken vs Adam Walton",1,93750.25094499996,5,0.26,0.805,0.509
+"HSBC Championships, Qualification: Harry Wendelken vs Adam Walton",2026-06-13T10:21:24.675231Z,"HSBC Championships, Qualification: Completed Match: Harry Wendelken vs Adam Walton",1,0.0,5,0.5,0.5,0.5
+Nottingham 2: Nicolai Budkov Kjaer vs Mackenzie McDonald,2026-06-13T10:21:24.330624Z,Nottingham 2: Nicolai Budkov Kjaer vs Mackenzie McDonald,0,56185.72726,30,0.005,0.64,0.4862
+Nottingham 2: Nicolai Budkov Kjaer vs Mackenzie McDonald,2026-06-13T10:21:24.330624Z,Nottingham 2: Completed Match: Nicolai Budkov Kjaer vs Mackenzie McDonald,1,0.0,30,0.5,0.995,0.5172
+Nottingham 2: Shintaro Mochizuki vs Michael Zheng,2026-06-13T10:21:22.446196Z,Nottingham 2: Completed Match: Shintaro Mochizuki vs Michael Zheng,1,0.0,32,0.5,0.995,0.5162
+Nottingham 2: Shintaro Mochizuki vs Michael Zheng,2026-06-13T10:21:22.446196Z,Nottingham 2: Shintaro Mochizuki vs Michael Zheng,1,170540.05159100008,32,0.325,0.995,0.5098
+"HSBC Championships, Qualification: Martin Damm vs Daniel Merida Aguilar",2026-06-13T10:21:22.121042Z,"HSBC Championships, Qualification: Martin Damm vs Daniel Merida Aguilar",1,4158.452684999998,2,0.805,0.965,0.885
+"HSBC Championships, Qualification: Martin Damm vs Daniel Merida Aguilar",2026-06-13T10:21:22.121042Z,"HSBC Championships, Qualification: Completed Match: Martin Damm vs Daniel Merida Aguilar",1,0.0,2,0.5,0.5,0.5
+Nottingham 2: Rei Sakamoto vs Yibing Wu,2026-06-13T10:21:22.012031Z,Nottingham 2: Rei Sakamoto vs Yibing Wu,0,63847.149029,31,0.015,0.665,0.4577
+Nottingham 2: Rei Sakamoto vs Yibing Wu,2026-06-13T10:21:22.012031Z,Nottingham 2: Completed Match: Rei Sakamoto vs Yibing Wu,1,0.0,31,0.5,0.505,0.5008
+Nottingham 2: Tomas Barrios vs Benjamin Bonzi,2026-06-13T10:21:21.589699Z,Nottingham 2: Tomas Barrios vs Benjamin Bonzi,0,70825.521882,56,0.0005,0.5,0.2471
+Nottingham 2: Tomas Barrios vs Benjamin Bonzi,2026-06-13T10:21:21.589699Z,Nottingham 2: Completed Match: Tomas Barrios vs Benjamin Bonzi,1,0.0,56,0.495,0.995,0.5068
+Nottingham 2: Coleman Wong vs Billy Harris,2026-06-13T10:21:21.174358Z,Nottingham 2: Completed Match: Coleman Wong vs Billy Harris,1,0.0,57,0.5,0.995,0.5088
+Nottingham 2: Coleman Wong vs Billy Harris,2026-06-13T10:21:21.174358Z,Nottingham 2: Coleman Wong vs Billy Harris,0,120672.14107599994,57,0.005,0.73,0.5489
+"Halle Open, Qualification: Benito Sanchez Martinez vs Roberto Bautista Agut",2026-06-13T10:21:19.613669Z,"Halle Open, Qualification: Benito Sanchez Martinez vs Roberto Bautista Agut",0,8730.713347,3,0.0005,0.215,0.1302
+"Halle Open, Qualification: Benito Sanchez Martinez vs Roberto Bautista Agut",2026-06-13T10:21:19.613669Z,"Halle Open, Qualification: Completed Match: Benito Sanchez Martinez vs Roberto Bautista Agut",1,0.0,3,0.5,0.9995,0.6665
+"Halle Open, Qualification: Raphael Collignon vs Aziz Dougaz",2026-06-13T10:21:19.019157Z,"Halle Open, Qualification: Completed Match: Raphael Collignon vs Aziz Dougaz",1,0.0,4,0.5,0.505,0.5012
+"Halle Open, Qualification: Raphael Collignon vs Aziz Dougaz",2026-06-13T10:21:19.019157Z,"Halle Open, Qualification: Raphael Collignon vs Aziz Dougaz",1,23927.870681999993,4,0.89,0.984,0.9147
+Stuttgart Open: Alexander Bublik vs Taylor Fritz,2026-06-13T00:39:25.273916Z,Stuttgart Open: Alexander Bublik vs Taylor Fritz,0,628097.0430059995,14,0.0005,0.755,0.5372
+Stuttgart Open: Alexander Bublik vs Taylor Fritz,2026-06-13T00:39:25.273916Z,Stuttgart Open: Completed Match: Alexander Bublik vs Taylor Fritz,1,0.0,13,0.5,0.9995,0.5384
+Tucuman: Guido Justo vs Luciano Emanuel Ambrogi,2026-06-13T00:08:55.64162Z,Tucuman: Guido Justo vs Luciano Emanuel Ambrogi,0,63566.69012399998,19,0.035,0.865,0.6045
+Tucuman: Guido Justo vs Luciano Emanuel Ambrogi,2026-06-13T00:08:55.64162Z,Tucuman: Completed Match: Guido Justo vs Luciano Emanuel Ambrogi,1,0.0,20,0.5,0.505,0.5003
+Tucuman: Johan Alexander Rodriguez vs Nicolas Kicker,2026-06-13T00:08:55.504537Z,Tucuman: Johan Alexander Rodriguez vs Nicolas Kicker,1,39050.517108,17,0.335,0.9995,0.4006
+Tucuman: Johan Alexander Rodriguez vs Nicolas Kicker,2026-06-13T00:08:55.504537Z,Tucuman: Completed Match: Johan Alexander Rodriguez vs Nicolas Kicker,1,0.0,17,0.5,0.9995,0.5294
+Ilkley: Oliver Tarvet vs Filippo Romano,2026-06-13T00:08:55.473399Z,Ilkley: Oliver Tarvet vs Filippo Romano,0,78495.68737699998,13,0.395,0.795,0.6412
+Ilkley: Oliver Tarvet vs Filippo Romano,2026-06-13T00:08:55.473399Z,Ilkley: Completed Match: Oliver Tarvet vs Filippo Romano,1,0.0,13,0.5,0.5,0.5
+Ilkley: Dane Sweeny vs Toby Samuel,2026-06-12T23:54:13.324065Z,Ilkley: Completed Match: Dane Sweeny vs Toby Samuel,1,0.0,13,0.5,0.5,0.5
+Ilkley: Dane Sweeny vs Toby Samuel,2026-06-12T23:54:13.324065Z,Ilkley: Dane Sweeny vs Toby Samuel,1,90584.44104700004,13,0.065,0.755,0.2496
+Ilkley: Darwin Blanch vs Jacob Fearnley,2026-06-12T23:27:41.641372Z,Ilkley: Darwin Blanch vs Jacob Fearnley,0,77104.71569299999,14,0.0005,0.45,0.3793
+Ilkley: Darwin Blanch vs Jacob Fearnley,2026-06-12T23:27:41.641372Z,Ilkley: Completed Match: Darwin Blanch vs Jacob Fearnley,1,0.0,13,0.5,0.995,0.5381
+Libema Open: Daniil Medvedev vs Marin Cilic,2026-06-12T23:27:24.026993Z,Libema Open: Daniil Medvedev vs Marin Cilic,1,42330.641996,13,0.62,0.995,0.6658
+Libema Open: Daniil Medvedev vs Marin Cilic,2026-06-12T23:27:24.026993Z,Libema Open: Completed Match: Daniil Medvedev vs Marin Cilic,1,0.0,13,0.5,0.5,0.5
+Cattolica: Roberto Carballes Baena vs Francesco Forti,2026-06-12T23:15:25.805108Z,Cattolica: Completed Match: Roberto Carballes Baena vs Francesco Forti,1,0.0,20,0.5,0.5,0.5
+Cattolica: Roberto Carballes Baena vs Francesco Forti,2026-06-12T23:15:25.805108Z,Cattolica: Roberto Carballes Baena vs Francesco Forti,1,53780.095639000014,20,0.405,0.9545,0.6635
+Lyon: Daniel Galan vs Felix Balshaw,2026-06-12T22:35:07.79913Z,Lyon: Completed Match: Daniel Galan vs Felix Balshaw,1,0.0,20,0.5,0.505,0.5003
+Lyon: Daniel Galan vs Felix Balshaw,2026-06-12T22:35:07.79913Z,Lyon: Daniel Galan vs Felix Balshaw,0,220944.46347200018,20,0.43,0.615,0.4628
+Bratislava: Federico Cina vs Taro Daniel,2026-06-12T16:32:43.858559Z,Bratislava: Completed Match: Federico Cina vs Taro Daniel,1,0.0,23,0.5,0.5,0.5
+Bratislava: Federico Cina vs Taro Daniel,2026-06-12T16:32:43.858559Z,Bratislava: Federico Cina vs Taro Daniel,0,94196.97317599993,23,0.345,0.595,0.5213
+Lyon: David Jorda Sanchis vs Tristan Boyer,2026-06-12T16:32:15.545615Z,Lyon: David Jorda Sanchis vs Tristan Boyer,1,179209.12477600013,23,0.215,0.63,0.3846
+Lyon: David Jorda Sanchis vs Tristan Boyer,2026-06-12T16:32:15.545615Z,Lyon: Completed Match: David Jorda Sanchis vs Tristan Boyer,1,49.712999999999994,23,0.5,0.945,0.6052
+Stuttgart Open: Ben Shelton vs Sho Shimabukuro,2026-06-12T16:32:15.517889Z,Stuttgart Open: Ben Shelton vs Sho Shimabukuro,1,707849.7596869995,19,0.445,0.755,0.5187
+Stuttgart Open: Ben Shelton vs Sho Shimabukuro,2026-06-12T16:32:15.517889Z,Stuttgart Open: Completed Match: Ben Shelton vs Sho Shimabukuro,1,0.0,19,0.5,0.85,0.6139
+Cattolica: Jesper de Jong vs Enrico Dalla Valle,2026-06-12T16:32:14.474966Z,Cattolica: Completed Match: Jesper de Jong vs Enrico Dalla Valle,1,0.0,24,0.5,0.9995,0.521
+Cattolica: Jesper de Jong vs Enrico Dalla Valle,2026-06-12T16:32:14.474966Z,Cattolica: Jesper de Jong vs Enrico Dalla Valle,1,127431.08725200007,24,0.345,0.9995,0.6996
+Libema Open: Adrian Mannarino vs Alex de Minaur,2026-06-12T16:17:44.475828Z,Libema Open: Adrian Mannarino vs Alex de Minaur,0,178390.29946900002,23,0.0055,0.27,0.2026
+Libema Open: Adrian Mannarino vs Alex de Minaur,2026-06-12T16:17:44.475828Z,Libema Open: Completed Match: Adrian Mannarino vs Alex de Minaur,1,39.7819,23,0.5,0.885,0.5752
+Bratislava: Alexander Shevchenko vs Vitaliy Sachko,2026-06-12T16:17:34.497856Z,Bratislava: Completed Match: Alexander Shevchenko vs Vitaliy Sachko,1,24.48975,21,0.5,0.89,0.5598
+Bratislava: Alexander Shevchenko vs Vitaliy Sachko,2026-06-12T16:17:34.497856Z,Bratislava: Alexander Shevchenko vs Vitaliy Sachko,1,90935.32330199993,21,0.555,0.975,0.6162
+Ilkley: Mark Lajal vs Yunchaokete Bu,2026-06-12T16:17:24.88248Z,Ilkley: Completed Match: Mark Lajal vs Yunchaokete Bu,1,0.0,19,0.5,0.5,0.5
+Ilkley: Mark Lajal vs Yunchaokete Bu,2026-06-12T16:17:24.88248Z,Ilkley: Mark Lajal vs Yunchaokete Bu,0,19912.950013000012,19,0.165,0.495,0.4229
+Tucuman: Guido Justo vs Thiago Cigarran,2026-06-12T04:18:02.596809Z,Tucuman: Guido Justo vs Thiago Cigarran,1,27779.311436000004,15,0.835,0.95,0.871
+Tucuman: Guido Justo vs Thiago Cigarran,2026-06-12T04:18:02.596809Z,Tucuman: Completed Match: Guido Justo vs Thiago Cigarran,1,0.0,15,0.495,0.54,0.5113
+Tucuman: Nicolas Kicker vs Federico Coria,2026-06-12T04:17:54.505226Z,Tucuman: Completed Match: Nicolas Kicker vs Federico Coria,0,0.0,15,0.0005,0.5,0.4667
+Tucuman: Nicolas Kicker vs Federico Coria,2026-06-12T04:17:54.505226Z,Tucuman: Nicolas Kicker vs Federico Coria,1,45990.27279099998,15,0.47,0.9995,0.6126
+Tucuman: Carlos Maria Zarate vs Luciano Emanuel Ambrogi,2026-06-11T22:26:57.799702Z,Tucuman: Completed Match: Carlos Maria Zarate vs Luciano Emanuel Ambrogi,1,0.0,19,0.485,0.5,0.4982
+Tucuman: Carlos Maria Zarate vs Luciano Emanuel Ambrogi,2026-06-11T22:26:57.799702Z,Tucuman: Carlos Maria Zarate vs Luciano Emanuel Ambrogi,0,86060.499113,19,0.215,0.535,0.3861
+Tucuman: Matheus Pucinelli de Almeida vs Johan Alexander Rodriguez,2026-06-11T22:15:42.610009Z,Tucuman: Completed Match: Matheus Pucinelli de Almeida vs Johan Alexander Rodriguez,1,0.0,19,0.495,0.51,0.5003
+Tucuman: Matheus Pucinelli de Almeida vs Johan Alexander Rodriguez,2026-06-11T22:15:42.610009Z,Tucuman: Matheus Pucinelli de Almeida vs Johan Alexander Rodriguez,0,58295.085843,19,0.195,0.84,0.6934
+Lyon: Felix Balshaw vs Clement Tabur,2026-06-11T22:15:42.551362Z,Lyon: Felix Balshaw vs Clement Tabur,1,36118.73367100001,20,0.39,0.9995,0.4555
+Lyon: Felix Balshaw vs Clement Tabur,2026-06-11T22:15:42.551362Z,Lyon: Completed Match: Felix Balshaw vs Clement Tabur,1,0.0,20,0.5,0.9995,0.526
+Stuttgart Open: Mattia Bellucci vs Taylor Fritz,2026-06-11T22:15:42.485233Z,Stuttgart Open: Mattia Bellucci vs Taylor Fritz,0,750183.2663709994,20,0.0005,0.595,0.2613
+Stuttgart Open: Mattia Bellucci vs Taylor Fritz,2026-06-11T22:15:42.485233Z,Stuttgart Open: Completed Match: Mattia Bellucci vs Taylor Fritz,1,0.0,20,0.5,0.9995,0.5437
+Libema Open: Felix Auger-Aliassime vs Kamil Majchrzak,2026-06-11T16:27:18.271649Z,Libema Open: Felix Auger-Aliassime vs Kamil Majchrzak,0,372293.17484899994,24,0.0005,0.735,0.6838
+Libema Open: Felix Auger-Aliassime vs Kamil Majchrzak,2026-06-11T16:27:18.271649Z,Libema Open: Completed Match: Felix Auger-Aliassime vs Kamil Majchrzak,1,10.0,24,0.48,0.995,0.5181
+Stuttgart Open: Jiri Lehecka vs Frances Tiafoe,2026-06-11T16:27:18.208986Z,Stuttgart Open: Completed Match: Jiri Lehecka vs Frances Tiafoe,1,76.66,25,0.475,0.52,0.4998
+Stuttgart Open: Jiri Lehecka vs Frances Tiafoe,2026-06-11T16:27:18.208986Z,Stuttgart Open: Jiri Lehecka vs Frances Tiafoe,1,267216.74821600044,25,0.525,0.825,0.5596
+Libema Open: Benjamin Bonzi vs Alex de Minaur,2026-06-11T16:17:27.478415Z,Libema Open: Benjamin Bonzi vs Alex de Minaur,0,277120.526603,22,0.02,0.225,0.1989
+Libema Open: Benjamin Bonzi vs Alex de Minaur,2026-06-11T16:17:27.478415Z,Libema Open: Completed Match: Benjamin Bonzi vs Alex de Minaur,1,0.0,22,0.495,0.5,0.4993
+Bratislava: Zsombor Piros vs Taro Daniel,2026-06-11T16:17:25.420149Z,Bratislava: Completed Match: Zsombor Piros vs Taro Daniel,1,0.0,24,0.5,0.9995,0.5212
+Bratislava: Zsombor Piros vs Taro Daniel,2026-06-11T16:17:25.420149Z,Bratislava: Zsombor Piros vs Taro Daniel,0,30538.672802000016,24,0.005,0.665,0.5952
+Cattolica: Jesper de Jong vs Marco Cecchinato,2026-06-11T16:17:25.36292Z,Cattolica: Completed Match: Jesper de Jong vs Marco Cecchinato,1,0.0,19,0.5,0.995,0.5263
+Cattolica: Jesper de Jong vs Marco Cecchinato,2026-06-11T16:17:25.36292Z,Cattolica: Jesper de Jong vs Marco Cecchinato,1,45025.614362999986,19,0.645,0.995,0.7295
+Libema Open: Zhizhen Zhang vs Adrian Mannarino,2026-06-11T16:17:25.335327Z,Libema Open: Completed Match: Zhizhen Zhang vs Adrian Mannarino,1,0.0,19,0.475,0.52,0.5003
+Libema Open: Zhizhen Zhang vs Adrian Mannarino,2026-06-11T16:17:25.335327Z,Libema Open: Zhizhen Zhang vs Adrian Mannarino,0,402502.48839299957,19,0.175,0.445,0.4074
+Bratislava: Alexander Shevchenko vs Maxim Mrva,2026-06-11T16:17:25.287174Z,Bratislava: Completed Match: Alexander Shevchenko vs Maxim Mrva,1,0.0,20,0.49,0.9995,0.5247
+Bratislava: Alexander Shevchenko vs Maxim Mrva,2026-06-11T16:17:25.287174Z,Bratislava: Alexander Shevchenko vs Maxim Mrva,1,62877.23535,20,0.45,0.9995,0.6055
+Lyon: Daniel Galan vs Kimmer Coppejans,2026-06-11T16:17:25.23531Z,Lyon: Daniel Galan vs Kimmer Coppejans,1,256371.56352799965,24,0.295,0.535,0.4679
+Lyon: Daniel Galan vs Kimmer Coppejans,2026-06-11T16:17:25.23531Z,Lyon: Completed Match: Daniel Galan vs Kimmer Coppejans,1,0.0,24,0.5,0.5,0.5
+Lyon: Dali Blanch vs David Jorda Sanchis,2026-06-11T16:17:25.227983Z,Lyon: Completed Match: Dali Blanch vs David Jorda Sanchis,1,0.0,19,0.5,0.9995,0.5287
+Lyon: Dali Blanch vs David Jorda Sanchis,2026-06-11T16:17:25.227983Z,Lyon: Dali Blanch vs David Jorda Sanchis,0,110359.40877099986,19,0.0005,0.635,0.5569
+Tucuman: Eduardo Ribeiro vs Johan Alexander Rodriguez,2026-06-10T22:38:23.336201Z,Tucuman: Completed Match: Eduardo Ribeiro vs Johan Alexander Rodriguez,1,0.0,20,0.5,0.9995,0.525
+Tucuman: Eduardo Ribeiro vs Johan Alexander Rodriguez,2026-06-10T22:38:23.336201Z,Tucuman: Eduardo Ribeiro vs Johan Alexander Rodriguez,0,63307.01421499999,20,0.0005,0.84,0.5978
+Stuttgart Open: Giovanni Mpetshi Perricard vs Alexander Bublik,2026-06-10T22:28:10.174265Z,Stuttgart Open: Completed Match: Giovanni Mpetshi Perricard vs Alexander Bublik,1,0.0,41,0.5,0.505,0.5011
+Stuttgart Open: Giovanni Mpetshi Perricard vs Alexander Bublik,2026-06-10T22:28:10.174265Z,Stuttgart Open: Giovanni Mpetshi Perricard vs Alexander Bublik,0,262993.19626600016,41,0.235,0.63,0.3717
+Lyon: Tristan Boyer vs Nikolas Sanchez Izquierdo,2026-06-10T22:28:10.095766Z,Lyon: Tristan Boyer vs Nikolas Sanchez Izquierdo,1,131468.164994,40,0.45,0.9995,0.5311
+Lyon: Tristan Boyer vs Nikolas Sanchez Izquierdo,2026-06-10T22:28:10.095766Z,Lyon: Completed Match: Tristan Boyer vs Nikolas Sanchez Izquierdo,1,0.0,40,0.49,0.9995,0.5122
+Ilkley: Henrique Rocha vs Darwin Blanch,2026-06-10T22:28:09.754259Z,Ilkley: Completed Match: Henrique Rocha vs Darwin Blanch,1,0.0,41,0.495,0.505,0.499
+Ilkley: Henrique Rocha vs Darwin Blanch,2026-06-10T22:28:09.754259Z,Ilkley: Henrique Rocha vs Darwin Blanch,0,128165.512829,41,0.145,0.55,0.516
+Tucuman: Nicolas Kicker vs Nick Hardt,2026-06-10T22:28:09.646644Z,Tucuman: Nicolas Kicker vs Nick Hardt,1,237336.53043799955,27,0.385,0.995,0.5254
+Tucuman: Nicolas Kicker vs Nick Hardt,2026-06-10T22:28:09.646644Z,Tucuman: Completed Match: Nicolas Kicker vs Nick Hardt,1,0.0,27,0.495,0.995,0.5178
+Ilkley: Yunchaokete Bu vs Leandro Riedi,2026-06-10T22:28:09.552378Z,Ilkley: Completed Match: Yunchaokete Bu vs Leandro Riedi,0,0.0,19,0.0005,0.5,0.4737
+Ilkley: Keegan Smith vs Jacob Fearnley,2026-06-10T22:28:08.687124Z,Ilkley: Keegan Smith vs Jacob Fearnley,0,165221.04653700002,43,0.1,0.4,0.2971
+Ilkley: Keegan Smith vs Jacob Fearnley,2026-06-10T22:28:08.687124Z,Ilkley: Completed Match: Keegan Smith vs Jacob Fearnley,1,0.0,43,0.5,0.5,0.5
+Ilkley: Tristan Schoolkate vs Oliver Tarvet,2026-06-10T22:28:08.509724Z,Ilkley: Completed Match: Tristan Schoolkate vs Oliver Tarvet,1,0.0,44,0.49,0.51,0.5003
+Ilkley: Tristan Schoolkate vs Oliver Tarvet,2026-06-10T22:28:08.509724Z,Ilkley: Tristan Schoolkate vs Oliver Tarvet,0,39373.46558100002,44,0.005,0.565,0.5268
+Cattolica: Francesco Forti vs Andrea Guerrieri,2026-06-10T22:18:03.315061Z,Cattolica: Completed Match: Francesco Forti vs Andrea Guerrieri,1,0.0,44,0.465,0.525,0.5
+Cattolica: Francesco Forti vs Andrea Guerrieri,2026-06-10T22:18:03.315061Z,Cattolica: Francesco Forti vs Andrea Guerrieri,1,40051.68324399999,44,0.385,0.945,0.4392
+Tucuman: Carlos Maria Zarate vs Arklon Del Pino,2026-06-10T22:18:03.097969Z,Tucuman: Carlos Maria Zarate vs Arklon Del Pino,1,8212.526511000002,22,0.4,0.9995,0.5263
+Tucuman: Carlos Maria Zarate vs Arklon Del Pino,2026-06-10T22:18:03.097969Z,Tucuman: Completed Match: Carlos Maria Zarate vs Arklon Del Pino,1,0.0,22,0.5,0.9995,0.5227
+Tucuman: Federico Coria vs Andrea Collarini,2026-06-10T22:18:02.957727Z,Tucuman: Completed Match: Federico Coria vs Andrea Collarini,1,0.0,24,0.5,0.505,0.5004
+Tucuman: Federico Coria vs Andrea Collarini,2026-06-10T22:18:02.957727Z,Tucuman: Federico Coria vs Andrea Collarini,1,232154.6827320004,24,0.335,0.855,0.3779
+Tucuman: Guido Justo vs Hernan Casanova,2026-06-10T16:38:15.874614Z,Tucuman: Guido Justo vs Hernan Casanova,1,47441.76308499995,26,0.33,0.97,0.5844
+Tucuman: Guido Justo vs Hernan Casanova,2026-06-10T16:38:15.874614Z,Tucuman: Completed Match: Guido Justo vs Hernan Casanova,1,0.0,26,0.5,0.5,0.5
+Bratislava: Zdenek Kolar vs Federico Cina,2026-06-10T16:28:08.692633Z,Bratislava: Completed Match: Zdenek Kolar vs Federico Cina,1,0.0,46,0.5,0.5,0.5
+Bratislava: Zdenek Kolar vs Federico Cina,2026-06-10T16:28:08.692633Z,Bratislava: Zdenek Kolar vs Federico Cina,0,67715.67962299989,46,0.22,0.665,0.3524
+Cattolica: Raul Brancaccio vs Roberto Carballes Baena,2026-06-10T16:28:08.653058Z,Cattolica: Completed Match: Raul Brancaccio vs Roberto Carballes Baena,1,0.0,48,0.5,0.505,0.501
+Cattolica: Raul Brancaccio vs Roberto Carballes Baena,2026-06-10T16:28:08.653058Z,Cattolica: Raul Brancaccio vs Roberto Carballes Baena,0,63078.682253999985,48,0.165,0.64,0.423
+Ilkley: Arthur Gea vs Mark Lajal,2026-06-10T16:28:08.620343Z,Ilkley: Arthur Gea vs Mark Lajal,0,162430.27139099996,46,0.21,0.455,0.3577
+Ilkley: Arthur Gea vs Mark Lajal,2026-06-10T16:28:08.620343Z,Ilkley: Completed Match: Arthur Gea vs Mark Lajal,1,0.0,46,0.5,0.5,0.5
+Libema Open: Tallon Griekspoor vs Zhizhen Zhang,2026-06-10T16:28:08.450055Z,Libema Open: Completed Match: Tallon Griekspoor vs Zhizhen Zhang,1,0.0,21,0.5,0.9955,0.5236
+Libema Open: Tallon Griekspoor vs Zhizhen Zhang,2026-06-10T16:28:08.450055Z,Libema Open: Tallon Griekspoor vs Zhizhen Zhang,0,803524.7024670007,21,0.0005,0.715,0.64
+Libema Open: Kamil Majchrzak vs James McCabe,2026-06-10T16:28:08.430808Z,Libema Open: Kamil Majchrzak vs James McCabe,1,125435.14420300002,20,0.355,0.9905,0.7033
+Libema Open: Kamil Majchrzak vs James McCabe,2026-06-10T16:28:08.430808Z,Libema Open: Completed Match: Kamil Majchrzak vs James McCabe,1,0.0,20,0.5,0.5,0.5
+Libema Open: Daniil Medvedev vs Thijs Boogaard,2026-06-10T16:28:08.290725Z,Libema Open: Completed Match: Daniil Medvedev vs Thijs Boogaard,1,0.0,45,0.5,0.995,0.532
+Libema Open: Daniil Medvedev vs Thijs Boogaard,2026-06-10T16:28:08.290725Z,Libema Open: Daniil Medvedev vs Thijs Boogaard,1,697807.3931620003,45,0.535,0.9995,0.8868
+Bratislava: Zsombor Piros vs Joao Lucas Da Silva,2026-06-10T16:28:08.244051Z,Bratislava: Completed Match: Zsombor Piros vs Joao Lucas Da Silva,1,0.0,21,0.5,0.9995,0.5238
+Bratislava: Zsombor Piros vs Joao Lucas Da Silva,2026-06-10T16:28:08.244051Z,Bratislava: Zsombor Piros vs Joao Lucas Da Silva,1,30182.770746000002,21,0.355,0.9995,0.6657
+Bratislava: Petr Brunclik vs Vitaliy Sachko,2026-06-10T16:18:26.762574Z,Bratislava: Completed Match: Petr Brunclik vs Vitaliy Sachko,1,0.0,46,0.48,0.9995,0.5097
+Bratislava: Petr Brunclik vs Vitaliy Sachko,2026-06-10T16:18:26.762574Z,Bratislava: Petr Brunclik vs Vitaliy Sachko,0,43971.101284000026,46,0.0005,0.605,0.4789
+Tucuman: Lorenzo Joaquin Rodriguez vs Matheus Pucinelli de Almeida,2026-06-10T16:18:26.682201Z,Tucuman: Lorenzo Joaquin Rodriguez vs Matheus Pucinelli de Almeida,0,22330.89056,28,0.0005,0.64,0.3181
+Tucuman: Lorenzo Joaquin Rodriguez vs Matheus Pucinelli de Almeida,2026-06-10T16:18:26.682201Z,Tucuman: Completed Match: Lorenzo Joaquin Rodriguez vs Matheus Pucinelli de Almeida,1,0.0,28,0.5,0.9995,0.5178
+Ilkley: Filippo Romano vs Jack Pinnington Jones,2026-06-10T16:18:26.632681Z,Ilkley: Filippo Romano vs Jack Pinnington Jones,1,174684.74299999993,51,0.185,0.9995,0.3446
+Ilkley: Filippo Romano vs Jack Pinnington Jones,2026-06-10T16:18:26.632681Z,Ilkley: Completed Match: Filippo Romano vs Jack Pinnington Jones,1,102.9701,51,0.485,0.9995,0.5082
+Tucuman: Thiago Cigarran vs Juan Estevez,2026-06-10T16:18:26.612687Z,Tucuman: Completed Match: Thiago Cigarran vs Juan Estevez,1,0.0,31,0.5,0.9995,0.5161
+Tucuman: Thiago Cigarran vs Juan Estevez,2026-06-10T16:18:26.612687Z,Tucuman: Thiago Cigarran vs Juan Estevez,1,355847.2471140003,31,0.1,0.9995,0.2343
+Libema Open: Felix Auger-Aliassime vs Marton Fucsovics,2026-06-10T16:18:26.518013Z,Libema Open: Felix Auger-Aliassime vs Marton Fucsovics,1,490660.7433959996,22,0.68,0.983,0.7256
+Libema Open: Felix Auger-Aliassime vs Marton Fucsovics,2026-06-10T16:18:26.518013Z,Libema Open: Completed Match: Felix Auger-Aliassime vs Marton Fucsovics,1,0.0,22,0.5,0.5,0.5
+Lyon: Thomas Faurel vs Clement Tabur,2026-06-10T16:18:26.420248Z,Lyon: Thomas Faurel vs Clement Tabur,0,51887.516592999986,26,0.0005,0.395,0.3281
+Lyon: Thomas Faurel vs Clement Tabur,2026-06-10T16:18:26.420248Z,Lyon: Completed Match: Thomas Faurel vs Clement Tabur,1,0.0,26,0.5,0.9995,0.5192
+Tucuman: Nicolas Villalon vs Lorenzo Joaquin Rodriguez,2026-06-10T04:22:17.395799Z,Tucuman: Completed Match: Nicolas Villalon vs Lorenzo Joaquin Rodriguez,1,0.0,12,0.5,0.995,0.5413
+Tucuman: Nicolas Villalon vs Lorenzo Joaquin Rodriguez,2026-06-10T04:22:17.395799Z,Tucuman: Nicolas Villalon vs Lorenzo Joaquin Rodriguez,0,108906.68865499998,12,0.0005,0.273,0.1653
+Tucuman: Maximo Zeitune vs Arklon Del Pino,2026-06-10T04:22:17.382973Z,Tucuman: Maximo Zeitune vs Arklon Del Pino,0,10794.414957000003,17,0.005,0.72,0.5441
+Tucuman: Maximo Zeitune vs Arklon Del Pino,2026-06-10T04:22:17.382973Z,Tucuman: Completed Match: Maximo Zeitune vs Arklon Del Pino,1,5.0,17,0.5,0.995,0.5291
+Tucuman: Samuel Heredia vs Hernan Casanova,2026-06-10T04:22:17.340679Z,Tucuman: Samuel Heredia vs Hernan Casanova,0,19920.174816,11,0.0005,0.55,0.2264
+Tucuman: Samuel Heredia vs Hernan Casanova,2026-06-10T04:22:17.340679Z,Tucuman: Completed Match: Samuel Heredia vs Hernan Casanova,1,0.0,11,0.5,0.9995,0.5454
+Tucuman: Johan Alexander Rodriguez vs Juan Manuel La Serna,2026-06-10T04:12:50.077765Z,Tucuman: Johan Alexander Rodriguez vs Juan Manuel La Serna,1,69188.94656499999,13,0.215,0.995,0.3638
+Tucuman: Johan Alexander Rodriguez vs Juan Manuel La Serna,2026-06-10T04:12:50.077765Z,Tucuman: Completed Match: Johan Alexander Rodriguez vs Juan Manuel La Serna,1,0.0,13,0.5,0.995,0.5381
+Tucuman: Julian Cundom vs Andrea Collarini,2026-06-10T04:12:17.537547Z,Tucuman: Completed Match: Julian Cundom vs Andrea Collarini,1,0.0,11,0.5,0.995,0.545
+Tucuman: Julian Cundom vs Andrea Collarini,2026-06-10T04:12:17.537547Z,Tucuman: Julian Cundom vs Andrea Collarini,0,8128.143123000001,11,0.005,0.46,0.1336
+Tucuman: Nicolas Kicker vs Tomas Martinez,2026-06-10T04:12:16.942209Z,Tucuman: Completed Match: Nicolas Kicker vs Tomas Martinez,1,0.0,13,0.5,0.9995,0.5384
+Tucuman: Nicolas Kicker vs Tomas Martinez,2026-06-10T04:12:16.942209Z,Tucuman: Nicolas Kicker vs Tomas Martinez,1,22436.041471000004,13,0.845,0.9995,0.8694
+Tucuman: Thiago Cigarran vs Valerio Aboian,2026-06-10T04:12:16.92153Z,Tucuman: Completed Match: Thiago Cigarran vs Valerio Aboian,0,100.0,9,0.5,0.5,0.5
+Cattolica: Dusan Lajovic vs Oriol Roca Batalla,2026-06-09T22:31:23.940451Z,Cattolica: Completed Match: Dusan Lajovic vs Oriol Roca Batalla,1,0.0,62,0.5,0.995,0.509
+Cattolica: Dusan Lajovic vs Oriol Roca Batalla,2026-06-09T22:31:23.940451Z,Cattolica: Dusan Lajovic vs Oriol Roca Batalla,0,210690.59273399966,62,0.005,0.735,0.596
+Stuttgart Open: Rinky Hijikata vs Frances Tiafoe,2026-06-09T22:31:23.772036Z,Stuttgart Open: Rinky Hijikata vs Frances Tiafoe,0,335914.7877229999,38,0.035,0.325,0.2911
+Stuttgart Open: Rinky Hijikata vs Frances Tiafoe,2026-06-09T22:31:23.772036Z,Stuttgart Open: Completed Match: Rinky Hijikata vs Frances Tiafoe,1,0.0,38,0.5,0.5,0.5
+Tucuman: Santiago Rodriguez Taverna vs Luciano Emanuel Ambrogi,2026-06-09T22:21:47.411169Z,Tucuman: Santiago Rodriguez Taverna vs Luciano Emanuel Ambrogi,0,25336.294223000015,45,0.245,0.5,0.4034
+Tucuman: Santiago Rodriguez Taverna vs Luciano Emanuel Ambrogi,2026-06-09T22:21:47.411169Z,Tucuman: Completed Match: Santiago Rodriguez Taverna vs Luciano Emanuel Ambrogi,1,0.0,45,0.5,0.5,0.5
+Cattolica: Jesper de Jong vs Federico Bondioli,2026-06-09T22:21:47.37268Z,Cattolica: Jesper de Jong vs Federico Bondioli,1,109963.84912099988,40,0.445,0.995,0.7255
+Cattolica: Jesper de Jong vs Federico Bondioli,2026-06-09T22:21:47.37268Z,Cattolica: Completed Match: Jesper de Jong vs Federico Bondioli,1,0.0,40,0.5,0.995,0.5124
+Stuttgart Open: Sho Shimabukuro vs Nick Kyrgios,2026-06-09T22:21:47.331207Z,Stuttgart Open: Completed Match: Sho Shimabukuro vs Nick Kyrgios,1,0.0,41,0.5,0.9995,0.5122
+Stuttgart Open: Sho Shimabukuro vs Nick Kyrgios,2026-06-09T22:21:47.331207Z,Stuttgart Open: Sho Shimabukuro vs Nick Kyrgios,1,776925.4871139999,41,0.165,0.9995,0.4001
+Stuttgart Open: Jiri Lehecka vs James Duckworth,2026-06-09T22:21:47.279286Z,Stuttgart Open: Completed Match: Jiri Lehecka vs James Duckworth,1,63.998,39,0.495,0.9945,0.5126
+Stuttgart Open: Jiri Lehecka vs James Duckworth,2026-06-09T22:21:47.279286Z,Stuttgart Open: Jiri Lehecka vs James Duckworth,1,294333.11329099943,39,0.585,0.76,0.7312
+Bratislava: Taro Daniel vs Emilio Nava,2026-06-09T22:21:47.253269Z,Bratislava: Taro Daniel vs Emilio Nava,1,112672.68730599992,41,0.17,0.995,0.3137
+Bratislava: Taro Daniel vs Emilio Nava,2026-06-09T22:21:47.253269Z,Bratislava: Completed Match: Taro Daniel vs Emilio Nava,1,0.0,41,0.495,0.995,0.5121
+Cattolica: Enrico Dalla Valle vs Carlos Sanchez Jover,2026-06-09T22:21:47.246968Z,Cattolica: Completed Match: Enrico Dalla Valle vs Carlos Sanchez Jover,1,0.0,42,0.5,0.5,0.5
+Cattolica: Enrico Dalla Valle vs Carlos Sanchez Jover,2026-06-09T22:21:47.246968Z,Cattolica: Enrico Dalla Valle vs Carlos Sanchez Jover,1,25867.023129999998,42,0.5,0.9945,0.5873
+Lyon: Pedro Martinez vs Felix Balshaw,2026-06-09T22:21:47.208032Z,Lyon: Completed Match: Pedro Martinez vs Felix Balshaw,1,0.0,41,0.5,0.51,0.5002
+Lyon: Pedro Martinez vs Felix Balshaw,2026-06-09T22:21:47.208032Z,Lyon: Pedro Martinez vs Felix Balshaw,0,165769.66920599987,41,0.295,0.775,0.6289
+Lyon: Tristan Boyer vs Matteo Martineau,2026-06-09T22:21:47.201255Z,Lyon: Tristan Boyer vs Matteo Martineau,1,38075.28641500002,16,0.705,0.9995,0.7234
+Lyon: Tristan Boyer vs Matteo Martineau,2026-06-09T22:21:47.201255Z,Lyon: Completed Match: Tristan Boyer vs Matteo Martineau,1,0.0,16,0.5,0.995,0.5309
+Lyon: David Jorda Sanchis vs Miguel Damas,2026-06-09T16:25:35.876961Z,Lyon: David Jorda Sanchis vs Miguel Damas,1,233029.85783399988,46,0.275,0.9995,0.5237
+Lyon: David Jorda Sanchis vs Miguel Damas,2026-06-09T16:25:35.876961Z,Lyon: Completed Match: David Jorda Sanchis vs Miguel Damas,1,0.0,46,0.485,0.9955,0.5212
+Ilkley: Dane Sweeny vs Billy Harris,2026-06-09T16:25:35.802566Z,Ilkley: Completed Match: Dane Sweeny vs Billy Harris,1,24.9973,74,0.49,0.9995,0.541
+Ilkley: Dane Sweeny vs Billy Harris,2026-06-09T16:25:35.802566Z,Ilkley: Dane Sweeny vs Billy Harris,1,58214.38529599993,74,0.265,0.9995,0.3369
+Bratislava: Alexander Shevchenko vs Hynek Barton,2026-06-09T16:25:35.782269Z,Bratislava: Completed Match: Alexander Shevchenko vs Hynek Barton,1,0.0,45,0.5,0.9995,0.5222
+Bratislava: Alexander Shevchenko vs Hynek Barton,2026-06-09T16:25:35.782269Z,Bratislava: Alexander Shevchenko vs Hynek Barton,1,124282.25025700004,45,0.245,0.9995,0.4649
+Lyon: Alejandro Moro Canas vs Kimmer Coppejans,2026-06-09T16:25:35.676887Z,Lyon: Completed Match: Alejandro Moro Canas vs Kimmer Coppejans,1,0.0,21,0.49,0.9995,0.5504
+Lyon: Alejandro Moro Canas vs Kimmer Coppejans,2026-06-09T16:25:35.676887Z,Lyon: Alejandro Moro Canas vs Kimmer Coppejans,0,55486.22731899999,21,0.0005,0.605,0.4498
+Cattolica: Francesco Forti vs Franco Agamenone,2026-06-09T16:25:35.669573Z,Cattolica: Completed Match: Francesco Forti vs Franco Agamenone,1,0.0,24,0.495,0.9995,0.5414
+Cattolica: Francesco Forti vs Franco Agamenone,2026-06-09T16:25:35.669573Z,Cattolica: Francesco Forti vs Franco Agamenone,1,82018.563862,24,0.435,0.9995,0.5266
+Libema Open: Adrian Mannarino vs Arthur Rinderknech,2026-06-09T16:25:35.528916Z,Libema Open: Completed Match: Adrian Mannarino vs Arthur Rinderknech,1,0.0,47,0.5,0.9995,0.5213
+Libema Open: Adrian Mannarino vs Arthur Rinderknech,2026-06-09T16:25:35.528916Z,Libema Open: Adrian Mannarino vs Arthur Rinderknech,1,331242.44467200007,47,0.39,0.9995,0.4706
+Bratislava: Zdenek Kolar vs Lukas Pokorny,2026-06-09T16:25:35.480768Z,Bratislava: Zdenek Kolar vs Lukas Pokorny,1,37866.712839000014,22,0.705,0.9995,0.7663
+Bratislava: Zdenek Kolar vs Lukas Pokorny,2026-06-09T16:25:35.480768Z,Bratislava: Completed Match: Zdenek Kolar vs Lukas Pokorny,1,20.40815,22,0.495,0.9995,0.5465
+Bratislava: Petr Brunclik vs Andrej Martin,2026-06-09T16:25:35.442152Z,Bratislava: Completed Match: Petr Brunclik vs Andrej Martin,1,47.4166,20,0.465,0.9995,0.5552
+Bratislava: Petr Brunclik vs Andrej Martin,2026-06-09T16:25:35.442152Z,Bratislava: Petr Brunclik vs Andrej Martin,1,47935.42674899998,20,0.58,0.9995,0.6987
+Stuttgart Open: Mattia Bellucci vs Yannick Hanfmann,2026-06-09T16:25:35.384814Z,Stuttgart Open: Mattia Bellucci vs Yannick Hanfmann,1,664522.9846649999,21,0.455,0.9995,0.5254
+Stuttgart Open: Mattia Bellucci vs Yannick Hanfmann,2026-06-09T16:25:35.384814Z,Stuttgart Open: Completed Match: Mattia Bellucci vs Yannick Hanfmann,1,0.0,21,0.47,0.9995,0.5461
+Stuttgart Open: Ben Shelton vs Marcos Giron,2026-06-09T16:25:35.313205Z,Stuttgart Open: Completed Match: Ben Shelton vs Marcos Giron,1,34.8651,73,0.49,0.9995,0.5485
+Stuttgart Open: Ben Shelton vs Marcos Giron,2026-06-09T16:25:35.313205Z,Stuttgart Open: Ben Shelton vs Marcos Giron,1,1069574.1551990006,73,0.325,0.9995,0.637
+Lyon: Nikolas Sanchez Izquierdo vs Luca Van Assche,2026-06-09T16:25:35.234987Z,Lyon: Completed Match: Nikolas Sanchez Izquierdo vs Luca Van Assche,1,20.40815,27,0.5,0.9995,0.5392
+Lyon: Nikolas Sanchez Izquierdo vs Luca Van Assche,2026-06-09T16:25:35.234987Z,Lyon: Nikolas Sanchez Izquierdo vs Luca Van Assche,1,441449.63463299925,27,0.245,0.9995,0.4222
+Cattolica: Gianmarco Ferrari vs Roberto Carballes Baena,2026-06-09T16:25:35.147145Z,Cattolica: Gianmarco Ferrari vs Roberto Carballes Baena,0,66945.12445900001,19,0.0005,0.27,0.1658
+Cattolica: Gianmarco Ferrari vs Roberto Carballes Baena,2026-06-09T16:25:35.147145Z,Cattolica: Completed Match: Gianmarco Ferrari vs Roberto Carballes Baena,1,24.9973,19,0.485,0.9995,0.5466
+Cattolica: Alvaro Guillen Meza vs Marco Cecchinato,2026-06-09T16:15:28.89057Z,Cattolica: Completed Match: Alvaro Guillen Meza vs Marco Cecchinato,1,0.0,45,0.47,0.9995,0.522
+Cattolica: Alvaro Guillen Meza vs Marco Cecchinato,2026-06-09T16:15:28.89057Z,Cattolica: Alvaro Guillen Meza vs Marco Cecchinato,0,180070.22206999996,45,0.0005,0.54,0.3005
+Lyon: Daniel Rincon vs Dali Blanch,2026-06-09T16:15:27.011111Z,Lyon: Daniel Rincon vs Dali Blanch,0,38047.09993299999,43,0.0005,0.51,0.4164
+Lyon: Daniel Rincon vs Dali Blanch,2026-06-09T16:15:27.011111Z,Lyon: Completed Match: Daniel Rincon vs Dali Blanch,1,7.5,43,0.5,0.9995,0.5231
+Stuttgart Open: Jan-Lennard Struff vs Alexander Bublik,2026-06-09T16:15:26.966555Z,Stuttgart Open: Completed Match: Jan-Lennard Struff vs Alexander Bublik,1,50.5119,27,0.485,0.9995,0.5389
+Stuttgart Open: Jan-Lennard Struff vs Alexander Bublik,2026-06-09T16:15:26.966555Z,Stuttgart Open: Jan-Lennard Struff vs Alexander Bublik,0,744476.6426769994,27,0.0005,0.375,0.2999
+Lyon: Marco Trungelliti vs Daniel Galan,2026-06-09T16:15:26.959878Z,Lyon: Completed Match: Marco Trungelliti vs Daniel Galan,1,774.337099,46,0.44,0.9995,0.7723
+Lyon: Marco Trungelliti vs Daniel Galan,2026-06-09T16:15:26.959878Z,Lyon: Marco Trungelliti vs Daniel Galan,0,391873.56987500034,46,0.0005,0.82,0.6573
+Libema Open: Martin Damm vs Alex de Minaur,2026-06-09T16:15:26.776949Z,Libema Open: Completed Match: Martin Damm vs Alex de Minaur,1,20.40815,27,0.5,0.9995,0.5564
+Libema Open: Martin Damm vs Alex de Minaur,2026-06-09T16:15:26.776949Z,Libema Open: Martin Damm vs Alex de Minaur,0,342105.03837699967,27,0.0005,0.235,0.1915
+Bratislava: Maxim Mrva vs Chun-Hsin Tseng,2026-06-09T16:15:26.668845Z,Bratislava: Maxim Mrva vs Chun-Hsin Tseng,1,51081.80987400001,46,0.4,0.9995,0.4385
+Bratislava: Maxim Mrva vs Chun-Hsin Tseng,2026-06-09T16:15:26.668845Z,Bratislava: Completed Match: Maxim Mrva vs Chun-Hsin Tseng,1,0.0,46,0.5,0.9995,0.5218
+Stuttgart Open: Giovanni Mpetshi Perricard vs Gauthier Onclin,2026-06-09T16:14:49.263223Z,Stuttgart Open: Giovanni Mpetshi Perricard vs Gauthier Onclin,1,159219.14385499986,20,0.595,0.9995,0.664
+Stuttgart Open: Giovanni Mpetshi Perricard vs Gauthier Onclin,2026-06-09T16:14:49.263223Z,Stuttgart Open: Completed Match: Giovanni Mpetshi Perricard vs Gauthier Onclin,1,0.0,20,0.5,0.9995,0.5507
+Cattolica: Alexander Vasilev vs Andrea Guerrieri,2026-06-09T10:14:29.583617Z,Cattolica: Completed Match: Alexander Vasilev vs Andrea Guerrieri,1,20.40815,34,0.49,0.9995,0.5306
+Cattolica: Alexander Vasilev vs Andrea Guerrieri,2026-06-09T10:14:29.583617Z,Cattolica: Alexander Vasilev vs Andrea Guerrieri,0,72637.75573199996,34,0.0005,0.6,0.2944
+Libema Open: Ugo Humbert vs Benjamin Bonzi,2026-06-08T22:22:34.59571Z,Libema Open: Completed Match: Ugo Humbert vs Benjamin Bonzi,1,38.79865,63,0.495,0.9995,0.5275
+Libema Open: Ugo Humbert vs Benjamin Bonzi,2026-06-08T22:22:34.59571Z,Libema Open: Ugo Humbert vs Benjamin Bonzi,0,444625.6286990003,63,0.0005,0.675,0.6226
+Ilkley: Hamish Stewart vs Leandro Riedi,2026-06-08T22:22:34.574173Z,Ilkley: Completed Match: Hamish Stewart vs Leandro Riedi,1,0.0,45,0.495,0.9995,0.5216
+Ilkley: Hamish Stewart vs Leandro Riedi,2026-06-08T22:22:34.574173Z,Ilkley: Hamish Stewart vs Leandro Riedi,0,60314.16492599997,45,0.0005,0.305,0.2451
+Ilkley: Tristan Schoolkate vs Paul Jubb,2026-06-08T22:22:34.426569Z,Ilkley: Tristan Schoolkate vs Paul Jubb,1,125597.443751,44,0.56,0.9995,0.6969
+Ilkley: Tristan Schoolkate vs Paul Jubb,2026-06-08T22:22:34.426569Z,Ilkley: Completed Match: Tristan Schoolkate vs Paul Jubb,1,0.0,44,0.5,0.9995,0.5227
+Bratislava: Martin Krumich vs Maxim Mrva,2026-06-08T22:22:33.908369Z,Bratislava: Completed Match: Martin Krumich vs Maxim Mrva,1,0.0,14,0.5,0.9995,0.5714
+Bratislava: Martin Krumich vs Maxim Mrva,2026-06-08T22:22:33.908369Z,Bratislava: Martin Krumich vs Maxim Mrva,0,65374.61527599998,14,0.0005,0.505,0.4029
+Stuttgart Open: Roman Safiullin vs Giovanni Mpetshi Perricard,2026-06-08T22:22:33.86861Z,Stuttgart Open: Roman Safiullin vs Giovanni Mpetshi Perricard,0,38187.49610699999,15,0.0005,0.91,0.7497
+Stuttgart Open: Roman Safiullin vs Giovanni Mpetshi Perricard,2026-06-08T22:22:33.86861Z,Stuttgart Open: Completed Match: Roman Safiullin vs Giovanni Mpetshi Perricard,1,20.404000000000003,15,0.5,0.9995,0.5663
+Ilkley: Mark Lajal vs Michael Zheng,2026-06-08T22:13:53.83386Z,Ilkley: Completed Match: Mark Lajal vs Michael Zheng,1,0.0,43,0.48,0.9995,0.5236
+Ilkley: Mark Lajal vs Michael Zheng,2026-06-08T22:13:53.83386Z,Ilkley: Mark Lajal vs Michael Zheng,1,130091.67620199992,43,0.33,0.9995,0.5973
+Bratislava: Hynek Barton vs Buvaysar Gadamauri,2026-06-08T22:13:53.818625Z,Bratislava: Hynek Barton vs Buvaysar Gadamauri,1,55377.791016000025,19,0.265,0.9995,0.7038
+Bratislava: Hynek Barton vs Buvaysar Gadamauri,2026-06-08T22:13:53.818625Z,Bratislava: Completed Match: Hynek Barton vs Buvaysar Gadamauri,1,0.0,19,0.5,0.9995,0.5542
+Ilkley: Toby Samuel vs August Holmgren,2026-06-08T22:13:45.044601Z,Ilkley: Completed Match: Toby Samuel vs August Holmgren,1,30.626566,90,0.49,0.9995,0.535
+Ilkley: Toby Samuel vs August Holmgren,2026-06-08T22:13:45.044601Z,Ilkley: Toby Samuel vs August Holmgren,1,19321.952665,90,0.325,0.9995,0.6155
+Ilkley: Dane Sweeny vs Oliver Okonkwo,2026-06-08T22:13:44.93042Z,Ilkley: Dane Sweeny vs Oliver Okonkwo,1,22957.5275,19,0.695,0.9995,0.7573
+Ilkley: Dane Sweeny vs Oliver Okonkwo,2026-06-08T22:13:44.93042Z,Ilkley: Completed Match: Dane Sweeny vs Oliver Okonkwo,1,0.0,19,0.495,0.9995,0.5552
+Ilkley: Felix Gill vs Filippo Romano,2026-06-08T22:13:44.900412Z,Ilkley: Felix Gill vs Filippo Romano,0,91268.40737000012,43,0.0005,0.465,0.4227
+Ilkley: Felix Gill vs Filippo Romano,2026-06-08T22:13:44.900412Z,Ilkley: Completed Match: Felix Gill vs Filippo Romano,1,0.0,43,0.495,0.9995,0.5236
+Ilkley: Alex Bolt vs Keegan Smith,2026-06-08T22:13:44.830189Z,Ilkley: Completed Match: Alex Bolt vs Keegan Smith,1,0.0,44,0.49,0.9995,0.5221
+Ilkley: Alex Bolt vs Keegan Smith,2026-06-08T22:13:44.830189Z,Ilkley: Alex Bolt vs Keegan Smith,0,83094.73589800001,44,0.0005,0.765,0.6992
+Ilkley: Henrique Rocha vs Charles Broom,2026-06-08T22:13:44.760672Z,Ilkley: Completed Match: Henrique Rocha vs Charles Broom,1,0.0,46,0.5,0.9995,0.5329
+Ilkley: Henrique Rocha vs Charles Broom,2026-06-08T22:13:44.760672Z,Ilkley: Henrique Rocha vs Charles Broom,1,121650.45821000013,46,0.365,0.9995,0.4438
+Bratislava: Taro Daniel vs Timofey Skatov,2026-06-08T22:13:44.722719Z,Bratislava: Completed Match: Taro Daniel vs Timofey Skatov,1,0.0,20,0.5,0.9995,0.5747
+Bratislava: Taro Daniel vs Timofey Skatov,2026-06-08T22:13:44.722719Z,Bratislava: Taro Daniel vs Timofey Skatov,1,38932.20098499999,20,0.445,0.9995,0.5895
+Bratislava: Zsombor Piros vs Akira Santillan,2026-06-08T22:13:44.643548Z,Bratislava: Completed Match: Zsombor Piros vs Akira Santillan,1,0.0,22,0.485,0.9995,0.5461
+Bratislava: Zsombor Piros vs Akira Santillan,2026-06-08T22:13:44.643548Z,Bratislava: Zsombor Piros vs Akira Santillan,1,78922.61904900003,22,0.795,0.9995,0.8559
+Bratislava: Tiago Pereira vs Andrej Martin,2026-06-08T22:13:44.467107Z,Bratislava: Completed Match: Tiago Pereira vs Andrej Martin,1,0.0,14,0.5,0.9995,0.5714
+Bratislava: Tiago Pereira vs Andrej Martin,2026-06-08T22:13:44.467107Z,Bratislava: Tiago Pereira vs Andrej Martin,0,49767.824733000016,14,0.0005,0.46,0.3415
+Bratislava: Abedallah Shelbayh vs Petr Brunclik,2026-06-08T22:13:44.322521Z,Bratislava: Abedallah Shelbayh vs Petr Brunclik,0,21749.35308799999,16,0.0005,0.55,0.3326
+Bratislava: Abedallah Shelbayh vs Petr Brunclik,2026-06-08T22:13:44.322521Z,Bratislava: Completed Match: Abedallah Shelbayh vs Petr Brunclik,1,0.0,16,0.5,0.9995,0.5624
+Stuttgart Open: Martin Landaluce vs Taylor Fritz,2026-06-08T16:34:19.467183Z,Stuttgart Open: Completed Match: Martin Landaluce vs Taylor Fritz,1,84.40815,75,0.49,0.9995,0.5214
+Stuttgart Open: Martin Landaluce vs Taylor Fritz,2026-06-08T16:34:19.467183Z,Stuttgart Open: Martin Landaluce vs Taylor Fritz,0,937937.0876269988,75,0.0005,0.54,0.3093
+Libema Open: Nuno Borges vs Marin Cilic,2026-06-08T16:34:19.448779Z,Libema Open: Nuno Borges vs Marin Cilic,0,625621.0876850005,94,0.0005,0.89,0.5568
+Libema Open: Nuno Borges vs Marin Cilic,2026-06-08T16:34:19.448779Z,Libema Open: Completed Match: Nuno Borges vs Marin Cilic,1,20.0,94,0.08,0.995,0.5315
+Cattolica: Gonzalo Bueno vs Francesco Forti,2026-06-08T16:34:19.062728Z,Cattolica: Completed Match: Gonzalo Bueno vs Francesco Forti,1,0.0,23,0.5,0.9995,0.5434
+Cattolica: Gonzalo Bueno vs Francesco Forti,2026-06-08T16:34:19.062728Z,Cattolica: Gonzalo Bueno vs Francesco Forti,0,65203.778533999975,23,0.0005,0.6,0.4724
+Cattolica: Miguel Tobon vs Alexander Vasilev,2026-06-08T16:34:19.028954Z,Cattolica: Miguel Tobon vs Alexander Vasilev,0,39044.93375300002,19,0.0005,0.595,0.499
+Cattolica: Miguel Tobon vs Alexander Vasilev,2026-06-08T16:34:19.028954Z,Cattolica: Completed Match: Miguel Tobon vs Alexander Vasilev,1,0.0,19,0.5,0.9995,0.5526
+Cattolica: Gianmarco Ferrari vs Sergio Callejon,2026-06-08T16:34:19.000567Z,Cattolica: Completed Match: Gianmarco Ferrari vs Sergio Callejon,1,0.0,20,0.5,0.9995,0.55
+Cattolica: Gianmarco Ferrari vs Sergio Callejon,2026-06-08T16:34:19.000567Z,Cattolica: Gianmarco Ferrari vs Sergio Callejon,1,71815.31501100003,20,0.445,0.9995,0.5567
+Cattolica: Carlos Sanchez Jover vs Matej Dodig,2026-06-08T16:34:18.976236Z,Cattolica: Carlos Sanchez Jover vs Matej Dodig,1,32536.219278000015,20,0.37,0.9995,0.45
+Cattolica: Carlos Sanchez Jover vs Matej Dodig,2026-06-08T16:34:18.976236Z,Cattolica: Completed Match: Carlos Sanchez Jover vs Matej Dodig,1,0.0,20,0.5,0.9995,0.55
+Cattolica: Samuele Pieri vs Oriol Roca Batalla,2026-06-08T16:34:18.893564Z,Cattolica: Completed Match: Samuele Pieri vs Oriol Roca Batalla,1,0.0,26,0.485,0.9995,0.5398
+Cattolica: Samuele Pieri vs Oriol Roca Batalla,2026-06-08T16:34:18.893564Z,Cattolica: Samuele Pieri vs Oriol Roca Batalla,0,19533.901355000005,26,0.0005,0.635,0.3539
+Cattolica: Petr Nesterov vs Marco Cecchinato,2026-06-08T16:34:18.682726Z,Cattolica: Petr Nesterov vs Marco Cecchinato,0,65199.513332999995,22,0.0005,0.345,0.265
+Cattolica: Petr Nesterov vs Marco Cecchinato,2026-06-08T16:34:18.682726Z,Cattolica: Completed Match: Petr Nesterov vs Marco Cecchinato,1,0.0,22,0.5,0.9995,0.5454
+Cattolica: Federico Bondioli vs Carlo Alberto Caniato,2026-06-08T16:34:18.63212Z,Cattolica: Federico Bondioli vs Carlo Alberto Caniato,1,211827.76631900002,29,0.435,0.9995,0.5043
+Cattolica: Federico Bondioli vs Carlo Alberto Caniato,2026-06-08T16:34:18.63212Z,Cattolica: Completed Match: Federico Bondioli vs Carlo Alberto Caniato,1,4.9994,29,0.495,0.9995,0.5344
+Lyon: David Jorda Sanchis vs Alejo Sanchez Quilez,2026-06-08T16:34:12.527841Z,Lyon: Completed Match: David Jorda Sanchis vs Alejo Sanchez Quilez,1,0.0,25,0.5,0.9995,0.54
+Lyon: David Jorda Sanchis vs Alejo Sanchez Quilez,2026-06-08T16:34:12.527841Z,Lyon: David Jorda Sanchis vs Alejo Sanchez Quilez,1,34868.55949700003,25,0.255,0.9995,0.506
+Lyon: Max Alcala Gurri vs Dali Blanch,2026-06-08T16:34:10.280368Z,Lyon: Completed Match: Max Alcala Gurri vs Dali Blanch,1,0.0,21,0.5,0.9995,0.5476

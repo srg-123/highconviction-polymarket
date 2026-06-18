@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polymarket Backtester</title>
+<style>
+  :root {
+    --navy-900: #060d1a;
+    --navy-800: #0a1628;
+    --navy-700: #0f2040;
+    --navy-600: #162c54;
+    --navy-500: #1e3a6e;
+    --navy-400: #2a4f8c;
+    --amber-400: #fbbf24;
+    --amber-300: #fcd34d;
+    --amber-200: #fde68a;
+    --amber-500: #f59e0b;
+    --green:  #22c55e;
+    --red:    #ef4444;
+    --slate:  #94a3b8;
+    --text:   #e2e8f0;
+    --muted:  #64748b;
+    --border: #1e3a6e;
+    --radius: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--navy-900);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ── sidebar ── */
+  #sidebar {
+    width: 300px;
+    min-width: 300px;
+    background: var(--navy-800);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .sidebar-header {
+    padding: 20px 20px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-header h1 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--amber-400);
+    letter-spacing: .5px;
+  }
+
+  .sidebar-header p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  .sidebar-section {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-section label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--amber-300);
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    margin-bottom: 8px;
+  }
+
+  select, input[type="range"], input[type="number"] {
+    width: 100%;
+    background: var(--navy-700);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    padding: 8px 10px;
+    font-size: 13px;
+    outline: none;
+    appearance: none;
+  }
+  select:focus, input:focus {
+    border-color: var(--amber-400);
+  }
+
+  .field { margin-bottom: 12px; }
+  .field label {
+    display: block;
+    font-size: 11px;
+    color: var(--slate);
+    margin-bottom: 4px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  .range-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .range-row input[type="range"] {
+    flex: 1;
+    padding: 0;
+    height: 4px;
+    accent-color: var(--amber-400);
+    cursor: pointer;
+  }
+  .range-val {
+    font-size: 12px;
+    color: var(--amber-300);
+    width: 44px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--slate);
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  .toggle-row input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--amber-400);
+    cursor: pointer;
+  }
+
+  #run-btn {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 16px 20px;
+    background: var(--amber-500);
+    color: var(--navy-900);
+    border: none;
+    border-radius: var(--radius);
+    padding: 11px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: .4px;
+    transition: background .15s;
+  }
+  #run-btn:hover { background: var(--amber-400); }
+  #run-btn:disabled { background: var(--navy-600); color: var(--muted); cursor: default; }
+
+  #status-bar {
+    margin: 0 20px 16px;
+    font-size: 11px;
+    color: var(--muted);
+    min-height: 16px;
+    text-align: center;
+  }
+
+  /* ── main panel ── */
+  #main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* ── metric cards ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    background: var(--navy-800);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+  }
+
+  .card-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    margin-bottom: 8px;
+  }
+
+  .card-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--amber-400);
+    line-height: 1;
+  }
+
+  .card-value.green  { color: var(--green); }
+  .card-value.red    { color: var(--red); }
+  .card-value.white  { color: var(--text); }
+
+  .card-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── section headers ── */
+  .section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--amber-300);
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    margin-bottom: 12px;
+  }
+
+  /* ── calibration table ── */
+  .cal-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cal-row {
+    display: grid;
+    grid-template-columns: 90px 60px 1fr 64px 64px 80px;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: var(--navy-800);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 12px;
+  }
+
+  .cal-row.header {
+    background: var(--navy-700);
+    border-color: var(--navy-500);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+
+  .bar-wrap {
+    background: var(--navy-700);
+    border-radius: 3px;
+    height: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width .4s ease;
+  }
+
+  .edge-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .edge-pos { background: rgba(34,197,94,.15); color: var(--green); }
+  .edge-neg { background: rgba(239,68,68,.15);  color: var(--red); }
+  .edge-zero { background: var(--navy-700); color: var(--muted); }
+
+  /* ── bets table ── */
+  .bets-table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  thead th {
+    background: var(--navy-700);
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 10px 12px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--border);
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--navy-700);
+    transition: background .1s;
+  }
+  tbody tr:hover { background: var(--navy-700); }
+  tbody tr:last-child { border-bottom: none; }
+
+  tbody td {
+    padding: 9px 12px;
+    color: var(--text);
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .won-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .won-yes { background: rgba(34,197,94,.15); color: var(--green); }
+  .won-no  { background: rgba(239,68,68,.15);  color: var(--red); }
+
+  .pnl-pos { color: var(--green); font-weight: 600; }
+  .pnl-neg { color: var(--red);   font-weight: 600; }
+
+  .sport-pill {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    background: var(--navy-500);
+    color: var(--amber-300);
+  }
+
+  /* ── db stats bar ── */
+  #db-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: var(--navy-800);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  #db-stats span b { color: var(--amber-300); margin-left: 4px; }
+
+  /* ── empty state ── */
+  .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    text-align: center;
+    gap: 8px;
+  }
+  .empty svg { opacity: .3; }
+  .empty p { font-size: 13px; }
+  .empty small { font-size: 11px; }
+
+  /* ── spinner ── */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spinner {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 2px solid var(--navy-600);
+    border-top-color: var(--amber-400);
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── SIDEBAR ────────────────────────────────────────────────────────────── -->
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <h1>PM Backtester</h1>
+    <p>Polymarket historical strategy analysis</p>
+  </div>
+
+  <div class="sidebar-section">
+    <label>Sport</label>
+    <div class="field">
+      <select id="sel-sport">
+        <option value="">All Sports</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <label>Strategy</label>
+    <div class="field">
+      <select id="sel-strategy"></select>
+    </div>
+    <div id="strategy-params"></div>
+  </div>
+
+  <div class="sidebar-section">
+    <label>Backtest settings</label>
+    <div class="field">
+      <label>Entry window (% of market life)</label>
+      <div class="range-row">
+        <input type="range" id="entry-pct" min="10" max="90" value="50" step="5">
+        <span class="range-val" id="entry-pct-val">50%</span>
+      </div>
+    </div>
+    <div class="field">
+      <label>Bankroll ($)</label>
+      <input type="number" id="bankroll" value="1000" min="100" max="100000" step="100">
+    </div>
+    <div class="field">
+      <label>Bet sizing</label>
+      <select id="sizing-mode">
+        <option value="strategy">Strategy-defined (% of bankroll)</option>
+        <option value="fixed_dollar">Fixed unit size ($)</option>
+        <option value="fixed_pct">Fixed unit size (% of bankroll)</option>
+      </select>
+    </div>
+    <div class="field" id="unit-size-field" style="display:none">
+      <label>Unit size ($)</label>
+      <input type="number" id="unit-size" value="50" min="1" max="100000" step="1">
+    </div>
+    <div class="field" id="unit-pct-field" style="display:none">
+      <label>Unit size (% of bankroll)</label>
+      <div class="range-row">
+        <input type="range" id="unit-pct" min="1" max="25" value="5" step="1">
+        <span class="range-val" id="unit-pct-val">5%</span>
+      </div>
+    </div>
+    <div class="field">
+      <label class="toggle-row">
+        <input type="checkbox" id="hold-to-close" checked>
+        Hold to close (use final outcome)
+      </label>
+    </div>
+    <div class="field">
+      <label class="toggle-row">
+        <input type="checkbox" id="compounding">
+        Compounding (reinvest P&amp;L)
+      </label>
+    </div>
+    <div class="field">
+      <label class="toggle-row">
+        <input type="checkbox" id="limit-orders">
+        Simulate limit order fills
+      </label>
+    </div>
+    <div class="field" id="exit-pct-field" style="display:none">
+      <label class="toggle-row">
+        <input type="checkbox" id="take-profit-enabled" checked>
+        Take-profit price
+      </label>
+      <div class="range-row">
+        <input type="range" id="take-profit-price" min="5" max="95" value="50" step="1">
+        <span class="range-val" id="take-profit-price-val">0.50</span>
+      </div>
+    </div>
+    <div class="field" id="stop-loss-field" style="display:none">
+      <label class="toggle-row">
+        <input type="checkbox" id="stop-loss-enabled">
+        Stop-loss price
+      </label>
+      <div class="range-row">
+        <input type="range" id="stop-loss-price" min="5" max="95" value="15" step="1">
+        <span class="range-val" id="stop-loss-price-val">0.15</span>
+      </div>
+    </div>
+  </div>
+
+  <button id="run-btn">Run Backtest</button>
+  <div id="status-bar"></div>
+</aside>
+
+<!-- ── MAIN ───────────────────────────────────────────────────────────────── -->
+<main id="main">
+  <div id="db-stats">
+    <span>Loading database stats…</span>
+  </div>
+
+  <!-- metric cards -->
+  <div>
+    <div class="section-title">Performance</div>
+    <div class="cards" id="cards">
+      <div class="empty" style="grid-column:1/-1">
+        <p>Configure a strategy and click <b>Run Backtest</b></p>
+        <small>Or scroll down to view calibration data</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- calibration -->
+  <div>
+    <div class="section-title">Calibration — price bucket vs actual win rate</div>
+    <div id="cal-container">
+      <div class="empty"><p>Select a sport to load calibration</p></div>
+    </div>
+  </div>
+
+  <!-- bets -->
+  <div>
+    <div class="section-title">Sample bets</div>
+    <div id="bets-container">
+      <div class="empty"><p>Run a backtest to see individual bets</p></div>
+    </div>
+  </div>
+</main>
+
+<script>
+const API = '';  // same origin
+
+// ── utilities ────────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+const fmt = (n, digits=1) => n == null ? '—' : Number(n).toFixed(digits);
+const pct = n => n == null ? '—' : (n * 100).toFixed(1) + '%';
+const money = n => n == null ? '—' : (n >= 0 ? '+' : '') + '$' + Number(n).toFixed(0);
+const dollars = n => n == null ? '—' : '$' + Number(n).toFixed(0);
+
+async function apiFetch(path) {
+  const r = await fetch(API + path);
+  if (!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+
+function setStatus(msg, loading = false) {
+  $('status-bar').innerHTML = loading ? `<span class="spinner"></span>${msg}` : msg;
+}
+
+// ── DB stats ─────────────────────────────────────────────────────────────────
+async function loadStats() {
+  try {
+    const s = await apiFetch('/stats');
+    const bySport = (s.by_sport || []).map(r =>
+      `<span>${r.sport}: <b>${r.markets}</b> mkts</span>`
+    ).join('');
+    $('db-stats').innerHTML =
+      `<span>Events: <b>${s.total_events.toLocaleString()}</b></span>` +
+      `<span>Resolved markets: <b>${s.resolved_markets.toLocaleString()}</b></span>` +
+      `<span>Price points: <b>${s.price_data_points.toLocaleString()}</b></span>` +
+      (bySport || '<span>No data — run data_collector.py</span>');
+  } catch(e) {
+    $('db-stats').innerHTML = '<span>Could not reach API — is api.py running?</span>';
+  }
+}
+
+// ── sports dropdown ───────────────────────────────────────────────────────────
+async function loadSports() {
+  const sports = await apiFetch('/sports');
+  const sel = $('sel-sport');
+  sports.forEach(s => {
+    const o = document.createElement('option');
+    o.value = s.key; o.textContent = s.key;
+    sel.appendChild(o);
+  });
+}
+
+// ── strategy dropdown + dynamic params ───────────────────────────────────────
+let strategies = [];
+
+async function loadStrategies() {
+  strategies = await apiFetch('/strategies');
+  const sel = $('sel-strategy');
+  sel.innerHTML = '';
+  strategies.forEach(s => {
+    const o = document.createElement('option');
+    o.value = s.name; o.textContent = s.name.replace(/_/g, ' ');
+    sel.appendChild(o);
+  });
+  renderParams();
+}
+
+function renderParams() {
+  const name = $('sel-strategy').value;
+  const strat = strategies.find(s => s.name === name);
+  const container = $('strategy-params');
+  container.innerHTML = '';
+  if (!strat) return;
+
+  Object.entries(strat.params).forEach(([key, p]) => {
+    const div = document.createElement('div');
+    div.className = 'field';
+    div.innerHTML = `<label>${p.label || key}</label>`;
+
+    if (p.type === 'select') {
+      const sel = document.createElement('select');
+      sel.id = `param-${key}`;
+      p.options.forEach(opt => {
+        const o = document.createElement('option');
+        o.value = opt; o.textContent = opt;
+        if (opt === p.default) o.selected = true;
+        sel.appendChild(o);
+      });
+      div.appendChild(sel);
+    } else {
+      const row = document.createElement('div');
+      row.className = 'range-row';
+      const slider = document.createElement('input');
+      slider.type = 'range';
+      slider.id = `param-${key}`;
+      slider.min = p.min ?? 0; slider.max = p.max ?? 1;
+      slider.step = p.type === 'int' ? 1 : (p.max - p.min) / 40;
+      slider.value = p.default;
+      const valEl = document.createElement('span');
+      valEl.className = 'range-val';
+      valEl.id = `param-${key}-val`;
+      valEl.textContent = p.default;
+      slider.addEventListener('input', () => { valEl.textContent = Number(slider.value).toFixed(p.type === 'int' ? 0 : 2); });
+      row.appendChild(slider); row.appendChild(valEl);
+      div.appendChild(row);
+    }
+    container.appendChild(div);
+  });
+}
+
+$('sel-strategy').addEventListener('change', () => {
+  renderParams();
+  loadCalibration();
+});
+
+// ── entry pct slider ──────────────────────────────────────────────────────────
+$('entry-pct').addEventListener('input', () => {
+  $('entry-pct-val').textContent = $('entry-pct').value + '%';
+});
+
+// ── take-profit / stop-loss price sliders / hold-to-close toggle ───────────────
+$('take-profit-price').addEventListener('input', () => {
+  $('take-profit-price-val').textContent = (parseInt($('take-profit-price').value) / 100).toFixed(2);
+});
+
+$('stop-loss-price').addEventListener('input', () => {
+  $('stop-loss-price-val').textContent = (parseInt($('stop-loss-price').value) / 100).toFixed(2);
+});
+
+$('hold-to-close').addEventListener('change', () => {
+  const show = $('hold-to-close').checked ? 'none' : 'block';
+  $('exit-pct-field').style.display = show;
+  $('stop-loss-field').style.display = show;
+});
+
+// ── sizing mode ────────────────────────────────────────────────────────────────
+$('sizing-mode').addEventListener('change', () => {
+  const mode = $('sizing-mode').value;
+  $('unit-size-field').style.display = mode === 'fixed_dollar' ? 'block' : 'none';
+  $('unit-pct-field').style.display  = mode === 'fixed_pct'    ? 'block' : 'none';
+});
+
+$('unit-pct').addEventListener('input', () => {
+  $('unit-pct-val').textContent = $('unit-pct').value + '%';
+});
+
+// ── calibration ───────────────────────────────────────────────────────────────
+async function loadCalibration() {
+  const sport = $('sel-sport').value || null;
+  const qs = sport ? `?sport=${sport}` : '';
+  try {
+    const rows = await apiFetch('/calibration' + qs);
+    renderCalibration(rows);
+  } catch(e) {
+    $('cal-container').innerHTML = `<div class="empty"><p>${e.message}</p></div>`;
+  }
+}
+
+function renderCalibration(rows) {
+  if (!rows || rows.length === 0) {
+    $('cal-container').innerHTML = '<div class="empty"><p>No calibration data — collect some markets first</p></div>';
+    return;
+  }
+  let html = `<div class="cal-grid">
+    <div class="cal-row header">
+      <span>Bucket</span><span>N</span><span>Win rate vs market</span>
+      <span>Market</span><span>Actual</span><span>Edge</span>
+    </div>`;
+
+  rows.forEach(r => {
+    const mktW = r.market_prob * 100;
+    const actW = r.actual_win_rate * 100;
+    const edgeClass = r.edge > 0.01 ? 'edge-pos' : r.edge < -0.01 ? 'edge-neg' : 'edge-zero';
+    const sign = r.edge >= 0 ? '+' : '';
+    const barColor = r.edge > 0.01 ? 'var(--green)' : r.edge < -0.01 ? 'var(--red)' : 'var(--navy-500)';
+
+    html += `<div class="cal-row">
+      <span>${r.bucket}</span>
+      <span style="color:var(--muted)">${r.count.toLocaleString()}</span>
+      <div>
+        <div class="bar-wrap">
+          <div class="bar-fill" style="width:${mktW}%;background:var(--navy-400)"></div>
+        </div>
+        <div class="bar-wrap" style="margin-top:3px">
+          <div class="bar-fill" style="width:${actW}%;background:${barColor}"></div>
+        </div>
+      </div>
+      <span>${pct(r.market_prob)}</span>
+      <span>${pct(r.actual_win_rate)}</span>
+      <span><span class="edge-badge ${edgeClass}">${sign}${pct(r.edge)}</span></span>
+    </div>`;
+  });
+
+  html += '</div>';
+  $('cal-container').innerHTML = html;
+}
+
+$('sel-sport').addEventListener('change', loadCalibration);
+
+// ── backtest ──────────────────────────────────────────────────────────────────
+$('run-btn').addEventListener('click', runBacktest);
+
+async function runBacktest() {
+  const btn = $('run-btn');
+  btn.disabled = true;
+  setStatus('Running backtest…', true);
+
+  const sport    = $('sel-sport').value;
+  const strategy = $('sel-strategy').value;
+  const entryPct = parseInt($('entry-pct').value) / 100;
+  const bankroll = parseFloat($('bankroll').value);
+  const holdToClose = $('hold-to-close').checked;
+  const takeProfitEnabled = $('take-profit-enabled').checked;
+  const takeProfitPrice = parseInt($('take-profit-price').value) / 100;
+  const stopLossEnabled = $('stop-loss-enabled').checked;
+  const stopLossPrice = parseInt($('stop-loss-price').value) / 100;
+  const compounding = $('compounding').checked;
+  const sizingMode = $('sizing-mode').value;
+  const unitSize = parseFloat($('unit-size').value);
+  const unitPct = parseInt($('unit-pct').value) / 100;
+  const limitOrders = $('limit-orders').checked;
+
+  let qs = `?strategy=${strategy}&entry_pct=${entryPct}&bankroll=${bankroll}&hold_to_close=${holdToClose}&compounding=${compounding}&sizing_mode=${sizingMode}&limit_orders=${limitOrders}`;
+  if (sizingMode === 'fixed_dollar') qs += `&unit_size=${unitSize}`;
+  if (sizingMode === 'fixed_pct')    qs += `&unit_pct=${unitPct}`;
+  if (!holdToClose) {
+    if (takeProfitEnabled) qs += `&take_profit_price=${takeProfitPrice}`;
+    if (stopLossEnabled)   qs += `&stop_loss_price=${stopLossPrice}`;
+  }
+  if (sport) qs += `&sport=${sport}`;
+
+  // collect strategy params
+  const strat = strategies.find(s => s.name === strategy);
+  if (strat) {
+    Object.keys(strat.params).forEach(key => {
+      const el = document.getElementById(`param-${key}`);
+      if (el) qs += `&${key}=${encodeURIComponent(el.value)}`;
+    });
+  }
+
+  try {
+    const result = await apiFetch('/backtest' + qs);
+    renderCards(result);
+    renderBets(result.bets || []);
+    setStatus(`Done — ${result.total_bets} bets analysed`);
+  } catch(e) {
+    setStatus('Error: ' + e.message);
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function renderCards(r) {
+  const roiClass = r.roi > 0 ? 'green' : r.roi < 0 ? 'red' : 'white';
+  const pnlClass = r.total_pnl > 0 ? 'green' : r.total_pnl < 0 ? 'red' : 'white';
+
+  const pnlCard = r.compounding ? `
+    <div class="card">
+      <div class="card-label">Final bankroll</div>
+      <div class="card-value ${pnlClass}">$${r.final_bankroll.toLocaleString()}</div>
+      <div class="card-sub">from $${r.starting_bankroll.toLocaleString()} (${money(r.total_pnl)})</div>
+    </div>` : `
+    <div class="card">
+      <div class="card-label">Net P&amp;L</div>
+      <div class="card-value ${pnlClass}">${money(r.total_pnl)}</div>
+      <div class="card-sub">on $${r.starting_bankroll.toLocaleString()} bankroll</div>
+    </div>`;
+
+  $('cards').innerHTML = `
+    <div class="card">
+      <div class="card-label">Total bets</div>
+      <div class="card-value white">${r.total_bets.toLocaleString()}</div>
+      <div class="card-sub">${r.sport || 'all sports'} · ${r.strategy.replace(/_/g,' ')}</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Win rate</div>
+      <div class="card-value ${r.win_rate > 0.5 ? 'green' : 'white'}">${pct(r.win_rate)}</div>
+      <div class="card-sub">${r.wins}W / ${r.losses}L</div>
+    </div>
+    <div class="card">
+      <div class="card-label">ROI</div>
+      <div class="card-value ${roiClass}">${pct(r.roi)}</div>
+      <div class="card-sub">return on wagered</div>
+    </div>
+    ${pnlCard}
+    <div class="card">
+      <div class="card-label">Total wagered</div>
+      <div class="card-value white">$${r.total_wagered.toLocaleString()}</div>
+      <div class="card-sub">cumulative stake</div>
+    </div>
+  `;
+}
+
+function renderBets(bets) {
+  if (!bets || bets.length === 0) {
+    $('bets-container').innerHTML = '<div class="empty"><p>No bets generated by this strategy</p></div>';
+    return;
+  }
+  const rows = bets.map(b => {
+    const wonBadge = b.won
+      ? `<span class="won-badge won-yes">WIN</span>`
+      : `<span class="won-badge won-no">LOSS</span>`;
+    const pnlHtml = `<span class="${b.pnl >= 0 ? 'pnl-pos' : 'pnl-neg'}">${money(b.pnl)}</span>`;
+    const ts = b.timestamp ? new Date(b.timestamp * 1000).toLocaleDateString() : '—';
+    return `<tr>
+      <td><span class="sport-pill">${b.sport}</span></td>
+      <td title="${b.question}">${b.question}</td>
+      <td>${b.bet.toUpperCase()}</td>
+      <td>${pct(b.entry_price)}</td>
+      <td>${b.exit_price == null ? '—' : pct(b.exit_price)}</td>
+      <td>${dollars(b.stake)}</td>
+      <td>${wonBadge}</td>
+      <td>${pnlHtml}</td>
+      <td style="color:var(--muted)">${b.reason}</td>
+      <td style="color:var(--muted)">${ts}</td>
+    </tr>`;
+  }).join('');
+
+  $('bets-container').innerHTML = `
+    <div class="bets-table-wrap">
+      <table>
+        <thead><tr>
+          <th>Sport</th><th>Market</th><th>Side</th><th>Entry</th><th>Exit</th>
+          <th>Stake</th><th>Result</th><th>P&amp;L</th><th>Reason</th><th>Date</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+// ── init ──────────────────────────────────────────────────────────────────────
+async function init() {
+  await loadStats();
+  await Promise.all([loadSports(), loadStrategies()]);
+  await loadCalibration();
+}
+
+init().catch(console.error);
+</script>
+</body>
+</html>
