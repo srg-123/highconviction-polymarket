@@ -174,6 +174,7 @@ def run_backtest(
     take_profit_price: Optional[float] = None,
     stop_loss_price: Optional[float] = None,
     sl_slippage: float = 0.0,
+    assumed_spread: float = 0.0,
     compounding: bool = False,
     sizing_mode: str = "strategy",
     unit_size: float = 50.0,
@@ -289,7 +290,14 @@ def run_backtest(
 
             bet_side    = signal["bet"]
             size_frac   = signal["size_fraction"]
-            entry_price = snapshot["price"]
+            # Entry at ask (mid + half-spread) for YES buys,
+            # bid (mid - half-spread) for NO buys.
+            half_spread = assumed_spread / 2.0
+            mid_price   = snapshot["price"]
+            if bet_side == "yes":
+                entry_price = min(0.99, mid_price + half_spread)
+            else:
+                entry_price = max(0.01, mid_price - half_spread)
             entry_idx   = i
             entry_timestamp = snapshot["timestamp"]
 
@@ -351,12 +359,18 @@ def run_backtest(
                     # For stop-loss exits also subtract any additional slippage.
                     actual_price = history[fill_idx]["price"]
                     if exit_kind == "sl":
+                        # Exit via marketable limit sell at bid - slippage.
+                        # bid = mid - half_spread; subtract additional slippage on top.
                         if bet_side == "yes":
-                            exit_price = max(0.01, actual_price - sl_slippage)
+                            exit_price = max(0.01, actual_price - half_spread - sl_slippage)
                         else:
-                            exit_price = min(0.99, actual_price + sl_slippage)
+                            exit_price = min(0.99, actual_price + half_spread + sl_slippage)
                     else:
-                        exit_price = actual_price
+                        # TP exit: selling into the bid side (paying spread to exit)
+                        if bet_side == "yes":
+                            exit_price = max(0.01, actual_price - half_spread)
+                        else:
+                            exit_price = min(0.99, actual_price + half_spread)
                     ratio = (exit_price / entry_price) if bet_side == "yes" \
                         else (1.0 - exit_price) / (1.0 - entry_price)
                     won = ratio > 1.0

@@ -8,22 +8,25 @@ Built entirely from scratch — data collection, strategy engine, walk-forward v
 
 ## Key Results
 
-The best strategy found — **momentum reversal on ATP underdogs** — was validated using walk-forward analysis (train on early data, test on unseen later data):
+The best strategy found — **pre-match momentum reversal on ATP match-winner markets** — was validated using walk-forward analysis (train on early data, test on unseen later data):
 
 | Period | Bets | Win Rate | ROI |
 |--------|------|----------|-----|
 | Training (Apr 11 – Jun 9) | 273 | 41.0% | +10.4% |
 | **Out-of-sample test (Jun 9 – present)** | **36** | **52.8%** | **+29.5%** |
 
-The out-of-sample win rate (52.8%) is *higher* than training — on markets priced at ≤20% to win. That gap between implied probability and actual win rate is the edge the strategy is exploiting.
+The out-of-sample win rate (52.8%) is *higher* than training. That gap between implied probability and actual win rate is the edge being exploited.
 
-Slippage stress-testing confirmed the edge survives realistic exit execution (actual fill price, not just the trigger):
+Execution cost stress-testing confirmed the edge survives realistic live trading conditions:
 
-| Exit model | ROI |
-|------------|-----|
-| Trigger price (optimistic) | ~+22% |
-| Actual market price at trigger | +13.8% |
-| Actual price + 2¢ slippage | +12.2% |
+| Execution model | ROI |
+|-----------------|-----|
+| Baseline (mid prices, no costs) | +14.1% |
+| Entry at ask + exit at bid (2¢ spread modeled) | +8.3% |
+| + 1¢ additional SL slippage | +7.6% |
+| Stress test (3¢ spread + 2¢ SL slippage) | +5.4% |
+
+The strategy remains profitable through a 5¢ round-trip execution cost — the realistic ceiling for liquid ATP markets on Polymarket.
 
 ---
 
@@ -31,16 +34,22 @@ Slippage stress-testing confirmed the edge survives realistic exit execution (ac
 
 **`momentum_reversal` — mom_fast variant**
 
-Every hour, Polymarket records a price for each player's win contract. This strategy:
+Every ATP match on Polymarket is a binary market: one player's YES contract and the other player's YES contract, priced so they sum to ~$1. The strategy watches the overnight pre-match window — the 12–20 hours between market creation and match start — and fades overreactions in either direction.
 
-1. Looks at a player's price now vs 5 hours ago
-2. If it dropped 5+ percentage points (market overreacted against the underdog)
-3. **And** the player is priced at 20% or below (clear underdog, overreaction is largest here)
-4. Bets YES — expecting the price to drift back up
+**Signal:** compare each player's YES price now vs 5 hours ago.
 
-Stop-loss at 10¢: if the market disagrees further, exit rather than hold to zero.
+- If a player's YES price **dropped** 5+ cents in 5 hours → buy that player's YES contract, expecting the price to recover.
+- If a player's YES price **rose** 5+ cents in 5 hours → buy the *opposing* player's YES contract (the one that got cheap as money poured into the other side), expecting the same reversion.
 
-Optimal stake: **15% of bankroll per bet**, compounding. Found on training data only — not tuned on the test period.
+Both signals are structurally identical: you're buying the YES contract that the market just moved away from, expecting it to drift back.
+
+**Why it works:** Pre-match betting pressure concentrates on one player at a time — news, social media, sharp money — and tends to overshoot. The strategy buys the contract that got hit, before the market corrects itself.
+
+**Why pre-match only:** Polymarket creates match markets the evening before the match. The first 20% of a market's lifetime is almost entirely pre-match (confirmed using Polymarket's actual `startTime` field — 308 of 309 signals fire before the match begins). In-match price moves reflect real gameplay, not sentiment overreaction, so the signal does not apply once the match starts.
+
+**Stop-loss at 10¢:** if the position continues moving against you, exit at best bid rather than ride to zero.
+
+**Optimal stake: 15% of bankroll per bet**, compounding. Chosen on training data only — never exposed to the test period. For live trading, start at 2–5%.
 
 ---
 
@@ -58,19 +67,27 @@ Optimal stake: **15% of bankroll per bet**, compounding. Found on training data 
 ## Methodology
 
 ### 1. Data Collection
-Pulls all resolved ATP/WTA events from Polymarket's public Gamma API, then fetches hourly price histories from the CLOB API. Async collection with a concurrency of 20 requests. Runs nightly via LaunchAgent to build the live dataset.
+Pulls all resolved ATP/WTA events from Polymarket's public Gamma API, then fetches hourly price histories from the CLOB API. Async collection with a concurrency of 20 requests. Runs nightly via LaunchAgent to build the live dataset. Each event record includes `startTime` — the actual match kickoff time from Polymarket — used to enforce the pre-match trading window.
 
 ### 2. Strategy Grid Search
-Tested 5,500 parameter combinations across 22 strategy variants × entry prices × take-profit/stop-loss levels × sizing modes. Compounding, fixed-percentage sizing only (removed strategy-defined sizing — it has no theoretical basis without an independent probability estimate).
+Tested 5,500 parameter combinations across 22 strategy variants × entry windows × stop-loss levels × sizing modes. Fixed-percentage compounding sizing only (strategy-defined sizing has no theoretical basis without an independent probability estimate).
 
 ### 3. Walk-Forward Validation
-To avoid overfitting, the top grid-search strategies were re-validated using chronological folds: train on earlier data, test on a later unseen period. Only strategies that were profitable across all test folds were kept. This is how `mom_fast` and `mom_sensitive` were selected.
+To avoid overfitting, the top strategies were re-validated using a chronological split: train on earlier data, test on a held-out later period. Only strategies profitable on the unseen test period were kept. This is how `mom_fast` and `mom_sensitive` were selected.
 
-### 4. Stake Size Selection
+### 4. Stake Size Selection (Out-of-Sample)
 Ran a percentage sweep (1%–20% of bankroll) on the **training period only**, then evaluated the chosen percentage on the **held-out test period**. The 15% figure was never exposed to test data during selection.
 
-### 5. Slippage Testing
-The initial stop-loss model assumed exact fills at the trigger price. Updated to use the actual recorded market price at the exit tick (which can gap lower in thin markets). Added a configurable `sl_slippage` parameter for additional stress-testing.
+### 5. Pre-Match Window Validation
+Initially classified bets as pre-match vs in-match using a price-velocity heuristic, which showed 89% in-match — clearly wrong. Switched to Polymarket's actual `startTime` field (match kickoff time). Result: 308 of 309 signals fire pre-match. Markets are created the evening before matches; the first 20% of market lifetime is well before kickoff. The 1 in-match bet was a loss. This confirms the strategy is a pre-match sentiment fade, not a live in-play system.
+
+### 6. Execution Cost Modeling
+The initial backtester used mid prices for both entry and exit. Updated to model realistic live execution:
+- **Entry at ask** (`mid + half-spread`) — you pay the spread when buying
+- **Stop-loss exit at bid** (`mid - half-spread - slippage`) — you pay the spread again when selling
+- Resolution payouts are unchanged (Polymarket settles at $1.00 or $0.00, no spread cost)
+
+The `assumed_spread` and `sl_slippage` parameters are configurable for stress-testing. Default live simulation uses 2¢ spread + 1¢ SL slippage.
 
 ---
 
@@ -110,7 +127,7 @@ python3 api.py
 # → open http://localhost:8000
 ```
 
-**Run the validated strategy:**
+**Run the validated strategy with realistic execution costs:**
 ```bash
 python3 - <<'EOF'
 from backtester import run_backtest
@@ -124,7 +141,10 @@ r = run_backtest(
     stop_loss_price=0.10,
     compounding=True,
     sizing_mode="fixed_pct",
-    unit_pct=0.15,
+    unit_pct=0.05,          # 5% for live; 15% is the research optimum
+    assumed_spread=0.02,    # entry at ask, exit at bid
+    sl_slippage=0.01,       # additional stop-loss slippage
+    trade_window="prematch",
 )
 print(f"Bets: {r['total_bets']}  Win rate: {r['win_rate']:.1%}  ROI: {r['roi']:+.1%}")
 EOF
@@ -142,12 +162,12 @@ launchctl load ~/Library/LaunchAgents/com.pmbacktester.collect.plist
 ## Database Schema
 
 ```sql
-events        (id, title, series_id, sport, start_date, end_date)
+events        (id, title, series_id, sport, start_date, end_date, game_start_time)
 markets       (id, event_id, question, yes_token_id, resolved_outcome, volume)
 price_history (market_id, timestamp, price)   -- hourly YES-price snapshots
 ```
 
-`sample_data.csv` shows 500 real ATP match rows with summary price statistics.
+`game_start_time` stores Polymarket's actual match kickoff time, used to enforce the pre-match trading window. `sample_data.csv` shows 500 real ATP match rows with summary price statistics.
 
 ---
 
