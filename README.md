@@ -24,9 +24,9 @@ Execution cost stress-testing confirmed the edge survives realistic live trading
 | Baseline (mid prices, no costs) | +14.1% |
 | Entry at ask + exit at bid (2¢ spread modeled) | +8.3% |
 | + 1¢ additional SL slippage | +7.6% |
-| Stress test (3¢ spread + 2¢ SL slippage) | +5.4% |
+| Stress test (3¢ spread + 2¢ SL slippage) | +4.4% |
 
-The strategy remains profitable through a 5¢ round-trip execution cost — the realistic ceiling for liquid ATP markets on Polymarket.
+All figures are over 308 bets across 37 days (May 10 – Jun 16 2026), ~8 signals per day. The strategy remains profitable through a 5¢ round-trip execution cost — the realistic ceiling for liquid ATP markets on Polymarket.
 
 ---
 
