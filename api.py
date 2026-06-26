@@ -8,6 +8,8 @@ Endpoints:
   GET /strategies  — list of strategies + param schemas
   GET /calibration — calibration table (?sport=ATP)
   GET /backtest    — run backtest (?sport=ATP&strategy=price_threshold&...)
+  POST /strategies/generate — turn a plain-English strategy description into
+                              an executable predicate via Claude, register it
 """
 
 import sqlite3
@@ -16,13 +18,17 @@ from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import HTMLResponse
+from pydantic import BaseModel
 
+import nl_strategy
 from backtester import SPORT_SERIES, calibration_only, run_backtest
 from strategies import STRATEGIES
 
 app = FastAPI(title="Polymarket Backtester", version="1.0.0")
 
 DB_PATH = "backtest.db"
+
+nl_strategy.load_generated_strategies()
 
 
 def _db():
@@ -95,6 +101,20 @@ def strategies():
         {"name": name, "description": info["description"], "params": info["params"]}
         for name, info in STRATEGIES.items()
     ]
+
+
+# ── natural-language strategy generation ─────────────────────────────────────
+
+class GenerateStrategyRequest(BaseModel):
+    description: str
+
+
+@app.post("/strategies/generate")
+def generate_strategy(req: GenerateStrategyRequest):
+    try:
+        return nl_strategy.generate_strategy_from_text(req.description)
+    except Exception as exc:
+        raise HTTPException(400, str(exc))
 
 
 # ── calibration ───────────────────────────────────────────────────────────────

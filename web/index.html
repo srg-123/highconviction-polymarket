@@ -412,6 +412,15 @@
   </div>
 
   <div class="sidebar-section">
+    <label>Describe a strategy (AI)</label>
+    <div class="field">
+      <textarea id="nl-description" rows="3" placeholder="e.g. Buy a player's YES contract if it drops 5+ cents in the last 3 hours before the match" style="width:100%;background:var(--navy-700);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);padding:8px 10px;font-size:12px;font-family:inherit;resize:vertical;"></textarea>
+    </div>
+    <button id="generate-btn" style="display:block;width:100%;background:var(--navy-600);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);padding:9px;font-size:12px;font-weight:600;cursor:pointer;">Generate predicate</button>
+    <div id="generate-status" style="font-size:11px;color:var(--muted);margin-top:6px;"></div>
+  </div>
+
+  <div class="sidebar-section">
     <label>Strategy</label>
     <div class="field">
       <select id="sel-strategy"></select>
@@ -638,6 +647,33 @@ function renderParams() {
 $('sel-strategy').addEventListener('change', () => {
   renderParams();
   loadCalibration();
+});
+
+// ── NL strategy generation ────────────────────────────────────────────────────
+$('generate-btn').addEventListener('click', async () => {
+  const desc = $('nl-description').value.trim();
+  if (!desc) return;
+  const btn = $('generate-btn');
+  btn.disabled = true;
+  $('generate-status').textContent = 'Generating…';
+  try {
+    const r = await fetch(API + '/strategies/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ description: desc }),
+    });
+    if (!r.ok) throw new Error(await r.text());
+    const result = await r.json();
+    await loadStrategies();
+    $('sel-strategy').value = result.name;
+    renderParams();
+    loadCalibration();
+    $('generate-status').textContent = `Added "${result.name}" — ${result.description}`;
+  } catch (e) {
+    $('generate-status').textContent = 'Error: ' + e.message;
+  } finally {
+    btn.disabled = false;
+  }
 });
 
 // ── entry pct slider ──────────────────────────────────────────────────────────

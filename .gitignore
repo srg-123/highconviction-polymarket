@@ -1,4 +1,5 @@
 backtest.db
+generated_strategies.json
 __pycache__/
 *.pyc
 *.pyo

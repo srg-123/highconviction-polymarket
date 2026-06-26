@@ -59,6 +59,7 @@ Both signals are structurally identical: you're buying the YES contract that the
 - **SQLite** — local database (5,478 ATP events, 7,314 WTA markets, ~270K price points)
 - **asyncio + aiohttp** — concurrent price history collection (~20x faster than sequential)
 - **FastAPI** — REST API backend
+- **Anthropic Claude** — converts plain-English strategy descriptions into Python predicates, sandboxed before execution
 - **Vanilla JS** — single-file dark-themed frontend (no build step)
 - **macOS LaunchAgent** — automated daily data collection at 6am
 
@@ -94,16 +95,18 @@ The `assumed_spread` and `sl_slippage` parameters are configurable for stress-te
 ## Project Structure
 
 ```
-data_collector.py   — async pipeline: Gamma API events → CLOB price history → SQLite
-strategies.py       — pluggable strategy registry (5 strategies, easy to add more)
-backtester.py       — walk price histories, apply strategy, compute metrics
-grid_search.py      — exhaustive parameter sweep across all strategy variants
-walk_forward.py     — chronological train/test validation framework
-pct_sweep.py        — out-of-sample stake size optimization
-api.py              — FastAPI backend
-web/index.html      — interactive frontend (single file, no build step)
-collect.sh          — LaunchAgent wrapper for nightly collection
-sample_data.csv     — 500 real ATP match-winner markets (schema preview)
+data_collector.py        — async pipeline: Gamma API events → CLOB price history → SQLite
+strategies.py             — pluggable strategy registry (5 strategies, easy to add more)
+nl_strategy.py            — plain-English → Python predicate via Claude, AST-sandboxed before registration
+backtester.py             — walk price histories, apply strategy, compute metrics
+grid_search.py            — exhaustive parameter sweep across all strategy variants
+walk_forward.py           — chronological train/test validation framework
+pct_sweep.py              — out-of-sample stake size optimization
+api.py                    — FastAPI backend
+web/index.html            — interactive frontend (single file, no build step)
+collect.sh                — LaunchAgent wrapper for nightly collection
+sample_data.csv           — 500 real ATP match-winner markets (schema preview)
+generated_strategies.json — predicates generated from plain-English descriptions (created on first use)
 ```
 
 ---
@@ -113,8 +116,14 @@ sample_data.csv     — 500 real ATP match-winner markets (schema preview)
 **Requirements:** Python 3.11+, pip
 
 ```bash
-pip install fastapi uvicorn requests aiohttp certifi
+pip install fastapi uvicorn requests aiohttp certifi anthropic
 ```
+
+To use the plain-English strategy generator, set an Anthropic API key:
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+```
+Without it, everything else (manual strategies, backtests, the UI) still works — `/strategies/generate` is the only endpoint that needs it.
 
 **Collect data** (builds `backtest.db` — takes 20–60 min first run):
 ```bash
@@ -189,6 +198,16 @@ STRATEGIES["my_strategy"] = {
 ```
 
 Restart the API and it appears in the frontend immediately.
+
+---
+
+## Generating a Strategy from a Description
+
+Writing a strategy by hand means editing `strategies.py` and restarting the API. The "Describe a strategy" box in the UI skips that: type a plain-English description (e.g. *"buy a player's YES contract if it drops 5+ cents in the last 3 hours before the match"*), and Claude converts it into a function matching the same `fn(snapshot, history, **params)` contract every hand-written strategy uses.
+
+The generated code never runs unchecked. `nl_strategy.py` walks the returned source through an AST allowlist before execution — rejecting imports, file or network access, `exec`/`eval`, dunder attribute access, and unbounded `while` loops — then executes it in a namespace with a restricted builtins set. Only code that survives validation gets registered into `STRATEGIES` and is immediately backtestable through the existing engine. Accepted predicates are persisted to `generated_strategies.json` and re-validated on every API restart.
+
+This is additive to, not a replacement for, hand-written strategies — both paths land in the same registry and run through the same `backtester.py`.
 
 ---
 
