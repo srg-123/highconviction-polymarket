@@ -3,11 +3,12 @@ Backtester: walks resolved market price histories, applies strategies,
 computes calibration tables and performance metrics.
 """
 
+import os
 import sqlite3
 from collections import defaultdict
 from typing import Optional
 
-DB_PATH = "backtest.db"
+DB_PATH = os.environ.get("DB_PATH", "backtest.db")
 
 SPORT_SERIES: dict[str, int] = {
     "ATP": 10365,

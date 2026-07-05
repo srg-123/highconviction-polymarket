@@ -9,6 +9,7 @@ using asyncio + aiohttp, making collection ~10-20x faster than sequential.
 import asyncio
 import json
 import logging
+import os
 import sqlite3
 import time
 from datetime import datetime
@@ -24,7 +25,7 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s %(message)s",
 )
 
-DB_PATH     = "backtest.db"
+DB_PATH     = os.environ.get("DB_PATH", "backtest.db")
 GAMMA_API   = "https://gamma-api.polymarket.com"
 CLOB_API    = "https://clob.polymarket.com"
 CONCURRENCY = 20   # concurrent price-history requests

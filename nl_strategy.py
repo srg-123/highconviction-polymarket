@@ -17,6 +17,7 @@ generated_strategies.json so they survive an API restart.
 
 import ast
 import json
+import os
 import re
 from pathlib import Path
 
@@ -24,8 +25,9 @@ import anthropic
 
 from strategies import STRATEGIES
 
+GENERATED_PATH = Path(os.environ.get("DB_PATH", "backtest.db")).parent / "generated_strategies.json"
+
 MODEL = "claude-sonnet-4-6"
-GENERATED_PATH = Path("generated_strategies.json")
 
 _SYSTEM_PROMPT = """You convert a trader's plain-English description of a Polymarket trading strategy into a single Python function.
 

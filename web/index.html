@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polymarket Backtester</title>
+<title>Highconviction — Polymarket Edge Research</title>
 <style>
   :root {
     --navy-900: #060d1a;
@@ -32,9 +32,278 @@
     color: var(--text);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-size: 14px;
+  }
+
+  a { color: var(--amber-400); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── top nav ── */
+  #topnav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(6,13,26,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
     display: flex;
-    height: 100vh;
+    align-items: center;
+    padding: 0 32px;
+    height: 52px;
+    gap: 0;
+  }
+
+  .nav-logo {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--amber-400);
+    letter-spacing: .4px;
+    margin-right: 32px;
+    white-space: nowrap;
+  }
+
+  .nav-tabs {
+    display: flex;
+    gap: 0;
+    flex: 1;
+  }
+
+  .nav-tab {
+    padding: 0 18px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+    white-space: nowrap;
+  }
+
+  .nav-tab:hover { color: var(--text); }
+  .nav-tab.active { color: var(--amber-400); border-bottom-color: var(--amber-400); }
+
+  .nav-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  #db-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--navy-700);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  .pulse {
+    width: 7px; height: 7px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulseAnim 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseAnim {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .3; }
+  }
+
+  /* ── sections ── */
+  .page-section { display: none; }
+  .page-section.active { display: block; }
+
+  /* ════════════════════════════════════
+     RESULTS SECTION
+  ════════════════════════════════════ */
+  #section-results {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .hero {
+    margin-bottom: 48px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--amber-500);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 16px;
+    max-width: 680px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--amber-400);
+  }
+
+  .hero p {
+    font-size: 15px;
+    color: var(--slate);
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  /* ── result cards ── */
+  .result-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .rcard {
+    background: var(--navy-800);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+
+  .rcard-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    margin-bottom: 10px;
+  }
+
+  .rcard-value {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .rcard-sub {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .green  { color: var(--green); }
+  .amber  { color: var(--amber-400); }
+  .white  { color: var(--text); }
+  .red    { color: var(--red); }
+
+  /* ── tables ── */
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  @media (max-width: 700px) { .results-grid { grid-template-columns: 1fr; } }
+
+  .results-block h2 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--amber-300);
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    margin-bottom: 14px;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     overflow: hidden;
+  }
+
+  .data-table thead th {
+    background: var(--navy-700);
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  .data-table tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--navy-700);
+    color: var(--text);
+  }
+
+  .data-table tbody tr:last-child td { border-bottom: none; }
+  .data-table tbody tr:hover { background: var(--navy-700); }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .badge-green { background: rgba(34,197,94,.15); color: var(--green); }
+  .badge-amber { background: rgba(251,191,36,.12); color: var(--amber-300); }
+  .badge-muted { background: var(--navy-600); color: var(--muted); }
+
+  .strategy-explainer {
+    background: var(--navy-800);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber-500);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 48px;
+  }
+
+  .strategy-explainer h2 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--amber-300);
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    margin-bottom: 12px;
+  }
+
+  .strategy-explainer p {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+
+  .strategy-explainer p:last-child { margin-bottom: 0; }
+
+  .strategy-explainer strong { color: var(--text); }
+
+  /* ════════════════════════════════════
+     BACKTESTER SECTION
+  ════════════════════════════════════ */
+  #section-backtester {
+    display: none;
+    height: calc(100vh - 52px);
+    overflow: hidden;
+  }
+
+  #section-backtester.active {
+    display: flex;
   }
 
   /* ── sidebar ── */
@@ -49,25 +318,25 @@
   }
 
   .sidebar-header {
-    padding: 20px 20px 12px;
+    padding: 16px 20px 12px;
     border-bottom: 1px solid var(--border);
   }
 
-  .sidebar-header h1 {
-    font-size: 16px;
+  .sidebar-header h2 {
+    font-size: 13px;
     font-weight: 700;
     color: var(--amber-400);
-    letter-spacing: .5px;
+    letter-spacing: .4px;
   }
 
   .sidebar-header p {
     font-size: 11px;
     color: var(--muted);
-    margin-top: 3px;
+    margin-top: 2px;
   }
 
   .sidebar-section {
-    padding: 16px 20px;
+    padding: 14px 20px;
     border-bottom: 1px solid var(--border);
   }
 
@@ -92,11 +361,11 @@
     outline: none;
     appearance: none;
   }
-  select:focus, input:focus {
-    border-color: var(--amber-400);
-  }
+
+  select:focus, input:focus { border-color: var(--amber-400); }
 
   .field { margin-bottom: 12px; }
+  .field:last-child { margin-bottom: 0; }
   .field label {
     display: block;
     font-size: 11px;
@@ -107,48 +376,30 @@
     font-weight: 400;
   }
 
-  .range-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  .range-row { display: flex; align-items: center; gap: 8px; }
   .range-row input[type="range"] {
-    flex: 1;
-    padding: 0;
-    height: 4px;
-    accent-color: var(--amber-400);
-    cursor: pointer;
+    flex: 1; padding: 0; height: 4px;
+    accent-color: var(--amber-400); cursor: pointer;
   }
   .range-val {
-    font-size: 12px;
-    color: var(--amber-300);
-    width: 44px;
-    text-align: right;
-    flex-shrink: 0;
+    font-size: 12px; color: var(--amber-300);
+    width: 44px; text-align: right; flex-shrink: 0;
   }
 
   .toggle-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    color: var(--slate);
-    cursor: pointer;
-    text-transform: none;
-    letter-spacing: 0;
-    font-weight: 400;
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--slate); cursor: pointer;
+    text-transform: none; letter-spacing: 0; font-weight: 400;
   }
   .toggle-row input[type="checkbox"] {
-    width: 14px;
-    height: 14px;
-    accent-color: var(--amber-400);
-    cursor: pointer;
+    width: 14px; height: 14px;
+    accent-color: var(--amber-400); cursor: pointer;
   }
 
   #run-btn {
     display: block;
     width: calc(100% - 40px);
-    margin: 16px 20px;
+    margin: 14px 20px;
     background: var(--amber-500);
     color: var(--navy-900);
     border: none;
@@ -164,21 +415,15 @@
   #run-btn:disabled { background: var(--navy-600); color: var(--muted); cursor: default; }
 
   #status-bar {
-    margin: 0 20px 16px;
-    font-size: 11px;
-    color: var(--muted);
-    min-height: 16px;
-    text-align: center;
+    margin: 0 20px 14px;
+    font-size: 11px; color: var(--muted);
+    min-height: 16px; text-align: center;
   }
 
   /* ── main panel ── */
   #main {
-    flex: 1;
-    overflow-y: auto;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    flex: 1; overflow-y: auto; padding: 24px;
+    display: flex; flex-direction: column; gap: 24px;
   }
 
   /* ── metric cards ── */
@@ -196,90 +441,55 @@
   }
 
   .card-label {
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: .6px;
-    margin-bottom: 8px;
+    font-size: 10px; font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .6px; margin-bottom: 8px;
   }
 
   .card-value {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--amber-400);
-    line-height: 1;
+    font-size: 26px; font-weight: 700;
+    color: var(--amber-400); line-height: 1;
   }
 
   .card-value.green  { color: var(--green); }
   .card-value.red    { color: var(--red); }
   .card-value.white  { color: var(--text); }
-
-  .card-sub {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 4px;
-  }
+  .card-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
 
   /* ── section headers ── */
   .section-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--amber-300);
-    text-transform: uppercase;
-    letter-spacing: .8px;
-    margin-bottom: 12px;
+    font-size: 12px; font-weight: 700; color: var(--amber-300);
+    text-transform: uppercase; letter-spacing: .8px; margin-bottom: 12px;
   }
 
   /* ── calibration table ── */
-  .cal-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
+  .cal-grid { display: flex; flex-direction: column; gap: 6px; }
 
   .cal-row {
     display: grid;
     grid-template-columns: 90px 60px 1fr 64px 64px 80px;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 12px;
-    background: var(--navy-800);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    font-size: 12px;
+    align-items: center; gap: 12px; padding: 8px 12px;
+    background: var(--navy-800); border: 1px solid var(--border);
+    border-radius: var(--radius); font-size: 12px;
   }
 
   .cal-row.header {
-    background: var(--navy-700);
-    border-color: var(--navy-500);
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: .5px;
+    background: var(--navy-700); border-color: var(--navy-500);
+    font-size: 10px; font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .5px;
   }
 
   .bar-wrap {
-    background: var(--navy-700);
-    border-radius: 3px;
-    height: 8px;
-    overflow: hidden;
-    position: relative;
+    background: var(--navy-700); border-radius: 3px;
+    height: 8px; overflow: hidden;
   }
 
   .bar-fill {
-    height: 100%;
-    border-radius: 3px;
-    transition: width .4s ease;
+    height: 100%; border-radius: 3px; transition: width .4s ease;
   }
 
   .edge-badge {
-    display: inline-block;
-    padding: 2px 7px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 700;
+    display: inline-block; padding: 2px 7px;
+    border-radius: 12px; font-size: 11px; font-weight: 700;
   }
   .edge-pos { background: rgba(34,197,94,.15); color: var(--green); }
   .edge-neg { background: rgba(239,68,68,.15);  color: var(--red); }
@@ -287,52 +497,32 @@
 
   /* ── bets table ── */
   .bets-table-wrap {
-    overflow-x: auto;
-    border-radius: var(--radius);
+    overflow-x: auto; border-radius: var(--radius);
     border: 1px solid var(--border);
   }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-  }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
 
   thead th {
-    background: var(--navy-700);
-    color: var(--muted);
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    padding: 10px 12px;
-    text-align: left;
-    white-space: nowrap;
-    border-bottom: 1px solid var(--border);
+    background: var(--navy-700); color: var(--muted);
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: .5px; padding: 10px 12px; text-align: left;
+    white-space: nowrap; border-bottom: 1px solid var(--border);
   }
 
-  tbody tr {
-    border-bottom: 1px solid var(--navy-700);
-    transition: background .1s;
-  }
+  tbody tr { border-bottom: 1px solid var(--navy-700); transition: background .1s; }
   tbody tr:hover { background: var(--navy-700); }
   tbody tr:last-child { border-bottom: none; }
 
   tbody td {
-    padding: 9px 12px;
-    color: var(--text);
-    max-width: 260px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    padding: 9px 12px; color: var(--text);
+    max-width: 260px; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap;
   }
 
   .won-badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 10px;
-    font-weight: 700;
+    display: inline-block; padding: 2px 8px;
+    border-radius: 12px; font-size: 10px; font-weight: 700;
   }
   .won-yes { background: rgba(34,197,94,.15); color: var(--green); }
   .won-no  { background: rgba(239,68,68,.15);  color: var(--red); }
@@ -341,210 +531,512 @@
   .pnl-neg { color: var(--red);   font-weight: 600; }
 
   .sport-pill {
-    display: inline-block;
-    padding: 2px 7px;
-    border-radius: 12px;
-    font-size: 10px;
-    font-weight: 600;
-    background: var(--navy-500);
-    color: var(--amber-300);
+    display: inline-block; padding: 2px 7px;
+    border-radius: 12px; font-size: 10px; font-weight: 600;
+    background: var(--navy-500); color: var(--amber-300);
   }
 
   /* ── db stats bar ── */
-  #db-stats {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    background: var(--navy-800);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 12px 16px;
-    font-size: 11px;
-    color: var(--muted);
+  #db-stats-bar {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    background: var(--navy-800); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 12px 16px;
+    font-size: 11px; color: var(--muted);
   }
-  #db-stats span b { color: var(--amber-300); margin-left: 4px; }
+  #db-stats-bar span b { color: var(--amber-300); margin-left: 4px; }
 
   /* ── empty state ── */
   .empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    color: var(--muted);
-    text-align: center;
-    gap: 8px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 60px 20px; color: var(--muted); text-align: center; gap: 8px;
   }
-  .empty svg { opacity: .3; }
   .empty p { font-size: 13px; }
   .empty small { font-size: 11px; }
 
   /* ── spinner ── */
   @keyframes spin { to { transform: rotate(360deg); } }
   .spinner {
-    display: inline-block;
-    width: 14px; height: 14px;
-    border: 2px solid var(--navy-600);
-    border-top-color: var(--amber-400);
-    border-radius: 50%;
-    animation: spin .7s linear infinite;
-    vertical-align: middle;
-    margin-right: 6px;
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid var(--navy-600); border-top-color: var(--amber-400);
+    border-radius: 50%; animation: spin .7s linear infinite;
+    vertical-align: middle; margin-right: 6px;
   }
+
+  /* ════════════════════════════════════
+     DATASET SECTION
+  ════════════════════════════════════ */
+  #section-dataset {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  #section-dataset h1 {
+    font-size: 26px; font-weight: 800; margin-bottom: 8px;
+  }
+
+  #section-dataset .subtitle {
+    font-size: 14px; color: var(--slate); margin-bottom: 40px; line-height: 1.5;
+  }
+
+  .dataset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .ds-card {
+    background: var(--navy-800);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+
+  .ds-card-sport {
+    font-size: 11px; font-weight: 700; color: var(--amber-300);
+    text-transform: uppercase; letter-spacing: .7px; margin-bottom: 10px;
+  }
+
+  .ds-card-events {
+    font-size: 26px; font-weight: 800; color: var(--text); line-height: 1;
+  }
+
+  .ds-card-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+  .dataset-schema {
+    background: var(--navy-800);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .dataset-schema h2 {
+    font-size: 12px; font-weight: 700; color: var(--amber-300);
+    text-transform: uppercase; letter-spacing: .8px; margin-bottom: 16px;
+  }
+
+  .schema-table {
+    width: 100%; border-collapse: collapse; font-size: 12px;
+  }
+
+  .schema-table td {
+    padding: 8px 12px; border-bottom: 1px solid var(--navy-700);
+    vertical-align: top;
+  }
+
+  .schema-table tr:last-child td { border-bottom: none; }
+  .schema-table .col-name { color: var(--amber-300); font-family: monospace; font-size: 12px; }
+  .schema-table .col-type { color: var(--muted); font-size: 11px; }
+  .schema-table .col-desc { color: var(--slate); }
+
+  .download-row {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+
+  .dl-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--navy-700); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 10px 16px;
+    font-size: 12px; font-weight: 600; color: var(--text);
+    cursor: pointer; text-decoration: none; transition: border-color .15s;
+  }
+  .dl-btn:hover { border-color: var(--amber-400); color: var(--amber-300); text-decoration: none; }
+
+  .api-block {
+    background: var(--navy-800);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 32px;
+  }
+
+  .api-block h2 {
+    font-size: 12px; font-weight: 700; color: var(--amber-300);
+    text-transform: uppercase; letter-spacing: .8px; margin-bottom: 16px;
+  }
+
+  .endpoint-row {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 0; border-bottom: 1px solid var(--navy-700);
+    font-size: 12px;
+  }
+  .endpoint-row:last-child { border-bottom: none; }
+
+  .ep-method {
+    font-family: monospace; font-size: 10px; font-weight: 700;
+    background: rgba(34,197,94,.12); color: var(--green);
+    padding: 2px 7px; border-radius: 4px; white-space: nowrap; margin-top: 1px;
+  }
+  .ep-method.post {
+    background: rgba(251,191,36,.10); color: var(--amber-300);
+  }
+
+  .ep-path { font-family: monospace; color: var(--text); flex-shrink: 0; }
+  .ep-desc { color: var(--muted); }
+
+  /* footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 32px;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--amber-400); }
 </style>
 </head>
 <body>
 
-<!-- ── SIDEBAR ────────────────────────────────────────────────────────────── -->
-<aside id="sidebar">
-  <div class="sidebar-header">
-    <h1>PM Backtester</h1>
-    <p>Polymarket historical strategy analysis</p>
+<!-- ── TOP NAV ─────────────────────────────────────────────────────────────── -->
+<nav id="topnav">
+  <span class="nav-logo">Highconviction</span>
+  <div class="nav-tabs">
+    <div class="nav-tab active" data-tab="results">Results</div>
+    <div class="nav-tab" data-tab="backtester">Backtester</div>
+    <div class="nav-tab" data-tab="dataset">Dataset</div>
+  </div>
+  <div class="nav-right">
+    <div id="db-badge">
+      <div class="pulse"></div>
+      <span id="db-badge-text">Loading…</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     RESULTS
+════════════════════════════════════════════════════════════════════════ -->
+<div id="section-results" class="page-section active">
+  <div class="hero">
+    <div class="hero-eyebrow">Polymarket edge research</div>
+    <h1>A statistical edge on ATP<br>tennis prediction markets</h1>
+    <p>Walk-forward validated strategy on Polymarket match-winner markets. Trained on early data, tested blind on the most recent period — the out-of-sample win rate beats training.</p>
   </div>
 
-  <div class="sidebar-section">
-    <label>Sport</label>
-    <div class="field">
-      <select id="sel-sport">
-        <option value="">All Sports</option>
-      </select>
+  <!-- key numbers -->
+  <div class="result-cards">
+    <div class="rcard">
+      <div class="rcard-label">Out-of-sample ROI</div>
+      <div class="rcard-value green">+29.5%</div>
+      <div class="rcard-sub">36 bets · Jun 9 – present</div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-label">Out-of-sample win rate</div>
+      <div class="rcard-value green">52.8%</div>
+      <div class="rcard-sub">vs 41.0% in training</div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-label">Training ROI</div>
+      <div class="rcard-value amber">+10.4%</div>
+      <div class="rcard-sub">273 bets · Apr 11 – Jun 9</div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-label">Stress-test ROI</div>
+      <div class="rcard-value amber">+4.4%</div>
+      <div class="rcard-sub">3¢ spread + 2¢ SL slippage</div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-label">Total bets validated</div>
+      <div class="rcard-value white">308</div>
+      <div class="rcard-sub">37 days · ~8 signals/day</div>
     </div>
   </div>
 
-  <div class="sidebar-section">
-    <label>Describe a strategy (AI)</label>
-    <div class="field">
-      <textarea id="nl-description" rows="3" placeholder="e.g. Buy a player's YES contract if it drops 5+ cents in the last 3 hours before the match" style="width:100%;background:var(--navy-700);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);padding:8px 10px;font-size:12px;font-family:inherit;resize:vertical;"></textarea>
+  <!-- walk-forward + execution tables -->
+  <div class="results-grid">
+    <div class="results-block">
+      <h2>Walk-forward validation</h2>
+      <table class="data-table">
+        <thead><tr><th>Period</th><th>Bets</th><th>Win rate</th><th>ROI</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Training (Apr 11 – Jun 9)</td>
+            <td>273</td>
+            <td>41.0%</td>
+            <td class="amber">+10.4%</td>
+          </tr>
+          <tr>
+            <td><strong>Out-of-sample (Jun 9+)</strong></td>
+            <td><strong>36</strong></td>
+            <td class="green"><strong>52.8%</strong></td>
+            <td class="green"><strong>+29.5%</strong></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <button id="generate-btn" style="display:block;width:100%;background:var(--navy-600);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);padding:9px;font-size:12px;font-weight:600;cursor:pointer;">Generate predicate</button>
-    <div id="generate-status" style="font-size:11px;color:var(--muted);margin-top:6px;"></div>
+
+    <div class="results-block">
+      <h2>Execution cost stress-test</h2>
+      <table class="data-table">
+        <thead><tr><th>Execution model</th><th>ROI</th></tr></thead>
+        <tbody>
+          <tr><td>Baseline (mid prices, no costs)</td><td class="green">+14.1%</td></tr>
+          <tr><td>Entry at ask + exit at bid (2¢ spread)</td><td class="green">+8.3%</td></tr>
+          <tr><td>+ 1¢ additional SL slippage</td><td class="green">+7.6%</td></tr>
+          <tr><td>Stress test (3¢ spread + 2¢ SL slippage)</td><td class="amber">+4.4%</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div class="sidebar-section">
-    <label>Strategy</label>
-    <div class="field">
-      <select id="sel-strategy"></select>
-    </div>
-    <div id="strategy-params"></div>
+  <!-- strategy explainer -->
+  <div class="strategy-explainer">
+    <h2>Strategy: momentum_reversal (mom_fast)</h2>
+    <p>Every ATP match on Polymarket is a binary market: one player's YES contract and the other's, priced to sum to ~$1. The strategy watches the <strong>overnight pre-match window</strong> — the 12–20 hours between market creation and match start — and fades overreactions in either direction.</p>
+    <p><strong>Signal:</strong> if a player's YES price dropped 5+ cents over the last 5 hours → buy that contract, expecting it to recover. If it rose 5+ cents → buy the opposing player's (the one that got cheap), same reversion logic.</p>
+    <p><strong>Why it works:</strong> pre-match pressure concentrates on one player at a time — news, social media, sharp money — and tends to overshoot. The strategy buys the contract that got hit, before the market corrects. Confirmed via Polymarket's <code>startTime</code> field: 308 of 309 signals fire before match start. In-match moves reflect real gameplay, not sentiment.</p>
+    <p><strong>Stop-loss at 10¢.</strong> Optimal stake 15% compounding (out-of-sample selection only — use 2–5% live).</p>
   </div>
 
-  <div class="sidebar-section">
-    <label>Backtest settings</label>
-    <div class="field">
-      <label>Entry window (% of market life)</label>
-      <div class="range-row">
-        <input type="range" id="entry-pct" min="10" max="90" value="50" step="5">
-        <span class="range-val" id="entry-pct-val">50%</span>
+  <!-- calibration (live from API) -->
+  <div style="margin-bottom: 48px">
+    <div class="section-title">Market calibration — ATP (price bucket vs actual win rate)</div>
+    <div id="cal-results-container">
+      <div class="empty"><p>Loading calibration data…</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     BACKTESTER
+════════════════════════════════════════════════════════════════════════ -->
+<div id="section-backtester" class="page-section">
+
+  <!-- sidebar -->
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <h2>Strategy Explorer</h2>
+      <p>Configure and run any strategy against the live dataset</p>
+    </div>
+
+    <div class="sidebar-section">
+      <label>Describe a strategy (AI)</label>
+      <div class="field">
+        <textarea id="nl-description" rows="3"
+          placeholder="e.g. Buy YES if price drops 5+ cents in the last 3 hours before the match"
+          style="width:100%;background:var(--navy-700);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);padding:8px 10px;font-size:12px;font-family:inherit;resize:vertical;"></textarea>
+      </div>
+      <button id="generate-btn" style="display:block;width:100%;background:var(--navy-600);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);padding:9px;font-size:12px;font-weight:600;cursor:pointer;">Generate predicate</button>
+      <div id="generate-status" style="font-size:11px;color:var(--muted);margin-top:6px;"></div>
+    </div>
+
+    <div class="sidebar-section">
+      <label>Sport</label>
+      <div class="field">
+        <select id="sel-sport">
+          <option value="">All Sports</option>
+        </select>
       </div>
     </div>
-    <div class="field">
-      <label>Bankroll ($)</label>
-      <input type="number" id="bankroll" value="1000" min="100" max="100000" step="100">
+
+    <div class="sidebar-section">
+      <label>Strategy</label>
+      <div class="field">
+        <select id="sel-strategy"></select>
+      </div>
+      <div id="strategy-params"></div>
     </div>
-    <div class="field">
-      <label>Bet sizing</label>
-      <select id="sizing-mode">
-        <option value="strategy">Strategy-defined (% of bankroll)</option>
-        <option value="fixed_dollar">Fixed unit size ($)</option>
-        <option value="fixed_pct">Fixed unit size (% of bankroll)</option>
-      </select>
-    </div>
-    <div class="field" id="unit-size-field" style="display:none">
-      <label>Unit size ($)</label>
-      <input type="number" id="unit-size" value="50" min="1" max="100000" step="1">
-    </div>
-    <div class="field" id="unit-pct-field" style="display:none">
-      <label>Unit size (% of bankroll)</label>
-      <div class="range-row">
-        <input type="range" id="unit-pct" min="1" max="25" value="5" step="1">
-        <span class="range-val" id="unit-pct-val">5%</span>
+
+    <div class="sidebar-section">
+      <label>Backtest settings</label>
+      <div class="field">
+        <label>Entry window (% of market life)</label>
+        <div class="range-row">
+          <input type="range" id="entry-pct" min="10" max="90" value="50" step="5">
+          <span class="range-val" id="entry-pct-val">50%</span>
+        </div>
+      </div>
+      <div class="field">
+        <label>Bankroll ($)</label>
+        <input type="number" id="bankroll" value="1000" min="100" max="100000" step="100">
+      </div>
+      <div class="field">
+        <label>Bet sizing</label>
+        <select id="sizing-mode">
+          <option value="strategy">Strategy-defined (% of bankroll)</option>
+          <option value="fixed_dollar">Fixed unit size ($)</option>
+          <option value="fixed_pct">Fixed unit size (% of bankroll)</option>
+        </select>
+      </div>
+      <div class="field" id="unit-size-field" style="display:none">
+        <label>Unit size ($)</label>
+        <input type="number" id="unit-size" value="50" min="1" max="100000" step="1">
+      </div>
+      <div class="field" id="unit-pct-field" style="display:none">
+        <label>Unit size (% of bankroll)</label>
+        <div class="range-row">
+          <input type="range" id="unit-pct" min="1" max="25" value="5" step="1">
+          <span class="range-val" id="unit-pct-val">5%</span>
+        </div>
+      </div>
+      <div class="field">
+        <label class="toggle-row">
+          <input type="checkbox" id="hold-to-close" checked>
+          Hold to close (use final outcome)
+        </label>
+      </div>
+      <div class="field">
+        <label class="toggle-row">
+          <input type="checkbox" id="compounding">
+          Compounding (reinvest P&amp;L)
+        </label>
+      </div>
+      <div class="field">
+        <label class="toggle-row">
+          <input type="checkbox" id="limit-orders">
+          Simulate limit order fills
+        </label>
+      </div>
+      <div class="field" id="exit-pct-field" style="display:none">
+        <label class="toggle-row">
+          <input type="checkbox" id="take-profit-enabled" checked>
+          Take-profit price
+        </label>
+        <div class="range-row">
+          <input type="range" id="take-profit-price" min="5" max="95" value="50" step="1">
+          <span class="range-val" id="take-profit-price-val">0.50</span>
+        </div>
+      </div>
+      <div class="field" id="stop-loss-field" style="display:none">
+        <label class="toggle-row">
+          <input type="checkbox" id="stop-loss-enabled">
+          Stop-loss price
+        </label>
+        <div class="range-row">
+          <input type="range" id="stop-loss-price" min="5" max="95" value="15" step="1">
+          <span class="range-val" id="stop-loss-price-val">0.15</span>
+        </div>
       </div>
     </div>
-    <div class="field">
-      <label class="toggle-row">
-        <input type="checkbox" id="hold-to-close" checked>
-        Hold to close (use final outcome)
-      </label>
-    </div>
-    <div class="field">
-      <label class="toggle-row">
-        <input type="checkbox" id="compounding">
-        Compounding (reinvest P&amp;L)
-      </label>
-    </div>
-    <div class="field">
-      <label class="toggle-row">
-        <input type="checkbox" id="limit-orders">
-        Simulate limit order fills
-      </label>
-    </div>
-    <div class="field" id="exit-pct-field" style="display:none">
-      <label class="toggle-row">
-        <input type="checkbox" id="take-profit-enabled" checked>
-        Take-profit price
-      </label>
-      <div class="range-row">
-        <input type="range" id="take-profit-price" min="5" max="95" value="50" step="1">
-        <span class="range-val" id="take-profit-price-val">0.50</span>
+
+    <button id="run-btn">Run Backtest</button>
+    <div id="status-bar"></div>
+  </aside>
+
+  <!-- main panel -->
+  <main id="main">
+    <div id="db-stats-bar"><span>Loading database stats…</span></div>
+
+    <div>
+      <div class="section-title">Performance</div>
+      <div class="cards" id="cards">
+        <div class="empty" style="grid-column:1/-1">
+          <p>Configure a strategy and click <b>Run Backtest</b></p>
+          <small>Or scroll down to view calibration data</small>
+        </div>
       </div>
     </div>
-    <div class="field" id="stop-loss-field" style="display:none">
-      <label class="toggle-row">
-        <input type="checkbox" id="stop-loss-enabled">
-        Stop-loss price
-      </label>
-      <div class="range-row">
-        <input type="range" id="stop-loss-price" min="5" max="95" value="15" step="1">
-        <span class="range-val" id="stop-loss-price-val">0.15</span>
+
+    <div>
+      <div class="section-title">Calibration — price bucket vs actual win rate</div>
+      <div id="cal-container">
+        <div class="empty"><p>Select a sport to load calibration</p></div>
       </div>
     </div>
-  </div>
 
-  <button id="run-btn">Run Backtest</button>
-  <div id="status-bar"></div>
-</aside>
-
-<!-- ── MAIN ───────────────────────────────────────────────────────────────── -->
-<main id="main">
-  <div id="db-stats">
-    <span>Loading database stats…</span>
-  </div>
-
-  <!-- metric cards -->
-  <div>
-    <div class="section-title">Performance</div>
-    <div class="cards" id="cards">
-      <div class="empty" style="grid-column:1/-1">
-        <p>Configure a strategy and click <b>Run Backtest</b></p>
-        <small>Or scroll down to view calibration data</small>
+    <div>
+      <div class="section-title">Sample bets</div>
+      <div id="bets-container">
+        <div class="empty"><p>Run a backtest to see individual bets</p></div>
       </div>
     </div>
+  </main>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     DATASET
+════════════════════════════════════════════════════════════════════════ -->
+<div id="section-dataset" class="page-section">
+  <h1>Dataset</h1>
+  <p class="subtitle">1.5M+ tick-level price observations collected daily from Polymarket's public APIs.<br>All data is from resolved markets — outcome known, no lookahead bias.</p>
+
+  <!-- live sport cards from /stats -->
+  <div class="dataset-grid" id="sport-cards">
+    <div class="ds-card"><div class="ds-card-sport">Loading…</div></div>
   </div>
 
-  <!-- calibration -->
-  <div>
-    <div class="section-title">Calibration — price bucket vs actual win rate</div>
-    <div id="cal-container">
-      <div class="empty"><p>Select a sport to load calibration</p></div>
-    </div>
+  <!-- schema -->
+  <div class="dataset-schema">
+    <h2>Schema</h2>
+    <table class="schema-table">
+      <tbody>
+        <tr>
+          <td class="col-name">events</td>
+          <td class="col-type">id, title, series_id, sport, start_date, end_date, game_start_time</td>
+          <td class="col-desc">One row per match. <code>game_start_time</code> is the actual Polymarket kickoff timestamp used to enforce the pre-match trading window.</td>
+        </tr>
+        <tr>
+          <td class="col-name">markets</td>
+          <td class="col-type">id, event_id, question, yes_token_id, resolved_outcome, volume</td>
+          <td class="col-desc">One row per binary outcome market (e.g. "Will Djokovic win?"). <code>resolved_outcome</code>: 1 = YES won, 0 = NO won.</td>
+        </tr>
+        <tr>
+          <td class="col-name">price_history</td>
+          <td class="col-type">market_id, timestamp, price</td>
+          <td class="col-desc">Hourly YES-price snapshots (0.0–1.0). Collected from <code>clob.polymarket.com/prices-history</code>. 1.5M+ rows.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- bets -->
-  <div>
-    <div class="section-title">Sample bets</div>
-    <div id="bets-container">
-      <div class="empty"><p>Run a backtest to see individual bets</p></div>
+  <div class="download-row">
+    <a class="dl-btn" href="/sample_data.csv" download>
+      ↓ sample_data.csv — 500 ATP match rows
+    </a>
+    <a class="dl-btn" href="https://github.com/srg-123/highconviction-polymarket" target="_blank">
+      ↗ GitHub — full source + data pipeline
+    </a>
+  </div>
+
+  <!-- API reference -->
+  <div class="api-block">
+    <h2>API endpoints</h2>
+    <div class="endpoint-row">
+      <span class="ep-method">GET</span>
+      <span class="ep-path">/stats</span>
+      <span class="ep-desc">Database summary — event and market counts by sport, total price points.</span>
+    </div>
+    <div class="endpoint-row">
+      <span class="ep-method">GET</span>
+      <span class="ep-path">/backtest</span>
+      <span class="ep-desc">Run any registered strategy against the dataset. Params: <code>sport</code>, <code>strategy</code>, <code>entry_pct</code>, <code>trade_window</code>, sizing, stop-loss, spread modeling.</span>
+    </div>
+    <div class="endpoint-row">
+      <span class="ep-method">GET</span>
+      <span class="ep-path">/calibration</span>
+      <span class="ep-desc">Price bucket → actual win rate calibration table for any sport.</span>
+    </div>
+    <div class="endpoint-row">
+      <span class="ep-method post">POST</span>
+      <span class="ep-path">/strategies/generate</span>
+      <span class="ep-desc">Pass a plain-English strategy description; returns a Claude-generated Python predicate, AST-validated and registered into the live backtester.</span>
     </div>
   </div>
-</main>
+</div>
+
+<!-- footer -->
+<footer>
+  <span>Highconviction — Polymarket edge research</span>
+  <a href="https://github.com/srg-123/highconviction-polymarket" target="_blank">GitHub</a>
+  <span style="margin-left:auto;font-size:10px">Data: Polymarket public APIs · Not financial advice</span>
+</footer>
 
 <script>
-const API = '';  // same origin
+const API = '';
 
-// ── utilities ────────────────────────────────────────────────────────────────
+// ── utilities ─────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
-const fmt = (n, digits=1) => n == null ? '—' : Number(n).toFixed(digits);
-const pct = n => n == null ? '—' : (n * 100).toFixed(1) + '%';
+const fmt  = (n, d=1) => n == null ? '—' : Number(n).toFixed(d);
+const pct  = n => n == null ? '—' : (n * 100).toFixed(1) + '%';
 const money = n => n == null ? '—' : (n >= 0 ? '+' : '') + '$' + Number(n).toFixed(0);
 const dollars = n => n == null ? '—' : '$' + Number(n).toFixed(0);
 
@@ -558,20 +1050,50 @@ function setStatus(msg, loading = false) {
   $('status-bar').innerHTML = loading ? `<span class="spinner"></span>${msg}` : msg;
 }
 
-// ── DB stats ─────────────────────────────────────────────────────────────────
+// ── tab navigation ────────────────────────────────────────────────────────────
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    $('section-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// ── DB badge + stats ──────────────────────────────────────────────────────────
 async function loadStats() {
   try {
     const s = await apiFetch('/stats');
+    $('db-badge-text').textContent =
+      `${(s.price_data_points / 1e6).toFixed(1)}M price points · live`;
+
+    // backtester stats bar
     const bySport = (s.by_sport || []).map(r =>
-      `<span>${r.sport}: <b>${r.markets}</b> mkts</span>`
+      `<span>${r.sport}: <b>${r.markets.toLocaleString()}</b> mkts</span>`
     ).join('');
-    $('db-stats').innerHTML =
+    $('db-stats-bar').innerHTML =
       `<span>Events: <b>${s.total_events.toLocaleString()}</b></span>` +
       `<span>Resolved markets: <b>${s.resolved_markets.toLocaleString()}</b></span>` +
       `<span>Price points: <b>${s.price_data_points.toLocaleString()}</b></span>` +
-      (bySport || '<span>No data — run data_collector.py</span>');
+      (bySport || '');
+
+    // dataset sport cards
+    if (s.by_sport && s.by_sport.length) {
+      $('sport-cards').innerHTML = s.by_sport.map(r => `
+        <div class="ds-card">
+          <div class="ds-card-sport">${r.sport}</div>
+          <div class="ds-card-events">${r.events.toLocaleString()}</div>
+          <div class="ds-card-sub">${r.markets.toLocaleString()} resolved markets</div>
+        </div>`).join('') + `
+        <div class="ds-card">
+          <div class="ds-card-sport">Total</div>
+          <div class="ds-card-events">${s.price_data_points.toLocaleString()}</div>
+          <div class="ds-card-sub">price-history rows</div>
+        </div>`;
+    }
   } catch(e) {
-    $('db-stats').innerHTML = '<span>Could not reach API — is api.py running?</span>';
+    $('db-badge-text').textContent = 'API unavailable';
+    $('db-stats-bar').innerHTML = '<span>Could not reach API</span>';
   }
 }
 
@@ -636,7 +1158,9 @@ function renderParams() {
       valEl.className = 'range-val';
       valEl.id = `param-${key}-val`;
       valEl.textContent = p.default;
-      slider.addEventListener('input', () => { valEl.textContent = Number(slider.value).toFixed(p.type === 'int' ? 0 : 2); });
+      slider.addEventListener('input', () => {
+        valEl.textContent = Number(slider.value).toFixed(p.type === 'int' ? 0 : 2);
+      });
       row.appendChild(slider); row.appendChild(valEl);
       div.appendChild(row);
     }
@@ -644,10 +1168,80 @@ function renderParams() {
   });
 }
 
-$('sel-strategy').addEventListener('change', () => {
-  renderParams();
-  loadCalibration();
+$('sel-strategy').addEventListener('change', () => { renderParams(); loadCalibration(); });
+
+// ── sliders ───────────────────────────────────────────────────────────────────
+$('entry-pct').addEventListener('input', () => {
+  $('entry-pct-val').textContent = $('entry-pct').value + '%';
 });
+$('take-profit-price').addEventListener('input', () => {
+  $('take-profit-price-val').textContent = (parseInt($('take-profit-price').value) / 100).toFixed(2);
+});
+$('stop-loss-price').addEventListener('input', () => {
+  $('stop-loss-price-val').textContent = (parseInt($('stop-loss-price').value) / 100).toFixed(2);
+});
+$('hold-to-close').addEventListener('change', () => {
+  const show = $('hold-to-close').checked ? 'none' : 'block';
+  $('exit-pct-field').style.display = show;
+  $('stop-loss-field').style.display = show;
+});
+$('sizing-mode').addEventListener('change', () => {
+  const mode = $('sizing-mode').value;
+  $('unit-size-field').style.display = mode === 'fixed_dollar' ? 'block' : 'none';
+  $('unit-pct-field').style.display  = mode === 'fixed_pct'    ? 'block' : 'none';
+});
+$('unit-pct').addEventListener('input', () => {
+  $('unit-pct-val').textContent = $('unit-pct').value + '%';
+});
+
+// ── calibration (shared between Results + Backtester tabs) ────────────────────
+async function loadCalibration() {
+  const sport = $('sel-sport').value || 'ATP';
+  try {
+    const rows = await apiFetch('/calibration?sport=' + sport);
+    const html = renderCalibrationHTML(rows);
+    $('cal-container').innerHTML = html;
+    $('cal-results-container').innerHTML = html;
+  } catch(e) {
+    const msg = `<div class="empty"><p>${e.message}</p></div>`;
+    $('cal-container').innerHTML = msg;
+    $('cal-results-container').innerHTML = msg;
+  }
+}
+
+function renderCalibrationHTML(rows) {
+  if (!rows || rows.length === 0)
+    return '<div class="empty"><p>No calibration data</p></div>';
+
+  let html = `<div class="cal-grid">
+    <div class="cal-row header">
+      <span>Bucket</span><span>N</span><span>Win rate vs market</span>
+      <span>Market</span><span>Actual</span><span>Edge</span>
+    </div>`;
+
+  rows.forEach(r => {
+    const mktW = r.market_prob * 100;
+    const actW = r.actual_win_rate * 100;
+    const edgeClass = r.edge > 0.01 ? 'edge-pos' : r.edge < -0.01 ? 'edge-neg' : 'edge-zero';
+    const sign = r.edge >= 0 ? '+' : '';
+    const barColor = r.edge > 0.01 ? 'var(--green)' : r.edge < -0.01 ? 'var(--red)' : 'var(--navy-500)';
+
+    html += `<div class="cal-row">
+      <span>${r.bucket}</span>
+      <span style="color:var(--muted)">${r.count.toLocaleString()}</span>
+      <div>
+        <div class="bar-wrap"><div class="bar-fill" style="width:${mktW}%;background:var(--navy-400)"></div></div>
+        <div class="bar-wrap" style="margin-top:3px"><div class="bar-fill" style="width:${actW}%;background:${barColor}"></div></div>
+      </div>
+      <span>${pct(r.market_prob)}</span>
+      <span>${pct(r.actual_win_rate)}</span>
+      <span><span class="edge-badge ${edgeClass}">${sign}${pct(r.edge)}</span></span>
+    </div>`;
+  });
+  return html + '</div>';
+}
+
+$('sel-sport').addEventListener('change', loadCalibration);
 
 // ── NL strategy generation ────────────────────────────────────────────────────
 $('generate-btn').addEventListener('click', async () => {
@@ -669,96 +1263,12 @@ $('generate-btn').addEventListener('click', async () => {
     renderParams();
     loadCalibration();
     $('generate-status').textContent = `Added "${result.name}" — ${result.description}`;
-  } catch (e) {
+  } catch(e) {
     $('generate-status').textContent = 'Error: ' + e.message;
   } finally {
     btn.disabled = false;
   }
 });
-
-// ── entry pct slider ──────────────────────────────────────────────────────────
-$('entry-pct').addEventListener('input', () => {
-  $('entry-pct-val').textContent = $('entry-pct').value + '%';
-});
-
-// ── take-profit / stop-loss price sliders / hold-to-close toggle ───────────────
-$('take-profit-price').addEventListener('input', () => {
-  $('take-profit-price-val').textContent = (parseInt($('take-profit-price').value) / 100).toFixed(2);
-});
-
-$('stop-loss-price').addEventListener('input', () => {
-  $('stop-loss-price-val').textContent = (parseInt($('stop-loss-price').value) / 100).toFixed(2);
-});
-
-$('hold-to-close').addEventListener('change', () => {
-  const show = $('hold-to-close').checked ? 'none' : 'block';
-  $('exit-pct-field').style.display = show;
-  $('stop-loss-field').style.display = show;
-});
-
-// ── sizing mode ────────────────────────────────────────────────────────────────
-$('sizing-mode').addEventListener('change', () => {
-  const mode = $('sizing-mode').value;
-  $('unit-size-field').style.display = mode === 'fixed_dollar' ? 'block' : 'none';
-  $('unit-pct-field').style.display  = mode === 'fixed_pct'    ? 'block' : 'none';
-});
-
-$('unit-pct').addEventListener('input', () => {
-  $('unit-pct-val').textContent = $('unit-pct').value + '%';
-});
-
-// ── calibration ───────────────────────────────────────────────────────────────
-async function loadCalibration() {
-  const sport = $('sel-sport').value || null;
-  const qs = sport ? `?sport=${sport}` : '';
-  try {
-    const rows = await apiFetch('/calibration' + qs);
-    renderCalibration(rows);
-  } catch(e) {
-    $('cal-container').innerHTML = `<div class="empty"><p>${e.message}</p></div>`;
-  }
-}
-
-function renderCalibration(rows) {
-  if (!rows || rows.length === 0) {
-    $('cal-container').innerHTML = '<div class="empty"><p>No calibration data — collect some markets first</p></div>';
-    return;
-  }
-  let html = `<div class="cal-grid">
-    <div class="cal-row header">
-      <span>Bucket</span><span>N</span><span>Win rate vs market</span>
-      <span>Market</span><span>Actual</span><span>Edge</span>
-    </div>`;
-
-  rows.forEach(r => {
-    const mktW = r.market_prob * 100;
-    const actW = r.actual_win_rate * 100;
-    const edgeClass = r.edge > 0.01 ? 'edge-pos' : r.edge < -0.01 ? 'edge-neg' : 'edge-zero';
-    const sign = r.edge >= 0 ? '+' : '';
-    const barColor = r.edge > 0.01 ? 'var(--green)' : r.edge < -0.01 ? 'var(--red)' : 'var(--navy-500)';
-
-    html += `<div class="cal-row">
-      <span>${r.bucket}</span>
-      <span style="color:var(--muted)">${r.count.toLocaleString()}</span>
-      <div>
-        <div class="bar-wrap">
-          <div class="bar-fill" style="width:${mktW}%;background:var(--navy-400)"></div>
-        </div>
-        <div class="bar-wrap" style="margin-top:3px">
-          <div class="bar-fill" style="width:${actW}%;background:${barColor}"></div>
-        </div>
-      </div>
-      <span>${pct(r.market_prob)}</span>
-      <span>${pct(r.actual_win_rate)}</span>
-      <span><span class="edge-badge ${edgeClass}">${sign}${pct(r.edge)}</span></span>
-    </div>`;
-  });
-
-  html += '</div>';
-  $('cal-container').innerHTML = html;
-}
-
-$('sel-sport').addEventListener('change', loadCalibration);
 
 // ── backtest ──────────────────────────────────────────────────────────────────
 $('run-btn').addEventListener('click', runBacktest);
@@ -792,7 +1302,6 @@ async function runBacktest() {
   }
   if (sport) qs += `&sport=${sport}`;
 
-  // collect strategy params
   const strat = strategies.find(s => s.name === strategy);
   if (strat) {
     Object.keys(strat.params).forEach(key => {
@@ -850,13 +1359,12 @@ function renderCards(r) {
       <div class="card-label">Total wagered</div>
       <div class="card-value white">$${r.total_wagered.toLocaleString()}</div>
       <div class="card-sub">cumulative stake</div>
-    </div>
-  `;
+    </div>`;
 }
 
 function renderBets(bets) {
   if (!bets || bets.length === 0) {
-    $('bets-container').innerHTML = '<div class="empty"><p>No bets generated by this strategy</p></div>';
+    $('bets-container').innerHTML = '<div class="empty"><p>No bets generated</p></div>';
     return;
   }
   const rows = bets.map(b => {

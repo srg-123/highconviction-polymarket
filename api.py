@@ -12,12 +12,13 @@ Endpoints:
                               an executable predicate via Claude, register it
 """
 
+import os
 import sqlite3
 from pathlib import Path
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Query
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel
 
 import nl_strategy
@@ -26,7 +27,7 @@ from strategies import STRATEGIES
 
 app = FastAPI(title="Polymarket Backtester", version="1.0.0")
 
-DB_PATH = "backtest.db"
+DB_PATH = os.environ.get("DB_PATH", "backtest.db")
 
 nl_strategy.load_generated_strategies()
 
@@ -47,6 +48,15 @@ def serve_frontend():
     if p.exists():
         return HTMLResponse(content=p.read_text())
     return HTMLResponse("<h1>Frontend not built</h1><p>web/index.html missing</p>", status_code=500)
+
+
+@app.get("/sample_data.csv", include_in_schema=False)
+def serve_sample_csv():
+    p = Path("sample_data.csv")
+    if not p.exists():
+        raise HTTPException(404, "sample_data.csv not found")
+    return FileResponse(str(p), media_type="text/csv",
+                        headers={"Content-Disposition": "attachment; filename=sample_data.csv"})
 
 
 # ── stats ─────────────────────────────────────────────────────────────────────

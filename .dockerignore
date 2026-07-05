@@ -1,0 +1,12 @@
+backtest.db
+generated_strategies.json
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+logs/
+*.log
+.DS_Store
+.claude/
